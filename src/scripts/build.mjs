@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { company, nav, pages } from '../data/siteContent.mjs';
-import { esc, link, sameRoute } from './html.mjs';
+import { esc, heroVisual, link, sameRoute } from './html.mjs';
 import * as HomePage from '../pages/HomePage.mjs';
 import * as CertificationsPage from '../pages/CertificationsPage.mjs';
 import * as WebdesignPage from '../pages/WebdesignPage.mjs';
