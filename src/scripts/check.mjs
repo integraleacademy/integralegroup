@@ -1,6 +1,6 @@
 import fs from 'fs';
-const routes=['/','/certifications/','/webdesign/','/developpement-saas/','/integrale-connect/','/entreprise/','/contact/'];
-const fileFor=r=>r==='/'?'dist/index.html':`dist${r}index.html`;
+const routes=['/','/certifications','/webdesign','/developpement-saas','/integrale-connect','/entreprise','/contact'];
+const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
 for(const route of routes){const file=fileFor(route); if(!fs.existsSync(file)) throw new Error(`${route} missing`); const html=fs.readFileSync(file,'utf8'); if(html.length<3300) throw new Error(`${route} lacks complete content`); for(const r of routes){if(!html.includes(`href="${r}"`) && !(route==='/'&&r==='/')) throw new Error(`${route} missing nav link ${r}`);} }
 const cert=fs.readFileSync('dist/certifications/index.html','utf8');
 if(!cert.includes('Certification DSSP en cours de dépôt auprès de France Compétences — sous réserve d’enregistrement.')) throw new Error('mandatory DSSP disclaimer missing');
