@@ -5,7 +5,7 @@ const legacyRoutes=['/certifications','/webdesign','/developpement-saas','/integ
 const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
 const expectedMarkers={
  '/':'Intégrale Group, un écosystème dédié à la formation',
- '/notre-histoire':'Une histoire construite sur le terrain',
+ '/notre-histoire':'Une histoire née du terrain',
  '/conseil-accompagnement':'Conseil et accompagnement pour organismes de formation',
  '/integrale-academy':'Visiter le site Intégrale Academy',
  '/ecosysteme':'Intégrale Connect',
