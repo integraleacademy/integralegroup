@@ -1,1 +1,1 @@
-{"scripts":{"build":"node src/scripts/build.mjs","check":"node src/scripts/check.mjs"},"dependencies":{},"devDependencies":{}}
+{"scripts":{"build":"node src/scripts/build.mjs","check":"node src/scripts/check.mjs","start":"node src/scripts/server.mjs"},"dependencies":{},"devDependencies":{},"engines":{"node":">=18"}}

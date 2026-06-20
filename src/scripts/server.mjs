@@ -1,0 +1,3 @@
+import http from 'http';import fs from 'fs';import path from 'path';
+const root=path.resolve('dist');const port=process.env.PORT||3000;const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8'};
+http.createServer((req,res)=>{let url=decodeURI(new URL(req.url,'http://x').pathname);let file=path.join(root,url);if(url.endsWith('/'))file=path.join(root,url,'index.html');else if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');if(!fs.existsSync(file))file=path.join(root,'404.html');res.setHeader('Content-Type',types[path.extname(file)]||'application/octet-stream');fs.createReadStream(file).pipe(res);}).listen(port,()=>console.log(`Intégrale Group listening on ${port}`));
