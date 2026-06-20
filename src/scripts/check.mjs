@@ -1,6 +1,6 @@
 import fs from 'fs';
 const routes=['/','/notre-histoire','/conseil-accompagnement','/integrale-academy','/ecosysteme','/certifications','/webdesign','/developpement-saas','/integrale-connect','/entreprise','/contact'];
-const menuRoutes=['/','/notre-histoire','/conseil-accompagnement','/integrale-academy','/ecosysteme','/contact'];
+const menuRoutes=routes;
 const legacyRoutes=['/certifications','/webdesign','/developpement-saas','/integrale-connect','/entreprise'];
 const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
 const expectedMarkers={
