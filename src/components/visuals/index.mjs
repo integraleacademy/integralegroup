@@ -29,6 +29,11 @@ export const ProcessTimelineVisual=(items=['Création','Vision','Pôles','Croiss
 
 export const visualForRoute=route=>({
  '/':HeroVisualGroup,
+ '/les-poles-du-groupe':ExpertiseNetworkVisual,
+ '/pole-formation':HeroVisualGroup,
+ '/pole-certification-ingenierie':CertificationVisual,
+ '/pole-conseil-accompagnement':CompanyVisual,
+ '/pole-developpement-web':ConnectVisual,
  '/certifications':CertificationVisual,
  '/webdesign':WebdesignVisual,
  '/developpement-saas':SaasVisual,
