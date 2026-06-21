@@ -1,7 +1,7 @@
 import { card, title } from '../scripts/html.mjs';
 import { company } from '../data/siteContent.mjs';
 export const route='/notre-histoire';
-export const buttons='<a class="btn primary" href="#parcours">Découvrir le parcours</a><a class="btn secondary" href="https://www.integraleacademy.com/" target="_blank" rel="noopener noreferrer">Voir Intégrale Academy</a><a class="btn secondary" href="/contact">Contacter le groupe</a>';
+export const buttons='<a class="btn primary" href="#fondateur">Découvrir le parcours</a><a class="btn secondary" href="https://www.integraleacademy.com/" target="_blank" rel="noopener noreferrer">Voir Intégrale Academy</a><a class="btn secondary" href="/contact">Contacter le groupe</a>';
 const academyUrl='https://www.integraleacademy.com/';
 const linkedinUrl='https://fr.linkedin.com/in/vaillantclement';
 const cardGrid=(items,cols='four')=>`<div class="grid ${cols}">${items.map(x=>Array.isArray(x)?card(x[0],x[1]):card(x,'')).join('')}</div>`;
