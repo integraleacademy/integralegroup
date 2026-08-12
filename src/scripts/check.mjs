@@ -20,7 +20,10 @@ const home=fs.readFileSync('dist/index.html','utf8');
 if(!home.includes('https://www.integraleacademy.com/')) throw new Error('external Academy link missing on home');
 for(const r of legacyRoutes){const html=fs.readFileSync(fileFor(r),'utf8'); if(!html.includes('location.replace')) throw new Error(`legacy route is not redirected: ${r}`);}
 const expertises=fs.readFileSync('dist/integrale-expertises/index.html','utf8');
-for(const title of ['ESP','ESP-AD','EPR','EIRC','DSSP','OVSE','EPRA-BD','ESPA-BD','ESP-E','ARP']) if(!expertises.includes(`>${title}<`)) throw new Error(`Intégrale Expertises page missing ${title}`);
+for(const title of ['Équipier de sécurité privée','Équipier de sécurité privée armé – catégorie D','Équipier de protection rapprochée','Expert en investigation et renseignement sur les cybermenaces','Dirigeant d’une société de sécurité privée','Opérateur de vidéoprotection et de surveillance électronique','Équipier de protection rapprochée armé – catégories B et D','Équipier de sécurité privée armé – catégories B et D','Équipier de sécurité privée événementiel','Agent de recherches privées']) if(!expertises.includes(title)) throw new Error(`Intégrale Expertises page missing ${title}`);
+for(const title of ['ESP','ESP-AD','EPR','EIRC','DSSP','OVP-SE','EPRA-BD','ESPA-BD','ESP-E','ARP']) if(!expertises.includes(`(${title})`)) throw new Error(`Intégrale Expertises page missing ${title}`);
+for(const duration of ['196 h','252 h','364 h','700 h','270 h','225 h','480 h 30','353 h','147 h','371 h']) if(!expertises.includes(`<dd>${duration}</dd>`)) throw new Error(`Intégrale Expertises page missing duration ${duration}`);
+for(const marker of ['Niveau visé','Présentiel','Distanciel','hors évaluations certificatives']) if(!expertises.includes(marker)) throw new Error(`Intégrale Expertises page missing detail ${marker}`);
 if(/DSSP[^<]{0,80}(enregistrée|enregistré|inscrit|inscrite)[^<]{0,50}RNCP/i.test(expertises)) throw new Error('false DSSP RNCP claim detected');
 if(!expertises.includes('mailto:clement@integraleacademy.com')) throw new Error('partner contact missing on Intégrale Expertises page');
 const dev=fs.readFileSync('dist/pole-developpement-web/index.html','utf8');

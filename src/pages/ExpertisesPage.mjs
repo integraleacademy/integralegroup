@@ -2,12 +2,35 @@ export const route = '/integrale-expertises';
 export const bodyClass = 'page-integrale-expertises';
 export const buttons = '<a class="btn primary" href="#titres">Découvrir nos titres</a><a class="btn secondary" href="#devenir-partenaire">Devenir partenaire</a>';
 
-const registrationTitles = ['ESP', 'ESP-AD', 'EPR', 'EIRC', 'DSSP'];
-const writingTitles = ['OVSE', 'EPRA-BD', 'ESPA-BD', 'ESP-E', 'ARP'];
+const registrationTitles = [
+  { acronym: 'ESP', name: 'Équipier de sécurité privée', level: '3', total: '196 h', onsite: '134 h', remote: '62 h' },
+  { acronym: 'ESP-AD', name: 'Équipier de sécurité privée armé – catégorie D', level: '4', total: '252 h', onsite: '174 h', remote: '78 h' },
+  { acronym: 'EPR', name: 'Équipier de protection rapprochée', level: '4', total: '364 h', onsite: '364 h', remote: '0 h' },
+  { acronym: 'EIRC', name: 'Expert en investigation et renseignement sur les cybermenaces', level: '6', total: '700 h', onsite: '462 h', remote: '238 h' },
+  { acronym: 'DSSP', name: 'Dirigeant d’une société de sécurité privée', level: '5', total: '270 h', onsite: '96 h', remote: '174 h' },
+];
+
+const writingTitles = [
+  { acronym: 'OVP-SE', name: 'Opérateur de vidéoprotection et de surveillance électronique', level: '4', total: '225 h', onsite: '158 h', remote: '67 h' },
+  { acronym: 'EPRA-BD', name: 'Équipier de protection rapprochée armé – catégories B et D', level: '4', total: '480 h 30', onsite: '351 h', remote: '129 h 30' },
+  { acronym: 'ESPA-BD', name: 'Équipier de sécurité privée armé – catégories B et D', level: '4', total: '353 h', onsite: '271 h', remote: '82 h' },
+  { acronym: 'ESP-E', name: 'Équipier de sécurité privée événementiel', level: '3', total: '147 h', onsite: '112 h', remote: '35 h' },
+  { acronym: 'ARP', name: 'Agent de recherches privées', level: '5', total: '371 h', onsite: '266 h', remote: '105 h' },
+];
 
 const eyebrow = text => `<p class="expertisesEyebrow"><span></span>${text}</p>`;
 
-const titleList = (titles, label) => `<div class="expertisesTitleList">${titles.map((title, index) => `<article><span>0${index + 1}</span><b>${title}</b><small>${label}</small></article>`).join('')}</div>`;
+const titleList = titles => `<div class="expertisesTitleList">${titles.map((title, index) => `<article class="expertisesTitleCard">
+  <div class="expertisesTitleIdentity">
+    <span>0${index + 1}</span>
+    <div><h4>${title.name} <b>(${title.acronym})</b></h4><small>Niveau visé <strong>${title.level}</strong></small></div>
+  </div>
+  <dl class="expertisesTitleHours" aria-label="Durées de formation de ${title.name}">
+    <div class="total"><dt>Total</dt><dd>${title.total}</dd></div>
+    <div><dt>Présentiel</dt><dd>${title.onsite}</dd></div>
+    <div><dt>Distanciel</dt><dd>${title.remote}</dd></div>
+  </dl>
+</article>`).join('')}</div>`;
 
 export function render() {
   return `<div class="expertisesPage">
@@ -55,16 +78,16 @@ export function render() {
             <div class="expertisesPortfolioHeader"><span class="expertisesStatus"><i></i>En cours d’enregistrement</span><strong>05 titres</strong></div>
             <h3>Dossiers en cours d’instruction auprès de France compétences</h3>
             <p>Les référentiels et dossiers ont atteint l’étape de l’enregistrement. Leur reconnaissance reste soumise à la décision de France compétences.</p>
-            ${titleList(registrationTitles, 'Enregistrement en cours')}
+            ${titleList(registrationTitles)}
           </article>
           <article class="expertisesPortfolioCard writing">
             <div class="expertisesPortfolioHeader"><span class="expertisesStatus"><i></i>En cours d’écriture</span><strong>05 titres</strong></div>
             <h3>Projets actuellement en phase de conception</h3>
             <p>Ces titres font l’objet d’un travail d’analyse métier, de structuration des compétences et de construction des modalités d’évaluation.</p>
-            ${titleList(writingTitles, 'Conception en cours')}
+            ${titleList(writingTitles)}
           </article>
         </div>
-        <p class="expertisesDisclaimer"><b>Information importante.</b> La mention « en cours d’enregistrement » ne vaut pas enregistrement au RNCP. Les titres concernés ne pourront être présentés comme enregistrés qu’après une décision favorable de France compétences.</p>
+        <p class="expertisesDisclaimer"><b>Information importante.</b> La mention « en cours d’enregistrement » ne vaut pas enregistrement au RNCP. Les niveaux indiqués sont les niveaux visés dans les demandes et ne seront acquis qu’après une décision favorable de France compétences. Les durées sont exprimées hors évaluations certificatives.</p>
       </div>
     </section>
 
