@@ -1,15 +1,173 @@
-import { card, title } from '../scripts/html.mjs';
 import { company } from '../data/siteContent.mjs';
-export const route='/notre-histoire';
-export const buttons='<a class="btn primary" href="/les-poles-du-groupe">Découvrir les pôles</a><a class="btn secondary" href="/contact">Contacter le groupe</a>';
-const academyUrl='https://www.integraleacademy.com/';
-const linkedinUrl='https://fr.linkedin.com/in/vaillantclement';
-const cardGrid=(items,cols='four')=>`<div class="grid ${cols}">${items.map(x=>Array.isArray(x)?card(x[0],x[1]):card(x,'')).join('')}</div>`;
-export function render(){const legal={'Dénomination':company.name,'Forme juridique':company.legal,'SIREN':company.siren,'SIRET':company.siret,'Adresse':company.address,'Capital social':company.capital,'Date de création':company.created,'Activité':company.activity,'Code NAF/APE':company.naf};
-const terrain=[['Sécurité privée','Une connaissance directe des exigences opérationnelles, réglementaires et humaines du secteur.'],['Événementiel & forte affluence','Une expérience de la coordination, de l’anticipation et de la gestion de situations complexes.'],['Communication','Une approche structurée de l’image, du message et de la clarté des parcours.'],['Formation professionnelle','Une volonté de transmettre des compétences utiles, concrètes et directement exploitables.']];
-const poles=[['Pôle formation','Intégrale Academy est un organisme de formation spécialisé dans les métiers de la sécurité privée, de la sécurité incendie, du transport VTC et de l’alternance.','/pole-formation',['APS','SSIAP 1','VTC','BTS'],'of'],['Pôle certification et ingénierie','Création de parcours, référentiels, blocs de compétences, dossiers de certification et dispositifs d’évaluation.','/pole-certification-ingenierie',['RNCP / RS','Référentiels','Évaluation'],'cert'],['Pôle conseil et accompagnement','Accompagnement stratégique, structuration administrative, amélioration des process, développement commercial et optimisation de l’organisation.','/pole-conseil-accompagnement',['Stratégie','Process','Digitalisation'],'growth'],['Pôle développement web','Mise en place d’outils digitaux, plateformes internes, automatisations, CRM, espaces apprenants et solutions de suivi.','/pole-developpement-web',['Webdesign','SaaS','CRM','Connect'],'web']];
-const timeline=[['2018','Fondation d’Intégrale Academy','Création d’un centre de formation fondé sur l’exigence, l’accompagnement et l’employabilité.'],['2019-2021','Développement des formations réglementées','Structuration des parcours dans les métiers de la sécurité privée et de la sécurité incendie.'],['2022-2024','Diversification et professionnalisation','Développement de l’alternance, des BTS, des process internes et des outils de suivi.'],['2025','Structuration d’Intégrale Group','Création d’une structure groupe pour porter une vision plus large : formation, conseil, certification, digitalisation et solutions métier.'],['Aujourd’hui','Un écosystème en construction','Intégrale Group développe des pôles complémentaires autour de l’accompagnement, du webdesign, du SaaS, de la certification et de la structuration des organismes.'],['Demain','Une ambition nationale','Construire un acteur reconnu de la formation professionnelle, de l’accompagnement des organismes et de la digitalisation métier.']];
-const valeurs=[['Terrain','Partir des réalités concrètes avant de concevoir une solution.'],['Exigence','Maintenir un haut niveau de sérieux dans la formation, le conseil, les outils et l’exécution.'],['Clarté','Rendre les parcours, les offres et les décisions compréhensibles.'],['Utilité','Créer des solutions qui répondent à de vrais besoins.'],['Transmission','Faire de la formation un levier de reconversion, d’évolution et de réussite.'],['Méthode','Structurer les décisions, les outils et les priorités pour avancer dans la durée.']];
-const vision=[['Un écosystème structuré','Relier formation, accompagnement, certification et outils digitaux dans une logique cohérente.'],['Des parcours plus lisibles','Clarifier les étapes, les informations et les décisions pour mieux accompagner chaque public.'],['Une organisation pilotable','Transformer les besoins du terrain en processus, indicateurs et supports utilisables.'],['Une croissance maîtrisée','Développer les projets avec méthode, exigence et une vision durable.']];
-const conseil=['Organisation administrative','Suivi des candidats','Pilotage commercial','Digitalisation des process'];
-return `<section class="intro historyIntro"><div class="heroBadges reveal">${['Depuis 2018','Intégrale Academy','Formation professionnelle','Terrain & méthode'].map(x=>`<span>${x}</span>`).join('')}</div><div class="splitText reveal"><p>L’histoire d’Intégrale Group commence en 2018 avec la création d’Intégrale Academy. Avant d’être une structure groupe, Intégrale est d’abord une aventure entrepreneuriale construite sur le terrain, autour de la formation professionnelle, de l’accompagnement et de l’employabilité.</p></div></section><section id="parcours">${title('Le point de départ : le terrain','Avant le groupe, une expérience de terrain','L’histoire d’Intégrale Group prend racine dans un parcours construit au contact du réel. Avant de structurer un groupe, son fondateur a évolué dans des environnements exigeants, au croisement de la sécurité privée, de la gestion de dispositifs à forte affluence, de l’organisation d’événements, de la communication et de la formation professionnelle.')}<div class="splitText reveal"><p>Très tôt impliqué dans l’organisation de manifestations sportives et culturelles d’envergure, il a progressivement évolué de missions opérationnelles vers des fonctions de coordination, de supervision puis de direction. Cette trajectoire lui a permis de piloter des équipes, des flux, des périmètres de sécurité et des projets complexes, dans des contextes où la rigueur, l’anticipation et la responsabilité sont essentielles.</p></div>${cardGrid(terrain.map(x=>[x,'Une expérience concrète qui nourrit encore la méthode du groupe.']),'fiveCards')}</section><section class="founderSection"><div>${title('Le fondateur','Une vision portée par Clément Vaillant')}<article class="founderCard reveal"><div class="founderAvatar">CV</div><div class="founderContent"><span>Président fondateur</span><h3>Clément VAILLANT</h3><p>Entrepreneur et dirigeant engagé dans la formation professionnelle et le développement des compétences, Clément VAILLANT a construit son parcours à partir du terrain, au croisement de la sécurité privée, de la gestion de dispositifs à forte affluence, de la communication et de la formation.</p><p>Très tôt impliqué dans l’organisation de manifestations sportives et culturelles d’envergure, il a évolué de fonctions opérationnelles vers des rôles de coordination, de supervision puis de direction, en pilotant des équipes, des flux, des périmètres de sécurité et des projets complexes dans des environnements exigeants et réglementés.</p><p>Titulaire d’un Master 2 en communication et stratégies d’image, il combine aujourd’hui vision stratégique, culture opérationnelle et approche pragmatique du management, de la formation, du conseil et du développement digital.</p><a class="btn primary" href="${linkedinUrl}" target="_blank" rel="noopener noreferrer">Voir le profil LinkedIn</a></div></article></div></section><section>${title('2018 : la naissance d’Intégrale Academy','2018 : la naissance d’Intégrale Academy','Fondée en 2018, Intégrale Academy est née d’une volonté claire : proposer des formations professionnelles sérieuses, exigeantes et réellement utiles. L’école s’est développée autour de l’accompagnement humain, de la rigueur réglementaire, de la proximité avec les entreprises et de l’employabilité.')}<a class="btn primary" href="${academyUrl}" target="_blank" rel="noopener noreferrer">Découvrir Intégrale Academy</a></section><section>${title('De l’école au groupe','De l’école au groupe','L’expérience acquise avec Intégrale Academy a progressivement fait émerger une vision plus large. Derrière chaque parcours de formation, il existe des enjeux d’organisation, de conformité, de suivi, de financement, de relation candidat, de pilotage et de digitalisation.')}<div class="splitText reveal"><p>Intégrale Group est né de cette évolution : structurer un écosystème capable d’accompagner les apprenants, les entreprises, les organismes de formation et les porteurs de projets.</p></div>${cardGrid(vision)}</section><section>${title('Conseil, outils et digitalisation','Structurer les besoins révélés par le terrain','L’expérience d’Intégrale Academy a permis d’identifier des besoins récurrents : organiser les informations, clarifier les parcours, sécuriser le suivi, améliorer la relation avec les candidats et aider les dirigeants à piloter plus sereinement leur activité.')}<div class="splitText reveal"><p>Intégrale Group accompagne les structures qui souhaitent gagner en clarté, en professionnalisme et en efficacité, avec une approche pragmatique issue du terrain.</p></div>${cardGrid(conseil.map(x=>[x,'Un chantier concret pour professionnaliser la structure et sécuriser son développement.']))}</section><section>${title('Timeline','Une trajectoire progressive depuis 2018')}<div class="timelineModern historyTimeline">${timeline.map(([date,h,p])=>`<article class="reveal"><b>${date}</b><h3>${h}</h3><p>${p}</p></article>`).join('')}</div></section><section>${title('Valeurs','Des valeurs liées à l’histoire et à l’exécution')}<div class="grid three">${valeurs.map(x=>card(x[0],x[1])).join('')}</div></section><section class="ctaSection"><div class="finalCta reveal"><div><span>Prochaine étape</span><h2>Construire la suite avec méthode</h2><p>Intégrale Group avance avec une conviction forte : la formation, le conseil et le digital peuvent transformer durablement les parcours professionnels lorsqu’ils sont pensés à partir du terrain, structurés avec exigence et déployés avec méthode.</p></div><div class="ctaActions"><a class="btn primary" href="/contact">Nous contacter</a><a class="btn secondary" href="/ecosysteme">Découvrir l’écosystème</a><a class="btn secondary" href="${academyUrl}" target="_blank" rel="noopener noreferrer">Voir Intégrale Academy</a></div></div></section><section id="infos-legales" class="historyLegal"><div class="sectionTitle reveal"><h2>Informations juridiques</h2><p>Repères administratifs essentiels.</p></div><div class="legalGrid">${Object.entries(legal).map(([k,v])=>`<p class="reveal"><b>${k}</b><span>${v}</span></p>`).join('')}</div></section>`;}
+
+export const route = '/notre-histoire';
+export const bodyClass = 'page-notre-histoire';
+export const buttons = '<a class="btn primary" href="#history-start">Découvrir notre histoire</a><a class="btn secondary" href="/les-poles-du-groupe">Découvrir les pôles</a>';
+
+const academyUrl = 'https://www.integraleacademy.com/';
+const linkedinUrl = 'https://fr.linkedin.com/in/vaillantclement';
+
+const terrainCards = [
+  { no: '02', icon: '↗', title: 'Événementiel & forte affluence', text: 'Coordonner des équipes, des flux et des dispositifs complexes.' },
+  { no: '03', icon: '◎', title: 'Communication', text: 'Structurer l’image, le message et la lisibilité des parcours.' },
+  { no: '04', icon: 'A', title: 'Formation professionnelle', text: 'Transmettre des compétences utiles et directement exploitables.' },
+  { no: '05', icon: '✓', title: 'Méthode & exécution', text: 'Transformer l’expérience en processus clairs, suivis et durables.' },
+];
+
+const evolutionCards = [
+  ['01', 'Un écosystème structuré', 'Relier formation, accompagnement, certification et outils digitaux dans une logique cohérente.'],
+  ['02', 'Des parcours plus lisibles', 'Clarifier les étapes, les informations et les décisions pour mieux accompagner chaque public.'],
+  ['03', 'Une organisation pilotable', 'Transformer les besoins du terrain en processus, indicateurs et supports utilisables.'],
+  ['04', 'Une croissance maîtrisée', 'Développer les projets avec méthode, exigence et une vision durable.'],
+];
+
+const journey = [
+  ['2018', 'Fondation d’Intégrale Academy', 'Création d’un centre de formation fondé sur l’exigence, l’accompagnement et l’employabilité.'],
+  ['2019 — 2021', 'Développement des formations réglementées', 'Structuration des parcours dans les métiers de la sécurité privée et de la sécurité incendie.'],
+  ['2022 — 2024', 'Diversification et professionnalisation', 'Développement de l’alternance, des BTS, des processus internes et des outils de suivi.'],
+  ['2025', 'Structuration d’Intégrale Group', 'Création d’une structure groupe pour porter une vision plus large : formation, conseil, certification et digitalisation.'],
+  ['Aujourd’hui', 'Un écosystème en construction', 'Quatre pôles complémentaires se développent autour de l’accompagnement, de l’ingénierie, du digital et de la structuration des organismes.'],
+  ['Demain', 'Une ambition nationale', 'Construire un acteur reconnu de la formation professionnelle, de l’accompagnement des organismes et de la digitalisation métier.'],
+];
+
+const values = [
+  ['01', 'Terrain', 'Partir des réalités concrètes avant de concevoir une solution.'],
+  ['02', 'Exigence', 'Maintenir un haut niveau de sérieux.'],
+  ['03', 'Clarté', 'Rendre les parcours compréhensibles.'],
+  ['04', 'Utilité', 'Répondre à de vrais besoins.'],
+  ['05', 'Transmission', 'Faire grandir les compétences.'],
+];
+
+const eyebrow = text => `<p class="historyEyebrow"><span></span>${text}</p>`;
+
+export function render() {
+  return `<div class="historyPage">
+    <section id="history-start" class="historyManifesto">
+      <div class="historyWrap">
+        <header class="historyHeading historyHeadingCenter">
+          ${eyebrow('Notre histoire')}
+          <h2>Avant d’être un groupe, Intégrale est d’abord <em>une aventure entrepreneuriale.</em></h2>
+        </header>
+        <div class="historyManifestoGrid">
+          <article class="historyYearCard">
+            <span>18</span>
+            <small>Le commencement</small>
+            <strong>Depuis 2018</strong>
+          </article>
+          <div class="historyManifestoCopy">
+            <h3>Une idée simple : partir du réel pour construire des solutions utiles.</h3>
+            <p>L’histoire d’Intégrale Group commence avec la création d’Intégrale Academy. Avant la structure groupe, il y a le terrain, la formation professionnelle, l’accompagnement et une conviction forte : les compétences changent durablement les parcours lorsqu’elles sont transmises avec exigence et méthode.</p>
+            <p>Cette première expérience a progressivement révélé d’autres besoins : mieux structurer les organisations, sécuriser les parcours, créer des certifications et développer des outils digitaux réellement adaptés aux métiers.</p>
+            <div class="historyPills"><span>Formation professionnelle</span><span>Employabilité</span><span>Accompagnement</span><span>Innovation métier</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="historyTerrain">
+      <div class="historyWrap">
+        <header class="historyHeading historyHeadingSplit">
+          <div>${eyebrow('Le point de départ')}<h2>Tout commence <em>sur le terrain.</em></h2></div>
+          <p>La méthode du groupe est née au contact d’environnements exigeants, où l’anticipation, la coordination et la responsabilité ne sont jamais théoriques.</p>
+        </header>
+        <div class="historyBento">
+          <article class="historyBentoLead">
+            <span class="historyBentoNumber">01</span>
+            <i>✦</i>
+            <div><h3>Sécurité privée</h3><p>Une connaissance directe des exigences opérationnelles, réglementaires et humaines du secteur. Le terrain reste le premier filtre de chaque décision.</p></div>
+          </article>
+          ${terrainCards.map(({ no, icon, title, text }) => `<article class="historyBentoCard"><span class="historyBentoNumber">${no}</span><i>${icon}</i><h3>${title}</h3><p>${text}</p></article>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="historyFounder">
+      <div class="historyWrap">
+        <header class="historyHeading historyHeadingDark">
+          ${eyebrow('Le fondateur')}
+          <h2>Une vision portée par Clément Vaillant.</h2>
+          <p>Un parcours qui associe culture opérationnelle, vision stratégique et volonté de construire des solutions concrètes.</p>
+        </header>
+        <article class="historyFounderCard">
+          <div class="historyPortrait" aria-label="Clément Vaillant"><span></span><b>CV</b><small>Président fondateur · Intégrale Group</small></div>
+          <div class="historyFounderCopy">
+            <span class="historyRole">Président fondateur</span>
+            <h3>Clément VAILLANT</h3>
+            <p>Entrepreneur et dirigeant engagé dans la formation professionnelle et le développement des compétences, Clément VAILLANT a construit son parcours à partir du terrain, au croisement de la sécurité privée, de la gestion de dispositifs à forte affluence, de la communication et de la formation.</p>
+            <p>De fonctions opérationnelles vers des rôles de coordination, de supervision puis de direction, il a piloté des équipes, des flux, des périmètres de sécurité et des projets complexes dans des environnements exigeants et réglementés.</p>
+            <p>Titulaire d’un Master 2 en communication et stratégies d’image, il combine aujourd’hui vision stratégique, culture opérationnelle et approche pragmatique du management, du conseil et du développement digital.</p>
+            <div class="historyFounderTags"><span>Entrepreneuriat</span><span>Formation</span><span>Stratégie</span><span>Développement digital</span></div>
+            <a class="btn primary" href="${linkedinUrl}" target="_blank" rel="noopener noreferrer">Voir le profil LinkedIn</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="historyAcademy">
+      <div class="historyWrap">
+        <article class="historyAcademyPanel">
+          <div class="historyAcademyYear"><strong>2018</strong><span>Naissance d’Intégrale Academy</span></div>
+          <div class="historyAcademyCopy">
+            ${eyebrow('Le socle du groupe')}
+            <h2>Former avec exigence.<br>Accompagner avec proximité.</h2>
+            <p>Intégrale Academy est née d’une volonté claire : proposer des formations professionnelles sérieuses, concrètes et réellement utiles. L’école s’est développée autour de la rigueur réglementaire, de l’accompagnement humain, de la proximité avec les entreprises et de l’employabilité.</p>
+            <a class="btn primary" href="${academyUrl}" target="_blank" rel="noopener noreferrer">Découvrir Intégrale Academy</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="historyEvolution">
+      <div class="historyWrap">
+        <header class="historyHeading historyHeadingCenter">
+          ${eyebrow('De l’école au groupe')}
+          <h2>Une expérience devenue <em>un écosystème.</em></h2>
+          <p>Derrière chaque parcours de formation se trouvent des enjeux d’organisation, de conformité, de financement, de pilotage et de digitalisation.</p>
+        </header>
+        <div class="historyEvolutionGrid">
+          ${evolutionCards.map(([no, title, text]) => `<article><b>${no}</b><div><h3>${title}</h3><p>${text}</p></div></article>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="historyJourney">
+      <div class="historyWrap">
+        <header class="historyHeading">
+          ${eyebrow('Notre trajectoire')}
+          <h2>Les étapes qui ont construit <em>Intégrale Group.</em></h2>
+        </header>
+        <div class="historyTimeline">
+          ${journey.map(([date, title, text], index) => `<article${index === 4 ? ' class="current"' : ''}><time>${date}</time><span class="historyTimelineDot"></span><div><h3>${title}</h3><p>${text}</p></div></article>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="historyValues">
+      <div class="historyWrap">
+        <header class="historyHeading historyHeadingCenter historyHeadingDark">
+          ${eyebrow('Ce qui nous guide')}
+          <h2>Des valeurs qui se voient dans l’exécution.</h2>
+          <p>Pas de promesses abstraites : chaque valeur doit se traduire dans les décisions, les outils et l’accompagnement.</p>
+        </header>
+        <div class="historyValuesGrid">
+          ${values.map(([no, title, text], index) => `<article${index === 0 ? ' class="featured"' : ''}><b>${no}</b><div><h3>${title}</h3><p>${text}</p></div></article>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="historyClosing">
+      <div class="historyWrap">
+        <article class="historyClosingPanel">
+          <div>${eyebrow('La suite s’écrit maintenant')}<h2>Construire l’avenir avec méthode.</h2><p>Intégrale Group avance avec une conviction forte : la formation, le conseil et le digital peuvent transformer durablement les parcours professionnels lorsqu’ils sont pensés à partir du terrain.</p></div>
+          <div class="historyClosingActions"><a class="btn primary" href="/les-poles-du-groupe">Découvrir l’écosystème</a><a class="btn secondary" href="/contact">Nous contacter</a></div>
+        </article>
+        <div class="historyLegalStrip">
+          <div><strong>${company.name}</strong><span>${company.legal} au capital de ${company.capital}</span><a href="/entreprise">Voir toutes les informations légales</a></div>
+          <div><small>Création</small><strong>${company.created}</strong></div>
+          <div><small>Siège social</small><strong>Puget-sur-Argens</strong></div>
+          <div><small>SIREN</small><strong>${company.siren}</strong></div>
+        </div>
+      </div>
+    </section>
+  </div>`;
+}

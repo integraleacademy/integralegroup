@@ -17,6 +17,8 @@ export const ConnectVisual=()=>panel('connectVisual',`<div class="connectDash"><
 
 export const CompanyVisual=()=>panel('companyVisual',`<div class="holdingTower"><b>Holding</b><small>pilotage stratégique</small><span></span><span></span><span></span></div><div class="pillarRow">${['Vision','Pôles','Pilotage','Croissance'].map((x,i)=>`<em><b>0${i+1}</b>${x}<span></span></em>`).join('')}</div><div class="strategyArrow"></div><div class="boardCard">${metric('Coordination','Groupe')}${metric('Cap','Méthode')}${metric('Projets','Métier')}</div>`,'Structure groupe, holding, coordination et vision stratégique');
 
+export const HistoryVisual=()=>panel('historyVisual',`<div class="historyVisualStamp">Depuis<br>2018</div><div class="historyVisualOrbit one"></div><div class="historyVisualOrbit two"></div><div class="historyVisualCore"><b>2018</b><span>Le point de départ</span></div>${[['Terrain','tag1'],['Formation','tag2'],['Méthode','tag3'],['Digital','tag4']].map(([text,cls])=>`<em class="historyVisualTag ${cls}">${text}</em>`).join('')}`,'Une trajectoire née du terrain en 2018, devenue un écosystème de formation, de conseil et de solutions digitales');
+
 export const ContactVisual=()=>panel('contactVisual',`<div class="messageCard"><b>Projet</b><span></span><span></span><small>discussion qualifiée</small></div><div class="wave wave1"></div><div class="wave wave2"></div><div class="contactNode">@</div>`,'Connexion et échange projet');
 
 export const ExpertiseNetworkVisual=()=>panel('expertiseNetworkVisual',`<div class="expertiseCore">Intégrale<br>Group</div>${[['Certifications','cert'],['Webdesign','web'],['SaaS','saas'],['Connect','connect']].map(([t,i],n)=>`<article class="xp xp${n}"><i>${iconGlyph(i)}</i><b>${t}</b></article>`).join('')}<svg viewBox="0 0 900 420"><path d="M450 210L170 92M450 210L730 92M450 210L170 328M450 210L730 328"/></svg>`,'Schéma des quatre pôles d’expertise');
@@ -34,6 +36,7 @@ export const visualForRoute=route=>({
  '/pole-certification-ingenierie':CertificationVisual,
  '/pole-conseil-accompagnement':CompanyVisual,
  '/pole-developpement-web':ConnectVisual,
+ '/notre-histoire':HistoryVisual,
  '/certifications':CertificationVisual,
  '/webdesign':WebdesignVisual,
  '/developpement-saas':SaasVisual,
