@@ -1,0 +1,134 @@
+/* Intégrale Expertises — page dédiée à l’ingénierie de certification */
+body.page-integrale-expertises{zoom:1;background:#f4f0e7}
+@supports not (zoom:1){body.page-integrale-expertises{width:100%;min-height:100%;transform:none}}
+.page-integrale-expertises main{background:#f4f0e7}
+.page-integrale-expertises .reveal{opacity:1;transform:none}
+.page-integrale-expertises .siteHeader{min-height:82px;padding:0 clamp(22px,5vw,76px);background:rgba(7,19,31,.95);border-bottom:1px solid rgba(255,255,255,.09);box-shadow:none}
+.page-integrale-expertises .brand{font-size:15px;letter-spacing:.15em}
+.page-integrale-expertises .navLinks{font-size:13px;gap:28px}
+.page-integrale-expertises .navLinks a{font-weight:750}
+
+.page-integrale-expertises .hero{position:relative;min-height:760px;padding:0;overflow:hidden;background:radial-gradient(circle at 82% 20%,rgba(47,112,151,.38),transparent 31%),radial-gradient(circle at 16% 6%,rgba(244,198,93,.16),transparent 28%),linear-gradient(135deg,#06111c 0%,#0b1d2d 56%,#123653 100%)}
+.page-integrale-expertises .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,#000,transparent 94%);pointer-events:none}
+.page-integrale-expertises .heroInner{position:relative;min-height:760px;grid-template-columns:minmax(0,1.04fr) minmax(430px,.96fr);gap:70px;padding:76px 0 90px}
+.page-integrale-expertises .heroCopy{position:relative;z-index:2}
+.page-integrale-expertises .kicker{display:flex;align-items:center;gap:12px;margin:0 0 24px;color:#f4c65d;font-size:12px;letter-spacing:.2em}
+.page-integrale-expertises .kicker:before{content:"";width:34px;height:1px;background:currentColor}
+.page-integrale-expertises .hero h1{max-width:760px;margin:0;font-size:clamp(54px,5.5vw,78px);line-height:.99;letter-spacing:-.055em;font-weight:760}
+.page-integrale-expertises .heroCopy>p:not(.kicker){max-width:690px;margin:30px 0 0;color:rgba(255,255,255,.72);font-size:18px;line-height:1.75}
+.page-integrale-expertises .heroActions{margin-top:36px}
+.page-integrale-expertises .btn{border-radius:12px;padding:14px 23px;min-height:52px}
+
+.expertisesVisual{min-height:520px;border-radius:38px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border-color:rgba(255,255,255,.15)}
+.expertisesVisual .visualGrid{opacity:.55;mask-image:radial-gradient(circle at 50% 50%,#000 0 62%,transparent 90%)}
+.expertisesVisualCore{position:absolute;left:50%;top:50%;width:250px;height:250px;display:grid;place-content:center;justify-items:center;border-radius:50%;transform:translate(-50%,-50%);color:#07131f;background:linear-gradient(145deg,#f4c65d,#ffe5a3);box-shadow:0 0 0 24px rgba(244,198,93,.065),0 28px 75px rgba(0,0,0,.3)}
+.expertisesVisualCore:before,.expertisesVisualCore:after{content:"";position:absolute;inset:-66px;border:1px solid rgba(244,198,93,.22);border-radius:50%}
+.expertisesVisualCore:after{inset:-122px;border-color:rgba(255,255,255,.13)}
+.expertisesVisualCore span{font-size:10px;font-weight:950;letter-spacing:.2em}
+.expertisesVisualCore b{margin-top:7px;font-size:30px;line-height:1;letter-spacing:-.05em}
+.expertisesVisualCore small{margin-top:10px;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.expertisesVisualMetric{position:absolute;width:160px;display:grid;gap:4px;padding:18px;border:1px solid rgba(255,255,255,.15);border-radius:22px;color:#fff;background:rgba(6,17,28,.64);box-shadow:0 18px 50px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
+.expertisesVisualMetric b{color:#f4c65d;font-size:30px;line-height:1}.expertisesVisualMetric span{color:rgba(255,255,255,.66);font-size:10px;font-weight:850;line-height:1.35;text-transform:uppercase;letter-spacing:.08em}
+.expertisesVisualMetric.registration{left:6%;top:10%}.expertisesVisualMetric.writing{right:6%;bottom:10%}
+.expertisesVisualTags{position:absolute;right:5%;top:10%;display:grid;gap:8px}.expertisesVisualTags span{padding:8px 11px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:rgba(255,255,255,.72);background:rgba(6,17,28,.55);font-size:9px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+.expertisesVisualSeal{position:absolute;left:7%;bottom:11%;width:84px;height:84px;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.38);border-radius:50%;color:#f4c65d;font-size:10px;font-weight:950;line-height:1.3;text-align:center;text-transform:uppercase;letter-spacing:.12em}
+
+.expertisesPage{--expertises-ink:#07131f;--expertises-navy:#0b1d2d;--expertises-gold:#f4c65d;--expertises-cream:#f4f0e7;--expertises-paper:#fffdfa;--expertises-blue:#2f7097;--expertises-muted:#65717d;--expertises-line:rgba(7,19,31,.11);color:var(--expertises-ink);background:var(--expertises-cream)}
+.expertisesPage section{position:relative;width:100%;max-width:none;margin:0;padding:112px 0}
+.expertisesPage section:before{content:none!important}
+.expertisesPage section>*{width:min(100% - 72px,1240px);margin-left:auto;margin-right:auto}
+.expertisesWrap{width:min(100% - 72px,1240px)!important}
+.expertisesEyebrow{display:flex;align-items:center;gap:13px;margin:0 0 22px;color:var(--expertises-gold);font-size:11px;font-weight:950;letter-spacing:.2em;text-transform:uppercase}
+.expertisesEyebrow span{width:34px;height:1px;background:currentColor}
+.expertisesHeading{max-width:920px;margin:0 0 52px}
+.expertisesHeadingCenter{max-width:1080px;margin-left:auto;margin-right:auto;text-align:center}
+.expertisesHeadingCenter .expertisesEyebrow{justify-content:center}
+.expertisesHeadingCenter .expertisesEyebrow:after{content:"";width:34px;height:1px;background:currentColor}
+.expertisesHeading h2,.expertisesStatement h2{margin:0;font-size:clamp(42px,4.6vw,64px);line-height:1.04;letter-spacing:-.05em;font-weight:760}
+.expertisesHeading h2 em,.expertisesStatement h2 em{color:var(--expertises-blue);font-style:normal}
+.expertisesHeading>p:last-child{max-width:840px;margin:22px 0 0;color:var(--expertises-muted);font-size:18px;line-height:1.75}
+.expertisesHeadingCenter>p:last-child{margin-left:auto;margin-right:auto}
+
+.expertisesIntro{background:var(--expertises-paper)}
+.expertisesIntroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:76px;align-items:center}
+.expertisesStatement h2{font-size:clamp(39px,4vw,57px)}
+.expertisesStatement>p:not(.expertisesEyebrow){margin:22px 0 0;color:var(--expertises-muted);font-size:17px;line-height:1.82}
+.expertisesNumbers{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.expertisesNumbers article{min-height:170px;display:grid;align-content:end;padding:26px;border:1px solid var(--expertises-line);border-radius:26px;background:var(--expertises-cream);overflow:hidden}
+.expertisesNumbers article.featured{grid-column:1/-1;min-height:230px;color:#fff;background:radial-gradient(circle at 92% 8%,rgba(47,112,151,.35),transparent 34%),var(--expertises-navy);border:0;box-shadow:0 24px 70px rgba(7,19,31,.14)}
+.expertisesNumbers strong{font-size:60px;line-height:1;letter-spacing:-.065em}.expertisesNumbers .featured strong{color:var(--expertises-gold);font-size:92px}
+.expertisesNumbers span{max-width:200px;margin-top:12px;color:var(--expertises-muted);font-size:13px;font-weight:850;line-height:1.45}.expertisesNumbers .featured span{color:rgba(255,255,255,.67);font-size:15px}
+
+.expertisesExperience{color:#fff;background:radial-gradient(circle at 86% 14%,rgba(47,112,151,.3),transparent 32%),linear-gradient(135deg,#07131f,#102b42)}
+.expertisesHeadingDark h2{color:#fff}.expertisesHeadingDark>p:last-child{color:rgba(255,255,255,.64)}
+.expertisesExperienceGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.expertisesExperienceGrid article{position:relative;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;border:1px solid rgba(255,255,255,.13);border-radius:28px;background:rgba(255,255,255,.052);overflow:hidden}
+.expertisesExperienceGrid article:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(244,198,93,.08),transparent 45%);pointer-events:none}
+.expertisesExperienceGrid article>span{position:absolute;right:18px;top:4px;color:rgba(255,255,255,.07);font-size:90px;font-weight:950;line-height:1;letter-spacing:-.08em}
+.expertisesExperienceGrid i{position:absolute;left:28px;top:28px;width:46px;height:46px;display:grid;place-items:center;border-radius:14px;color:var(--expertises-ink);background:var(--expertises-gold);font-size:18px;font-style:normal;font-weight:950}
+.expertisesExperienceGrid h3{position:relative;margin:0 0 12px;font-size:24px;line-height:1.16}.expertisesExperienceGrid p{position:relative;margin:0;color:rgba(255,255,255,.62);line-height:1.65}
+
+.expertisesPortfolio{background:var(--expertises-cream)}
+.expertisesPortfolioGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.expertisesPortfolioCard{position:relative;padding:34px;border:1px solid var(--expertises-line);border-radius:32px;background:var(--expertises-paper);box-shadow:0 24px 70px rgba(7,19,31,.07);overflow:hidden}
+.expertisesPortfolioCard:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--expertises-gold)}
+.expertisesPortfolioCard.writing:before{background:var(--expertises-blue)}
+.expertisesPortfolioHeader{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.expertisesPortfolioHeader>strong{color:var(--expertises-muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.expertisesStatus{display:inline-flex;align-items:center;gap:9px;padding:9px 12px;border-radius:999px;color:#6b4a05;background:#fff1c9;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.07em}
+.expertisesStatus i{width:8px;height:8px;border-radius:50%;background:var(--expertises-gold);box-shadow:0 0 0 5px rgba(244,198,93,.18)}
+.writing .expertisesStatus{color:#1f5878;background:#e5f0f5}.writing .expertisesStatus i{background:var(--expertises-blue);box-shadow:0 0 0 5px rgba(47,112,151,.14)}
+.expertisesPortfolioCard>h3{position:relative;margin:25px 0 12px;font-size:29px;line-height:1.12;letter-spacing:-.035em}
+.expertisesPortfolioCard>p{position:relative;margin:0;color:var(--expertises-muted);line-height:1.68}
+.expertisesTitleList{position:relative;display:grid;gap:10px;margin-top:27px}
+.expertisesTitleList article{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:14px;min-height:70px;padding:13px 15px;border:1px solid var(--expertises-line);border-radius:18px;background:#fbfaf7}
+.expertisesTitleList article>span{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;color:var(--expertises-gold);background:var(--expertises-navy);font-size:11px;font-weight:950}
+.expertisesTitleList b{font-size:20px;letter-spacing:-.02em}.expertisesTitleList small{color:var(--expertises-muted);font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.06em;text-align:right}
+.expertisesDisclaimer{margin-top:24px!important;padding:20px 22px;border:1px solid rgba(244,198,93,.52);border-radius:20px;color:#4f4b3e;background:#fff8e5;font-size:13px;line-height:1.65}.expertisesDisclaimer b{color:var(--expertises-ink)}
+
+.expertisesMethod{background:var(--expertises-paper)}
+.expertisesMethodGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.expertisesMethodGrid article{position:relative;min-height:275px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;border:1px solid var(--expertises-line);border-radius:28px;background:var(--expertises-cream);overflow:hidden}
+.expertisesMethodGrid article:nth-child(2){background:#e8f0f4}.expertisesMethodGrid article:nth-child(3){color:#fff;background:var(--expertises-navy)}.expertisesMethodGrid article:nth-child(4){background:#fff0c7}
+.expertisesMethodGrid b{position:absolute;left:24px;top:14px;color:rgba(7,19,31,.1);font-size:88px;line-height:1;letter-spacing:-.08em}.expertisesMethodGrid article:nth-child(3) b{color:rgba(255,255,255,.07)}
+.expertisesMethodGrid h3{position:relative;margin:0 0 12px;font-size:24px}.expertisesMethodGrid p{position:relative;margin:0;color:var(--expertises-muted);line-height:1.65}.expertisesMethodGrid article:nth-child(3) p{color:rgba(255,255,255,.62)}
+
+.expertisesPartner{padding:88px 0!important;background:var(--expertises-cream)}
+.expertisesPartnerPanel{display:grid;grid-template-columns:1.25fr .75fr;gap:58px;align-items:center;padding:58px;border-radius:36px;color:#fff;background:radial-gradient(circle at 92% 8%,rgba(47,112,151,.36),transparent 35%),var(--expertises-ink);box-shadow:0 28px 85px rgba(7,19,31,.15)}
+.expertisesPartnerCopy h2{max-width:760px;margin:0;font-size:clamp(42px,4.6vw,62px);line-height:1.03;letter-spacing:-.05em}
+.expertisesPartnerCopy>p:not(.expertisesEyebrow){max-width:780px;margin:22px 0 0;color:rgba(255,255,255,.67);font-size:17px;line-height:1.75}
+.expertisesPartnerBenefits{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.expertisesPartnerBenefits span{padding:10px 13px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:rgba(255,255,255,.8);font-size:11px;font-weight:850}
+.expertisesContactCard{padding:30px;border:1px solid rgba(255,255,255,.14);border-radius:28px;background:rgba(255,255,255,.07);box-shadow:0 24px 65px rgba(0,0,0,.2)}
+.expertisesContactCard>span{color:var(--expertises-gold);font-size:10px;font-weight:950;letter-spacing:.16em;text-transform:uppercase}
+.expertisesContactAvatar{width:76px;height:76px;display:grid;place-items:center;margin:24px 0 20px;border-radius:23px;color:var(--expertises-ink);background:var(--expertises-gold);font-size:22px;font-weight:950}
+.expertisesContactCard h3{margin:0;font-size:29px;letter-spacing:-.03em}.expertisesContactCard p{margin:9px 0 24px;color:rgba(255,255,255,.63);line-height:1.55}
+.expertisesContactCard .btn{width:100%;font-size:12px;overflow-wrap:anywhere}.expertisesContactCard small{display:block;margin-top:17px;color:rgba(255,255,255,.52);font-size:11px;line-height:1.55}
+
+@media(max-width:1120px){
+  .page-integrale-expertises .navLinks{gap:15px;font-size:12px}
+  .page-integrale-expertises .hero{min-height:auto}
+  .page-integrale-expertises .heroInner{min-height:auto;grid-template-columns:1fr;padding:76px 0;gap:52px}
+  .page-integrale-expertises .hero h1{max-width:900px}
+  .expertisesVisual{min-height:470px}
+  .expertisesIntroGrid{grid-template-columns:1fr;gap:45px}
+  .expertisesExperienceGrid,.expertisesMethodGrid{grid-template-columns:1fr 1fr}
+  .expertisesPortfolioGrid{grid-template-columns:1fr}
+  .expertisesPartnerPanel{grid-template-columns:1fr}.expertisesContactCard{max-width:520px;margin:0}
+}
+
+@media(max-width:760px){
+  .page-integrale-expertises .siteHeader{min-height:68px}
+  .page-integrale-expertises .brand{font-size:13px}
+  .page-integrale-expertises .heroInner{padding:58px 0}
+  .page-integrale-expertises .hero h1{font-size:clamp(42px,12vw,54px)}
+  .page-integrale-expertises .heroCopy>p:not(.kicker){font-size:16px;line-height:1.65}
+  .expertisesVisual{min-height:390px;border-radius:26px}.expertisesVisualCore{width:168px;height:168px}.expertisesVisualCore:before{inset:-40px}.expertisesVisualCore:after{inset:-78px}.expertisesVisualCore b{font-size:22px}.expertisesVisualCore small{display:none}.expertisesVisualMetric{width:128px;padding:13px}.expertisesVisualMetric b{font-size:24px}.expertisesVisualMetric span{font-size:8px}.expertisesVisualTags,.expertisesVisualSeal{display:none}
+  .expertisesPage section{padding:74px 0}.expertisesPage section>*,.expertisesWrap{width:min(100% - 32px,1240px)!important}
+  .expertisesHeading{margin-bottom:38px}.expertisesHeading h2,.expertisesStatement h2{font-size:clamp(37px,10vw,46px)}.expertisesHeading>p:last-child,.expertisesStatement>p:not(.expertisesEyebrow){font-size:16px;line-height:1.65}
+  .expertisesHeadingCenter{text-align:left}.expertisesHeadingCenter .expertisesEyebrow{justify-content:flex-start}.expertisesHeadingCenter .expertisesEyebrow:after{display:none}
+  .expertisesNumbers{grid-template-columns:1fr}.expertisesNumbers article.featured{grid-column:auto}.expertisesNumbers article{min-height:145px}.expertisesNumbers article.featured{min-height:200px}
+  .expertisesExperienceGrid,.expertisesMethodGrid{grid-template-columns:1fr}.expertisesExperienceGrid article{min-height:275px}.expertisesMethodGrid article{min-height:250px}
+  .expertisesPortfolioCard{padding:25px;border-radius:25px}.expertisesPortfolioHeader{align-items:flex-start;flex-direction:column}.expertisesPortfolioCard>h3{font-size:26px}
+  .expertisesTitleList article{grid-template-columns:38px 1fr}.expertisesTitleList small{grid-column:2;text-align:left}.expertisesTitleList b{font-size:19px}
+  .expertisesPartner{padding:62px 0!important}.expertisesPartnerPanel{padding:34px 25px;gap:38px}.expertisesPartnerCopy h2{font-size:40px}.expertisesContactCard{padding:25px}
+}

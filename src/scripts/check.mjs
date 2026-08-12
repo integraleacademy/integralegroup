@@ -1,13 +1,13 @@
 import fs from 'fs';
-const routes=['/','/les-poles-du-groupe','/pole-formation','/pole-certification-ingenierie','/pole-conseil-accompagnement','/pole-developpement-web','/notre-histoire','/entreprise','/contact'];
-const menuRoutes=['/','/les-poles-du-groupe','/pole-formation','/pole-certification-ingenierie','/pole-conseil-accompagnement','/pole-developpement-web','/notre-histoire','/entreprise','/contact'];
-const legacyRoutes=['/integrale-academy','/certifications','/conseil-accompagnement','/ecosysteme','/webdesign','/developpement-saas','/integrale-connect'];
+const routes=['/','/les-poles-du-groupe','/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web','/notre-histoire','/entreprise','/contact'];
+const menuRoutes=['/','/les-poles-du-groupe','/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web','/notre-histoire','/entreprise','/contact'];
+const legacyRoutes=['/integrale-academy','/certifications','/integrale-certifications','/pole-certification-ingenierie','/conseil-accompagnement','/ecosysteme','/webdesign','/developpement-saas','/integrale-connect'];
 const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
 const expectedMarkers={
  '/':'Les 4 pôles du groupe',
  '/les-poles-du-groupe':'Une structure mère qui développe des pôles complémentaires',
  '/pole-formation':'Visiter le site Intégrale Academy',
- '/pole-certification-ingenierie':'Certification DSSP en cours de dépôt auprès de France Compétences',
+ '/integrale-expertises':'Dossiers en cours d’instruction auprès de France compétences',
  '/pole-conseil-accompagnement':'Méthode',
  '/pole-developpement-web':'Focus Intégrale Connect',
  '/notre-histoire':'Une histoire née du terrain',
@@ -19,10 +19,14 @@ for(const route of routes){const file=fileFor(route); if(!fs.existsSync(file)) t
 const home=fs.readFileSync('dist/index.html','utf8');
 if(!home.includes('https://www.integraleacademy.com/')) throw new Error('external Academy link missing on home');
 for(const r of legacyRoutes){const html=fs.readFileSync(fileFor(r),'utf8'); if(!html.includes('location.replace')) throw new Error(`legacy route is not redirected: ${r}`);}
-const cert=fs.readFileSync('dist/pole-certification-ingenierie/index.html','utf8');
-if(/DSSP[^<]{0,80}(enregistrée|enregistré|inscrit|inscrite)[^<]{0,50}RNCP/i.test(cert)) throw new Error('false DSSP RNCP claim detected');
+const expertises=fs.readFileSync('dist/integrale-expertises/index.html','utf8');
+for(const title of ['ESP','ESP-AD','EPR','EIRC','DSSP','OVSE','EPRA-BD','ESPA-BD','ESP-E','ARP']) if(!expertises.includes(`>${title}<`)) throw new Error(`Intégrale Expertises page missing ${title}`);
+if(/DSSP[^<]{0,80}(enregistrée|enregistré|inscrit|inscrite)[^<]{0,50}RNCP/i.test(expertises)) throw new Error('false DSSP RNCP claim detected');
+if(!expertises.includes('mailto:clement@integraleacademy.com')) throw new Error('partner contact missing on Intégrale Expertises page');
 const dev=fs.readFileSync('dist/pole-developpement-web/index.html','utf8');
 for(const s of ['Site vitrine premium','CRM métier','Intégrale Connect CRM']) if(!dev.includes(s)) throw new Error(`development web page missing ${s}`);
 const css=fs.readFileSync('dist/assets/styles.css','utf8');
 for(const s of ['overflow-x:hidden','@media(max-width:640px)','--gold:#F4C45A','grid-template-columns:1fr']) if(!css.includes(s)) throw new Error(`responsive/global CSS guard failed: ${s}`);
+const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
+for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 console.log('OK: 4-pole architecture, redirects, navigation, Academy link and responsive CSS verified.');
