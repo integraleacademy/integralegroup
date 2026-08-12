@@ -73,7 +73,7 @@ body.page-notre-histoire{zoom:1;background:#f4f0e7}
 .historyBento p{position:relative;margin:0;color:var(--history-muted);line-height:1.67}
 .historyBentoLead h3{font-size:38px}.historyBentoLead p{max-width:430px;color:rgba(255,255,255,.66);font-size:17px}
 .historyBentoCard{display:flex;flex-direction:column;justify-content:flex-end;padding:28px;border:1px solid var(--history-line);background:var(--history-paper);box-shadow:0 20px 58px rgba(7,19,31,.06)}
-.historyBentoCard i{position:absolute;left:28px;top:28px}
+.historyBento .historyBentoCard i{position:absolute;left:28px;top:28px}
 
 .historyFounder{color:#fff;background:radial-gradient(circle at 86% 20%,rgba(47,112,151,.32),transparent 34%),linear-gradient(135deg,#07131f,#102b42);overflow:hidden}
 .historyFounder:after{content:"CV";position:absolute;right:-55px;bottom:-120px;color:rgba(255,255,255,.022);font-size:480px;font-weight:950;line-height:.8}
