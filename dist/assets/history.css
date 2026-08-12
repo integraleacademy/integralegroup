@@ -112,9 +112,9 @@ body.page-notre-histoire{zoom:1;background:#f4f0e7}
 .historyEvolutionGrid p{margin:0;color:var(--history-muted);line-height:1.66}.historyEvolutionGrid article:nth-child(3) p{color:rgba(255,255,255,.63)}
 
 .historyJourney{background:var(--history-paper)}
-.historyTimeline{position:relative;display:grid;gap:0}
+.historyTimeline{position:relative;display:grid;grid-template-columns:1fr;gap:0}
 .historyTimeline:before{content:"";position:absolute;left:184px;top:30px;bottom:30px;width:1px;background:#d8dde0}
-.historyTimeline article{position:relative;display:grid;grid-template-columns:150px 1fr;gap:68px;padding:0 0 42px}
+.historyTimeline article{position:relative;min-height:0;display:grid;grid-template-columns:150px 1fr;gap:68px;padding:0 0 42px}
 .historyTimeline article:last-child{padding-bottom:0}
 .historyTimeline time{padding-top:33px;color:var(--history-blue);font-size:16px;font-weight:950;text-align:right}
 .historyTimelineDot{position:absolute;left:178px;top:31px;width:13px;height:13px;border:4px solid #fff;border-radius:50%;background:var(--history-gold);box-shadow:0 0 0 1px #d8dde0}
