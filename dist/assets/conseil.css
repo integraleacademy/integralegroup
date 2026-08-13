@@ -1027,8 +1027,11 @@
   font-size: 23px;
   line-height: 1.05;
   letter-spacing: -.04em;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
 }
+
+.conseilMomentsGrid article:nth-child(4) h3 { font-size: 20px; }
 
 .conseilMomentsGrid p {
   margin: 0;
@@ -1227,6 +1230,7 @@
 }
 
 @media (max-width: 1120px) {
+  .conseilPage .homeHeaderCta { display: none; }
   .conseilPage .hero { min-height: auto; }
   .conseilPage .heroInner { grid-template-columns: 1fr; gap: 55px; }
   .conseilPage .heroCopy { max-width: 830px; }
@@ -1360,6 +1364,7 @@
   .conseilMomentsGrid { grid-template-columns: 1fr; }
   .conseilMomentsGrid article { min-height: 225px; }
   .conseilMomentsGrid h3 { margin-top: 62px; }
+  .conseilMomentsGrid article:nth-child(4) h3 { font-size: 23px; }
   .conseilGroupMap { display: grid; gap: 12px; min-height: auto; padding: 26px; border-radius: 30px; }
   .conseilGroupMap::before { inset: 13px; border-radius: 22px; }
   .conseilGroupCore,
