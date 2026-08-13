@@ -12,7 +12,7 @@ const expectedMarkers={
  '/pole-developpement-web':'Transformer un besoin en expérience digitale utile.',
  '/notre-histoire':'Une histoire née du terrain',
  '/entreprise':'La carte d’identité',
- '/contact':['formulaire','mailto'],
+ '/contact':'Quatre expertises.<br><em>Un seul contact.</em>',
 };
 const seen=new Set();
 for(const route of routes){const file=fileFor(route); if(!fs.existsSync(file)) throw new Error(`${route} missing`); const html=fs.readFileSync(file,'utf8'); if(html.length<4500) throw new Error(`${route} lacks complete content`); const marker=expectedMarkers[route]; if(Array.isArray(marker)){if(!marker.some(m=>html.toLowerCase().includes(m))) throw new Error(`${route} missing one of ${marker.join(', ')}`);} else if(!html.includes(marker)) throw new Error(`${route} missing own marker ${marker}`); if(seen.has(html)) throw new Error(`${route} duplicates another page HTML`); seen.add(html); for(const r of menuRoutes){if(!html.includes(`href="${r}"`) && !(route==='/'&&r==='/')) throw new Error(`${route} missing main menu link ${r}`);} }
@@ -47,6 +47,12 @@ const companyPage=fs.readFileSync('dist/entreprise/index.html','utf8');
 for(const marker of ['companyPage','/assets/company.css','Une structure pour faire grandir des projets','Donner une structure commune à des expertises','Transformer une vision en capacité d’action.','Une même exigence.<br><em>Quatre rôles distincts.</em>','Une direction directement impliquée.','Clément Vaillant','Quatre repères qui ne changent pas.','Une structure récente.<br>Une expérience déjà installée.','La carte d’identité<br>du groupe.','Capital social']) if(!companyPage.includes(marker)) throw new Error(`Company page redesign missing ${marker}`);
 for(const marker of ['INTEGRALE GROUP','SAS','989 785 068','989 785 068 00010','54 chemin du Carreou, 83480 Puget-sur-Argens','1 041 000 €','23/07/2025','Gestion de fonds','66.30Z']) if(!companyPage.includes(marker)) throw new Error(`Company legal identity missing ${marker}`);
 for(const href of ['/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web']) if(!companyPage.includes(`href="${href}"`)) throw new Error(`Company page missing pole link ${href}`);
+const contact=fs.readFileSync('dist/contact/index.html','utf8');
+for(const marker of ['contactPage','/assets/contact.css','Parlons de votre <span>projet.</span>','Quatre expertises.<br><em>Un seul contact.</em>','Intégrale Academy','Intégrale Expertises','Conseil & accompagnement','Digital & outils métiers','Quelques informations suffisent pour commencer.','Écrivez-nous.','Un échange simple, en trois temps.','Vous préférez parler<br>de vive voix','Préparer mon e-mail','04 22 47 07 68','mailto:clement@integraleacademy.com','tel:+33422470768']) if(!contact.includes(marker)) throw new Error(`Contact page redesign missing ${marker}`);
+for(const option of ['Formation / Intégrale Academy','Intégrale Expertises / partenariat','Conseil & accompagnement','Développement web & outils métiers','Intégrale Connect','Partenariat groupe','Autre demande']) if(!contact.includes(`<option value="${option}">${option}</option>`)) throw new Error(`Contact subject missing ${option}`);
+for(const forbidden of ['SMTP_HOST','SMTP_PORT','SMTP_USER','SMTP_PASS','CONTACT_EMAIL','Variables prévues']) if(contact.includes(forbidden)) throw new Error(`Technical contact implementation leaked in page: ${forbidden}`);
+const app=fs.readFileSync('dist/assets/app.js','utf8');
+for(const marker of ['subjectMap','data-contact-subject','contactFormStatus','[Intégrale Group]']) if(!app.includes(marker)) throw new Error(`Contact form behavior missing ${marker}`);
 const css=fs.readFileSync('dist/assets/styles.css','utf8');
 for(const s of ['overflow-x:hidden','@media(max-width:640px)','--gold:#F4C45A','grid-template-columns:1fr']) if(!css.includes(s)) throw new Error(`responsive/global CSS guard failed: ${s}`);
 const homeCss=fs.readFileSync('dist/assets/home.css','utf8');
@@ -61,6 +67,8 @@ const digitalCss=fs.readFileSync('dist/assets/digital.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','digitalSolutionsGrid','digitalSoftwareGrid','digitalConnectGrid','digitalMethodGrid','overflow-wrap: anywhere']) if(!digitalCss.includes(s)) throw new Error(`Digital responsive CSS guard failed: ${s}`);
 const companyCss=fs.readFileSync('dist/assets/company.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','companyPurposeGrid','companyArchitecturePoles','companyGovernanceGrid','companyLegalGrid','overflow-wrap: anywhere']) if(!companyCss.includes(s)) throw new Error(`Company responsive CSS guard failed: ${s}`);
+const contactCss=fs.readFileSync('dist/assets/contact.css','utf8');
+for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','contactOrientationGrid','contactFormGrid','contactProcessGrid','contactDirectPanel','overflow-wrap: anywhere']) if(!contactCss.includes(s)) throw new Error(`Contact responsive CSS guard failed: ${s}`);
 const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
 for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 console.log('OK: 4-pole architecture, redirects, navigation, Academy link and responsive CSS verified.');

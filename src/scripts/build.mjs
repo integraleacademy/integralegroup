@@ -60,6 +60,8 @@ function shell(page, body, buttons) {
       ? '<link rel="stylesheet" href="/assets/history.css">'
     : page.route === '/entreprise'
       ? '<link rel="stylesheet" href="/assets/company.css">'
+    : page.route === '/contact'
+      ? '<link rel="stylesheet" href="/assets/contact.css">'
       : page.route === '/integrale-expertises'
         ? '<link rel="stylesheet" href="/assets/expertises.css">'
         : '';
@@ -103,6 +105,7 @@ fs.copyFileSync('public/conseil.css', `${out}/assets/conseil.css`);
 fs.copyFileSync('public/digital.css', `${out}/assets/digital.css`);
 fs.copyFileSync('public/history.css', `${out}/assets/history.css`);
 fs.copyFileSync('public/company.css', `${out}/assets/company.css`);
+fs.copyFileSync('public/contact.css', `${out}/assets/contact.css`);
 fs.copyFileSync('public/expertises.css', `${out}/assets/expertises.css`);
 fs.copyFileSync('public/app.js', `${out}/assets/app.js`);
 fs.copyFileSync('public/favicon.svg', `${out}/favicon.svg`);
