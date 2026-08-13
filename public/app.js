@@ -1,13 +1,61 @@
 const header = document.querySelector('.siteHeader');
 const burger = document.querySelector('.burger');
+const navDropdowns = [...document.querySelectorAll('.navDropdown')];
+const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+const setDropdownOpen = (dropdown, open) => {
+  dropdown.classList.toggle('is-open', open);
+  dropdown.querySelector('.navDropdownToggle')?.setAttribute('aria-expanded', String(open));
+};
+
+const closeDropdowns = exception => {
+  navDropdowns.forEach(dropdown => {
+    if (dropdown !== exception) setDropdownOpen(dropdown, false);
+  });
+};
+
+navDropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.navDropdownToggle');
+
+  toggle?.addEventListener('click', event => {
+    event.stopPropagation();
+    const willOpen = !dropdown.classList.contains('is-open');
+    closeDropdowns(dropdown);
+    setDropdownOpen(dropdown, willOpen);
+  });
+
+  if (canHover) {
+    dropdown.addEventListener('mouseenter', () => setDropdownOpen(dropdown, true));
+    dropdown.addEventListener('mouseleave', () => {
+      if (!dropdown.contains(document.activeElement)) setDropdownOpen(dropdown, false);
+    });
+  }
+  dropdown.addEventListener('focusout', event => {
+    if (!dropdown.contains(event.relatedTarget)) setDropdownOpen(dropdown, false);
+  });
+  dropdown.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    setDropdownOpen(dropdown, false);
+    toggle?.focus();
+  });
+});
+
+document.addEventListener('click', event => {
+  if (!navDropdowns.some(dropdown => dropdown.contains(event.target))) closeDropdowns();
+});
 
 burger?.addEventListener('click', () => {
   const open = header.classList.toggle('open');
   burger.setAttribute('aria-expanded', String(open));
+  if (!open) closeDropdowns();
 });
 
 document.querySelectorAll('.navLinks a').forEach(link => {
-  link.addEventListener('click', () => header.classList.remove('open'));
+  link.addEventListener('click', () => {
+    header.classList.remove('open');
+    burger?.setAttribute('aria-expanded', 'false');
+    closeDropdowns();
+  });
 });
 
 const observer = new IntersectionObserver(entries => {
