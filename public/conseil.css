@@ -1,0 +1,1387 @@
+/* Pôle 03 — Conseil & accompagnement, août 2026 */
+.conseilPage {
+  --conseil-ink: #071722;
+  --conseil-navy: #061722;
+  --conseil-deep: #0b292b;
+  --conseil-green: #568c82;
+  --conseil-green-dark: #2e635c;
+  --conseil-mint: #dfeeea;
+  --conseil-gold: #f4c45a;
+  --conseil-cream: #f8f5ee;
+  --conseil-white: #fffdf9;
+  --conseil-muted: #65717e;
+  --conseil-border: rgba(7, 23, 34, .10);
+}
+
+.homeHeaderCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--conseil-gold), #ffe29a);
+  color: #08131e;
+  font-size: 13px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  box-shadow: 0 16px 36px rgba(244, 196, 90, .18);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.homeHeaderCta:hover,
+.homeHeaderCta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(244, 196, 90, .26);
+}
+
+.conseilPage main { background: var(--conseil-cream); }
+
+.conseilPage .hero {
+  position: relative;
+  min-height: 790px;
+  padding: 92px 0 112px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 22%, rgba(244, 196, 90, .20), transparent 25%),
+    radial-gradient(circle at 88% 44%, rgba(86, 140, 130, .39), transparent 32%),
+    linear-gradient(135deg, #06121c 0%, #082027 58%, #164b48 100%);
+}
+
+.conseilPage .hero::before,
+.conseilTerrainSection::before,
+.conseilGroupSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .28;
+  background-image: radial-gradient(rgba(255, 255, 255, .20) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: linear-gradient(to bottom, #000, transparent 92%);
+}
+
+.conseilPage .hero::after {
+  content: "";
+  position: absolute;
+  right: -190px;
+  bottom: -280px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: rgba(119, 183, 171, .07);
+  box-shadow: 0 0 0 90px rgba(255, 255, 255, .022), 0 0 0 180px rgba(255, 255, 255, .014);
+}
+
+.conseilPage .heroInner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 48px, 1320px);
+  grid-template-columns: minmax(0, 1fr) minmax(530px, .98fr);
+  gap: 76px;
+}
+
+.conseilPage .heroCopy,
+.conseilPage .heroVisualSlot { min-width: 0; }
+
+.conseilPage .kicker {
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  color: #e7efec;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .08);
+}
+
+.conseilPage .kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-right: 11px;
+  border-radius: 50%;
+  background: #78b1a7;
+  box-shadow: 0 0 16px rgba(120, 177, 167, .60);
+}
+
+.conseilPage .hero h1 {
+  max-width: 760px;
+  margin: 31px 0 24px;
+  font-size: clamp(57px, 6.2vw, 88px);
+  line-height: .98;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+
+.conseilPage .hero h1 span {
+  display: block;
+  color: #82b9af;
+}
+
+.conseilPage .heroCopy > p:not(.kicker) {
+  max-width: 720px;
+  color: #cbd8d5;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.62;
+}
+
+.conseilPage .heroActions {
+  display: grid;
+  gap: 27px;
+  margin-top: 36px;
+}
+
+.conseilHeroButtons,
+.conseilHeroProof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.conseilHeroButtons .btn { min-width: 220px; }
+.conseilHeroButtons .btn span { margin-left: 8px; }
+
+.conseilHeroProof span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 14px 8px 9px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .07);
+  color: #dce7e4;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.conseilHeroProof i {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(126, 184, 173, .17);
+  color: #a9d2ca;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.conseilPage .conseilHeroVisual {
+  min-height: 585px;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(244, 196, 90, .20), transparent 25%),
+    radial-gradient(circle at 84% 78%, rgba(101, 166, 154, .34), transparent 31%),
+    linear-gradient(145deg, #123d3c, #061722 72%);
+}
+
+.conseilHeroVisual::after {
+  content: "03";
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, .035);
+  font-size: 280px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.conseilVisualCore {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 205px;
+  min-height: 170px;
+  padding: 24px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(128, 189, 178, .30);
+  border-radius: 38px;
+  background: rgba(255, 255, 255, .09);
+  box-shadow: 0 0 0 35px rgba(255, 255, 255, .024), 0 24px 70px rgba(0, 0, 0, .18);
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.conseilVisualCore i {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: #78b1a7;
+  color: #071b1c;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.conseilVisualCore b {
+  color: #fff;
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+.conseilVisualCore small {
+  color: #b9cac7;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.conseilVisualSteps article {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px 10px;
+  align-items: center;
+  width: 155px;
+  min-height: 85px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .075);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .06), 0 18px 46px rgba(0, 0, 0, .14);
+  backdrop-filter: blur(12px);
+}
+
+.conseilVisualSteps article > i {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(120, 177, 167, .16);
+  color: #acd3cc;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.conseilVisualSteps article > b {
+  color: #eef7f5;
+  font-size: 13px;
+}
+
+.conseilVisualSteps article > span {
+  grid-column: 1 / -1;
+  width: 68%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #78b1a7, rgba(244, 196, 90, .55), transparent);
+}
+
+.conseilVisualSteps .cvs1 { left: 6%; top: 18%; }
+.conseilVisualSteps .cvs2 { right: 6%; top: 18%; }
+.conseilVisualSteps .cvs3 { left: 6%; bottom: 24%; }
+.conseilVisualSteps .cvs4 { right: 6%; bottom: 24%; }
+
+.conseilVisualResult {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 290px;
+  padding: 15px 18px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(244, 196, 90, .25);
+  border-radius: 20px;
+  background: rgba(244, 196, 90, .10);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .16);
+  backdrop-filter: blur(12px);
+}
+
+.conseilVisualResult small {
+  grid-row: 1 / 3;
+  align-self: center;
+  margin-right: 14px;
+  color: var(--conseil-gold);
+  font-size: 10px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.conseilVisualResult b { color: #fff; font-size: 15px; }
+.conseilVisualResult span { color: #b8c9c5; font-size: 10px; }
+
+.conseilVisualInputs {
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  z-index: 4;
+  display: flex;
+  gap: 7px;
+  width: max-content;
+  transform: translateX(-50%);
+}
+
+.conseilVisualInputs span {
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+  color: #c9d8d5;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.conseilVisualPath {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 36px;
+}
+
+.conseilVisualPath path,
+.conseilVisualPath circle {
+  fill: none;
+  stroke: rgba(124, 186, 175, .44);
+  stroke-width: 2;
+  stroke-dasharray: 5 10;
+}
+
+.conseilVisualPath circle {
+  stroke: rgba(255, 255, 255, .10);
+  stroke-dasharray: 3 12;
+  transform-origin: center;
+  animation: slowSpin 44s linear infinite;
+}
+
+.conseilVisualPath .pulse {
+  stroke: rgba(244, 196, 90, .45);
+  animation: signalSweep 5s ease-in-out infinite;
+}
+
+.conseilIntroSection,
+.conseilServicesSection,
+.conseilMethodSection,
+.conseilMomentsSection,
+.conseilCtaSection {
+  position: relative;
+  width: 100%;
+}
+
+.conseilIntroSection {
+  padding: 128px 0 118px;
+  background: var(--conseil-cream);
+}
+
+.conseilIntroGrid,
+.conseilTerrainInner,
+.conseilMethodGrid,
+.conseilGroupInner,
+.conseilCta,
+.conseilServicesSection > *,
+.conseilMomentsSection > * {
+  width: min(100% - 48px, 1240px);
+  margin-inline: auto;
+}
+
+.conseilIntroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(520px, 1.1fr);
+  gap: 86px;
+  align-items: center;
+}
+
+.conseilIntroCopy > span,
+.conseilSectionHeading > span,
+.conseilTerrainCopy > span,
+.conseilMethodLead > span,
+.conseilGroupCopy > span,
+.conseilCta > div > span {
+  display: inline-flex;
+  align-items: center;
+  color: var(--conseil-green-dark);
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .17em;
+}
+
+.conseilIntroCopy > span::before,
+.conseilSectionHeading > span::before,
+.conseilMethodLead > span::before,
+.conseilCta > div > span::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  margin-right: 10px;
+  border-radius: 999px;
+  background: var(--conseil-green);
+}
+
+.conseilIntroCopy h2,
+.conseilSectionHeading h2,
+.conseilTerrainCopy h2,
+.conseilMethodLead h2,
+.conseilGroupCopy h2,
+.conseilCta h2 {
+  margin: 18px 0 22px;
+  color: var(--conseil-ink);
+  font-size: clamp(43px, 5.1vw, 68px);
+  line-height: 1.01;
+  letter-spacing: -.06em;
+  text-wrap: balance;
+}
+
+.conseilIntroCopy > p,
+.conseilSectionHeading > p,
+.conseilTerrainCopy > p,
+.conseilMethodLead > p,
+.conseilGroupCopy > p,
+.conseilCta > div > p {
+  margin: 0;
+  color: var(--conseil-muted);
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.conseilIntroCopy blockquote {
+  position: relative;
+  margin: 32px 0 0;
+  padding: 25px 28px 25px 64px;
+  border: 1px solid rgba(86, 140, 130, .19);
+  border-radius: 24px;
+  background: var(--conseil-white);
+  color: #1d3e3c;
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.55;
+  box-shadow: 0 20px 50px rgba(15, 35, 36, .06);
+}
+
+.conseilIntroCopy blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 22px;
+  top: 18px;
+  color: var(--conseil-green);
+  font-family: Georgia, serif;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.conseilMissionPanel {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 23, 34, .08);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(244, 196, 90, .20), transparent 26%),
+    radial-gradient(circle at 85% 85%, rgba(113, 180, 168, .30), transparent 31%),
+    linear-gradient(145deg, #143f3d, #071722 72%);
+  box-shadow: 0 35px 100px rgba(7, 23, 34, .18);
+}
+
+.conseilMissionPanel::before,
+.conseilGroupMap::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 31px;
+  background-image: radial-gradient(rgba(255, 255, 255, .13) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+
+.conseilMissionPanel > strong {
+  position: absolute;
+  left: 38px;
+  top: 33px;
+  z-index: 3;
+  color: #c8d8d4;
+  font-size: 10px;
+  letter-spacing: .17em;
+}
+
+.conseilMissionLetter {
+  position: absolute;
+  right: -8px;
+  top: -28px;
+  color: rgba(255, 255, 255, .045);
+  font-size: 285px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.conseilMissionCore {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 285px;
+  min-height: 210px;
+  padding: 26px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(126, 184, 173, .26);
+  border-radius: 38px;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 0 0 36px rgba(255, 255, 255, .025), 0 25px 70px rgba(0, 0, 0, .20);
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.conseilMissionCore > i {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: var(--conseil-green);
+  color: #071722;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.conseilMissionCore > b {
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+
+.conseilMissionCore > small {
+  color: #bdd0cc;
+  font-size: 11px;
+}
+
+.conseilMissionPanel article {
+  position: absolute;
+  bottom: 32px;
+  z-index: 3;
+  display: grid;
+  width: calc(50% - 43px);
+  min-height: 118px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .07);
+  backdrop-filter: blur(12px);
+}
+
+.conseilMissionContext { left: 32px; }
+.conseilMissionResult { right: 32px; }
+.conseilMissionPanel article small { color: #8ebdb4; font-size: 9px; font-weight: 950; text-transform: uppercase; letter-spacing: .12em; }
+.conseilMissionPanel article b { color: #fff; font-size: 16px; }
+.conseilMissionPanel article span { color: #b9c9c6; font-size: 10px; line-height: 1.45; }
+
+.conseilServicesSection {
+  padding: 124px 0 132px;
+  background: #eef3f0;
+}
+
+.conseilSectionHeading {
+  max-width: 820px;
+  margin-bottom: 66px;
+}
+
+.conseilSectionHeading.centered {
+  max-width: 940px;
+  margin-inline: auto;
+  margin-bottom: 68px;
+  text-align: center;
+}
+
+.conseilSectionHeading.centered > span { justify-content: center; }
+.conseilSectionHeading.centered > p { max-width: 780px; margin-inline: auto; }
+
+.conseilServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.conseilServiceCard {
+  position: relative;
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 410px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--conseil-border);
+  border-radius: 34px;
+  background: var(--conseil-white);
+  box-shadow: 0 22px 58px rgba(15, 35, 36, .07);
+  transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
+}
+
+.conseilServiceCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(86, 140, 130, .27);
+  box-shadow: 0 32px 76px rgba(15, 35, 36, .12);
+}
+
+.conseilServiceCard::after {
+  content: "";
+  position: absolute;
+  right: -72px;
+  top: -72px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(86, 140, 130, .045);
+  pointer-events: none;
+}
+
+.conseilServiceCard.organismes {
+  grid-column: span 6;
+  grid-row: span 2;
+  min-height: 650px;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(244, 196, 90, .17), transparent 27%),
+    linear-gradient(145deg, #143e3b, #071722 76%);
+  color: #fff;
+}
+
+.conseilServiceCard.dirigeants {
+  grid-column: span 6;
+  min-height: 315px;
+  background: linear-gradient(145deg, #dcece8, #f8fbfa);
+}
+
+.conseilServiceCard.administration,
+.conseilServiceCard.commercial {
+  grid-column: span 3;
+  min-height: 315px;
+}
+
+.conseilServiceCard.custom {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: auto minmax(230px, .7fr) minmax(0, 1.15fr) auto;
+  gap: 18px 28px;
+  align-items: center;
+  min-height: 230px;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(86, 140, 130, .20), transparent 29%),
+    linear-gradient(135deg, #fffdf9, #edf5f2);
+}
+
+.conseilServiceCard.custom .conseilServiceTop { grid-row: 1 / 3; }
+.conseilServiceCard.custom .conseilServiceEyebrow { align-self: end; }
+.conseilServiceCard.custom h3 { grid-column: 2; align-self: start; }
+.conseilServiceCard.custom > p { grid-column: 3; grid-row: 1 / 3; align-self: center; }
+.conseilServiceCard.custom .conseilServiceTags { grid-column: 4; grid-row: 1 / 3; align-self: center; max-width: 150px; }
+
+.conseilServiceTop {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.conseilServiceIcon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 20px;
+  background: var(--conseil-mint);
+  color: var(--conseil-green-dark);
+}
+
+.conseilServiceIcon svg {
+  width: 31px;
+  height: 31px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.conseilServiceTop > i {
+  color: rgba(7, 23, 34, .13);
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.conseilServiceEyebrow {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 28px;
+  color: var(--conseil-green-dark);
+  font-size: 10px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.conseilServiceCard h3 {
+  position: relative;
+  z-index: 1;
+  margin: 10px 0 15px;
+  color: var(--conseil-ink);
+  font-size: 25px;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+.conseilServiceCard > p {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 22px;
+  color: var(--conseil-muted);
+  line-height: 1.65;
+}
+
+.conseilServiceTags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.conseilServiceTags b {
+  padding: 8px 10px;
+  border: 1px solid rgba(86, 140, 130, .15);
+  border-radius: 999px;
+  background: rgba(86, 140, 130, .07);
+  color: #386e67;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.conseilServiceCard.organismes .conseilServiceIcon { background: var(--conseil-green); color: #071722; }
+.conseilServiceCard.organismes .conseilServiceTop > i { color: rgba(255, 255, 255, .12); font-size: 62px; }
+.conseilServiceCard.organismes .conseilServiceEyebrow { color: #98c6bd; }
+.conseilServiceCard.organismes h3 { max-width: 480px; color: #fff; font-size: clamp(36px, 4.2vw, 55px); }
+.conseilServiceCard.organismes > p { max-width: 490px; color: #c3d4d1; font-size: 17px; }
+.conseilServiceCard.organismes .conseilServiceTags b { border-color: rgba(255, 255, 255, .11); background: rgba(255, 255, 255, .08); color: #e6f0ed; }
+
+.conseilTerrainSection {
+  position: relative;
+  padding: 126px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 25%, rgba(244, 196, 90, .13), transparent 28%),
+    radial-gradient(circle at 88% 76%, rgba(86, 140, 130, .26), transparent 32%),
+    linear-gradient(135deg, #06131d, #0a292c 67%, #164d49);
+}
+
+.conseilTerrainInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(540px, 1.12fr);
+  gap: 85px;
+  align-items: center;
+}
+
+.conseilTerrainCopy > span,
+.conseilGroupCopy > span { color: #8fc4ba; }
+
+.conseilTerrainCopy h2,
+.conseilGroupCopy h2 { color: #fff; }
+
+.conseilTerrainCopy > p,
+.conseilGroupCopy > p { color: #c4d2d0; }
+
+.conseilTerrainCopy .btn { margin-top: 31px; }
+.conseilTerrainCopy .btn b { margin-left: 8px; }
+
+.conseilDeliverables {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.conseilDeliverables article {
+  position: relative;
+  display: grid;
+  min-height: 175px;
+  padding: 23px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, .07);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .06);
+  backdrop-filter: blur(10px);
+}
+
+.conseilDeliverables article::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(120, 177, 167, .08);
+}
+
+.conseilDeliverables i {
+  color: #83b9af;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 950;
+  letter-spacing: .14em;
+}
+
+.conseilDeliverables b {
+  align-self: end;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.conseilDeliverables span {
+  color: #aebfbc;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.conseilMethodSection {
+  padding: 126px 0;
+  background: var(--conseil-cream);
+}
+
+.conseilMethodGrid {
+  display: grid;
+  grid-template-columns: minmax(380px, .82fr) minmax(0, 1.18fr);
+  gap: 65px;
+  align-items: stretch;
+}
+
+.conseilMethodLead {
+  position: relative;
+  min-height: 620px;
+  padding: 52px;
+  overflow: hidden;
+  border-radius: 40px;
+  background:
+    radial-gradient(circle at 80% 80%, rgba(112, 180, 168, .27), transparent 35%),
+    linear-gradient(145deg, #143f3d, #071722 74%);
+  box-shadow: 0 34px 90px rgba(7, 23, 34, .16);
+}
+
+.conseilMethodLead > span { color: #9bc9c1; }
+.conseilMethodLead > span::before { background: #8fc4ba; }
+.conseilMethodLead h2 { color: #fff; }
+.conseilMethodLead > p { color: #c2d1ce; }
+
+.conseilMethodSignal {
+  position: absolute;
+  left: 52px;
+  right: 52px;
+  bottom: 58px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.conseilMethodSignal i {
+  position: relative;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.conseilMethodSignal i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--conseil-green), var(--conseil-gold));
+  transform-origin: left;
+  animation: conseilSignal 5s ease-in-out infinite;
+}
+
+.conseilMethodSignal i:nth-child(2)::after { animation-delay: .25s; }
+.conseilMethodSignal i:nth-child(3)::after { animation-delay: .5s; }
+.conseilMethodSignal i:nth-child(4)::after { animation-delay: .75s; }
+
+@keyframes conseilSignal {
+  0%, 15% { transform: scaleX(.12); opacity: .35; }
+  65%, 100% { transform: scaleX(1); opacity: 1; }
+}
+
+.conseilMethodSteps {
+  display: grid;
+  gap: 15px;
+}
+
+.conseilMethodSteps article {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 44px;
+  gap: 22px;
+  align-items: center;
+  min-height: 140px;
+  padding: 25px 28px;
+  border: 1px solid var(--conseil-border);
+  border-radius: 28px;
+  background: var(--conseil-white);
+  box-shadow: 0 19px 52px rgba(15, 35, 36, .06);
+  transition: transform .24s ease, border-color .24s ease;
+}
+
+.conseilMethodSteps article:hover {
+  transform: translateX(7px);
+  border-color: rgba(86, 140, 130, .28);
+}
+
+.conseilMethodSteps article > i {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: var(--conseil-mint);
+  color: var(--conseil-green-dark);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.conseilMethodSteps h3 {
+  margin: 0 0 8px;
+  color: var(--conseil-ink);
+  font-size: 24px;
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+
+.conseilMethodSteps p {
+  margin: 0;
+  color: var(--conseil-muted);
+  line-height: 1.55;
+}
+
+.conseilMethodSteps article > b {
+  color: var(--conseil-green);
+  font-size: 27px;
+}
+
+.conseilMomentsSection {
+  padding: 120px 0 130px;
+  background: #e9f0ed;
+}
+
+.conseilMomentsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.conseilMomentsGrid article {
+  position: relative;
+  min-height: 275px;
+  padding: 28px 24px;
+  overflow: hidden;
+  border: 1px solid var(--conseil-border);
+  border-radius: 30px;
+  background: var(--conseil-white);
+  box-shadow: 0 20px 55px rgba(15, 35, 36, .06);
+}
+
+.conseilMomentsGrid article::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7px;
+  background: linear-gradient(90deg, var(--conseil-green), var(--conseil-gold));
+  opacity: .75;
+}
+
+.conseilMomentsGrid i {
+  color: var(--conseil-green);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 950;
+  letter-spacing: .12em;
+}
+
+.conseilMomentsGrid h3 {
+  margin: 96px 0 12px;
+  color: var(--conseil-ink);
+  font-size: 23px;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+}
+
+.conseilMomentsGrid p {
+  margin: 0;
+  color: var(--conseil-muted);
+  line-height: 1.55;
+}
+
+.conseilGroupSection {
+  position: relative;
+  padding: 126px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(244, 196, 90, .14), transparent 28%),
+    radial-gradient(circle at 85% 80%, rgba(86, 140, 130, .24), transparent 32%),
+    linear-gradient(135deg, #06131d, #09272a 67%, #133f3d);
+}
+
+.conseilGroupInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .87fr) minmax(540px, 1.13fr);
+  gap: 86px;
+  align-items: center;
+}
+
+.conseilGroupCopy .btn {
+  width: max-content;
+  margin-top: 30px;
+  color: #fff;
+  border-color: rgba(255, 255, 255, .19);
+  background: rgba(255, 255, 255, .07);
+}
+
+.conseilGroupCopy .btn b { margin-left: 8px; }
+
+.conseilGroupMap {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 42px;
+  background: rgba(255, 255, 255, .045);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .07), 0 32px 90px rgba(0, 0, 0, .20);
+}
+
+.conseilGroupCore {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 174px;
+  height: 174px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(123, 185, 174, .31);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #477f76, #1f514d);
+  box-shadow: 0 0 0 31px rgba(86, 140, 130, .09), 0 25px 70px rgba(0, 0, 0, .24);
+  text-align: center;
+}
+
+.conseilGroupCore i,
+.conseilGroupMap article > i {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border-radius: 16px;
+  background: var(--conseil-gold);
+  color: #071722;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.conseilGroupCore b { color: #fff; font-size: 20px; }
+.conseilGroupCore small { color: #d0e0dd; font-size: 11px; }
+
+.conseilGroupMap article {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 47px minmax(0, 1fr);
+  gap: 4px 13px;
+  align-items: center;
+  width: 205px;
+  min-height: 96px;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(12px);
+}
+
+.conseilGroupMap article > i { grid-row: 1 / 3; background: rgba(255, 255, 255, .10); color: #e9f2f0; }
+.conseilGroupMap article b { color: #fff; font-size: 15px; }
+.conseilGroupMap article small { color: #b8c9c5; font-size: 10px; line-height: 1.35; }
+.conseilGroupMap article.formation { left: 39px; top: 58px; }
+.conseilGroupMap article.expertises { right: 39px; top: 58px; }
+.conseilGroupMap article.digital { left: 50%; bottom: 38px; transform: translateX(-50%); }
+.conseilGroupMap article.formation > i { background: #e8f0f7; color: #123f64; }
+.conseilGroupMap article.expertises > i { background: #f4e7bc; color: #755d14; }
+.conseilGroupMap article.digital > i { background: #dfe3f4; color: #3f4a82; }
+
+.conseilGroupMap svg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 42px;
+}
+
+.conseilGroupMap svg path,
+.conseilGroupMap svg circle {
+  fill: none;
+  stroke: rgba(122, 184, 173, .36);
+  stroke-width: 2;
+  stroke-dasharray: 5 10;
+}
+
+.conseilGroupMap svg circle {
+  stroke: rgba(255, 255, 255, .08);
+  stroke-dasharray: 3 12;
+}
+
+.conseilCtaSection {
+  padding: 96px 0 110px;
+  background: var(--conseil-cream);
+}
+
+.conseilCta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: center;
+  min-height: 480px;
+  padding: 70px 74px;
+  overflow: hidden;
+  border-radius: 44px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(244, 196, 90, .17), transparent 28%),
+    radial-gradient(circle at 76% 85%, rgba(107, 174, 162, .30), transparent 30%),
+    linear-gradient(135deg, #133e3b, #061722 70%);
+  box-shadow: 0 35px 100px rgba(7, 23, 34, .18);
+}
+
+.conseilCta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .35;
+  background-image: radial-gradient(rgba(255, 255, 255, .16) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: linear-gradient(90deg, #000, transparent 90%);
+}
+
+.conseilCta > div,
+.conseilCtaMark { position: relative; z-index: 1; }
+.conseilCta > div > span { color: #99c9c0; }
+.conseilCta h2 { max-width: 850px; color: #fff; }
+.conseilCta > div > p { max-width: 760px; color: #c6d4d1; }
+
+.conseilCta > div > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 31px;
+}
+
+.conseilCta > div > div .secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .17);
+  background: rgba(255, 255, 255, .07);
+}
+
+.conseilCta > div > div b { margin-left: 8px; }
+
+.conseilCtaMark {
+  display: grid;
+  place-items: center;
+  width: 175px;
+  height: 175px;
+  margin-left: auto;
+  border: 1px solid rgba(133, 194, 183, .28);
+  border-radius: 48px;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 0 0 35px rgba(255, 255, 255, .025);
+  color: #8fc4ba;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 950;
+  backdrop-filter: blur(12px);
+}
+
+@media (max-width: 1120px) {
+  .conseilPage .hero { min-height: auto; }
+  .conseilPage .heroInner { grid-template-columns: 1fr; gap: 55px; }
+  .conseilPage .heroCopy { max-width: 830px; }
+  .conseilPage .conseilHeroVisual { min-height: 560px; }
+  .conseilIntroGrid,
+  .conseilTerrainInner,
+  .conseilGroupInner { grid-template-columns: 1fr; gap: 58px; }
+  .conseilIntroCopy,
+  .conseilTerrainCopy,
+  .conseilGroupCopy { max-width: 830px; }
+  .conseilMissionPanel,
+  .conseilGroupMap { width: 100%; max-width: 760px; margin-inline: auto; }
+  .conseilServiceCard { grid-column: span 6; }
+  .conseilServiceCard.organismes { grid-column: span 12; grid-row: auto; min-height: 500px; }
+  .conseilServiceCard.dirigeants { grid-column: span 6; }
+  .conseilServiceCard.administration,
+  .conseilServiceCard.commercial { grid-column: span 3; }
+  .conseilServiceCard.custom { grid-column: span 12; }
+  .conseilMethodGrid { grid-template-columns: 1fr; }
+  .conseilMethodLead { min-height: 480px; }
+  .conseilMomentsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .conseilPage .hero { padding: 72px 0 84px; }
+  .conseilPage .hero h1 { font-size: clamp(48px, 12vw, 68px); }
+  .conseilPage .conseilHeroVisual { min-height: 520px; }
+  .conseilIntroSection,
+  .conseilServicesSection,
+  .conseilTerrainSection,
+  .conseilMethodSection,
+  .conseilMomentsSection,
+  .conseilGroupSection { padding: 84px 0; }
+  .conseilIntroGrid,
+  .conseilTerrainInner,
+  .conseilMethodGrid,
+  .conseilGroupInner,
+  .conseilCta,
+  .conseilServicesSection > *,
+  .conseilMomentsSection > * { width: min(100% - 36px, 1240px); }
+  .conseilIntroGrid { gap: 46px; }
+  .conseilServicesGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .conseilServiceCard,
+  .conseilServiceCard.organismes,
+  .conseilServiceCard.dirigeants,
+  .conseilServiceCard.administration,
+  .conseilServiceCard.commercial,
+  .conseilServiceCard.custom { grid-column: auto; }
+  .conseilServiceCard.organismes,
+  .conseilServiceCard.custom { grid-column: 1 / -1; }
+  .conseilServiceCard.custom { display: flex; min-height: 360px; }
+  .conseilServiceCard.custom .conseilServiceTop,
+  .conseilServiceCard.custom .conseilServiceEyebrow,
+  .conseilServiceCard.custom h3,
+  .conseilServiceCard.custom > p,
+  .conseilServiceCard.custom .conseilServiceTags { grid-column: auto; grid-row: auto; align-self: auto; max-width: none; }
+  .conseilServiceCard { min-height: 400px; }
+  .conseilServiceCard.organismes { min-height: 480px; }
+  .conseilTerrainInner { gap: 50px; }
+  .conseilDeliverables { grid-template-columns: 1fr; }
+  .conseilMethodLead { min-height: 455px; padding: 43px 38px; }
+  .conseilMethodSignal { left: 38px; right: 38px; bottom: 43px; }
+  .conseilMethodSteps article { grid-template-columns: 58px minmax(0, 1fr); }
+  .conseilMethodSteps article > i { width: 58px; height: 58px; }
+  .conseilMethodSteps article > b { display: none; }
+  .conseilMomentsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .conseilCtaSection { padding: 70px 0 85px; }
+  .conseilCta { grid-template-columns: 1fr; padding: 50px 40px; }
+  .conseilCtaMark { grid-row: 1; width: 110px; height: 110px; margin: 0 0 30px; border-radius: 34px; font-size: 34px; }
+}
+
+@media (max-width: 640px) {
+  .conseilPage .heroInner { width: min(100% - 32px, 1320px); }
+  .conseilPage .kicker { font-size: 10px; letter-spacing: .12em; }
+  .conseilPage .hero h1 { margin-top: 25px; font-size: clamp(42px, 13vw, 56px); overflow-wrap: normal; }
+  .conseilPage .heroCopy > p:not(.kicker) { font-size: 16px; }
+  .conseilHeroButtons,
+  .conseilHeroProof { width: 100%; }
+  .conseilHeroButtons .btn,
+  .conseilHeroProof span { width: 100%; }
+  .conseilHeroProof span { justify-content: center; white-space: normal; text-align: center; }
+  .conseilPage .conseilHeroVisual { display: grid; gap: 12px; min-height: auto; padding: 24px; }
+  .conseilHeroVisual::after,
+  .conseilVisualPath { display: none; }
+  .conseilVisualCore,
+  .conseilVisualSteps article,
+  .conseilVisualResult,
+  .conseilVisualInputs { position: relative; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; width: 100%; transform: none; }
+  .conseilVisualCore { min-height: 160px; }
+  .conseilVisualInputs { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .conseilVisualInputs span { text-align: center; }
+  .conseilVisualSteps { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .conseilVisualSteps article { min-height: 74px; }
+  .conseilIntroCopy h2,
+  .conseilSectionHeading h2,
+  .conseilTerrainCopy h2,
+  .conseilMethodLead h2,
+  .conseilGroupCopy h2,
+  .conseilCta h2 { font-size: clamp(36px, 10.6vw, 46px); overflow-wrap: anywhere; }
+  .conseilIntroCopy > p,
+  .conseilSectionHeading > p,
+  .conseilTerrainCopy > p,
+  .conseilMethodLead > p,
+  .conseilGroupCopy > p,
+  .conseilCta > div > p { font-size: 16px; }
+  .conseilIntroCopy blockquote { padding: 23px 22px 23px 52px; font-size: 17px; }
+  .conseilMissionPanel { display: grid; gap: 13px; min-height: auto; padding: 26px; border-radius: 30px; }
+  .conseilMissionPanel::before { inset: 13px; border-radius: 22px; }
+  .conseilMissionPanel > strong,
+  .conseilMissionCore,
+  .conseilMissionPanel article { position: relative; left: auto; right: auto; top: auto; bottom: auto; width: 100%; transform: none; }
+  .conseilMissionPanel > strong { padding: 7px 4px 12px; }
+  .conseilMissionLetter { display: none; }
+  .conseilMissionCore { min-height: 190px; }
+  .conseilMissionPanel article { min-height: 105px; }
+  .conseilSectionHeading { margin-bottom: 42px; }
+  .conseilServicesGrid { grid-template-columns: 1fr; }
+  .conseilServiceCard,
+  .conseilServiceCard.organismes,
+  .conseilServiceCard.custom { grid-column: auto; min-height: 350px; padding: 27px 24px; }
+  .conseilServiceCard.organismes h3 { font-size: 35px; }
+  .conseilDeliverables article { min-height: 155px; }
+  .conseilTerrainCopy .btn,
+  .conseilGroupCopy .btn { width: 100%; }
+  .conseilMethodLead { min-height: 500px; padding: 35px 25px; border-radius: 29px; }
+  .conseilMethodSignal { left: 25px; right: 25px; bottom: 35px; }
+  .conseilMethodSteps article { grid-template-columns: 50px minmax(0, 1fr); gap: 15px; padding: 19px; }
+  .conseilMethodSteps article > i { width: 50px; height: 50px; border-radius: 16px; }
+  .conseilMethodSteps h3 { font-size: 20px; }
+  .conseilMethodSteps p { font-size: 14px; }
+  .conseilMomentsGrid { grid-template-columns: 1fr; }
+  .conseilMomentsGrid article { min-height: 225px; }
+  .conseilMomentsGrid h3 { margin-top: 62px; }
+  .conseilGroupMap { display: grid; gap: 12px; min-height: auto; padding: 26px; border-radius: 30px; }
+  .conseilGroupMap::before { inset: 13px; border-radius: 22px; }
+  .conseilGroupCore,
+  .conseilGroupMap article { position: relative; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; width: 100%; transform: none !important; }
+  .conseilGroupCore { height: auto; min-height: 155px; border-radius: 24px; box-shadow: none; }
+  .conseilGroupMap article { min-height: 82px; }
+  .conseilGroupMap svg { display: none; }
+  .conseilCtaSection { padding: 65px 0 78px; }
+  .conseilCta { padding: 38px 24px; border-radius: 29px; }
+  .conseilCta > div > div { display: grid; }
+}
+
+@media (max-width: 420px) {
+  .conseilVisualInputs { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conseilPage *,
+  .conseilPage *::before,
+  .conseilPage *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}

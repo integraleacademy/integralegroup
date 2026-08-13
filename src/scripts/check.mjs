@@ -8,7 +8,7 @@ const expectedMarkers={
  '/les-poles-du-groupe':'Quatre expertises.<br>Quatre portes d’entrée.',
  '/pole-formation':'Des parcours conçus pour des métiers réels.',
  '/integrale-expertises':'Dossiers en cours d’instruction auprès de France compétences',
- '/pole-conseil-accompagnement':'Méthode',
+ '/pole-conseil-accompagnement':'Huit leviers pour faire passer une organisation au niveau suivant.',
  '/pole-developpement-web':'Focus Intégrale Connect',
  '/notre-histoire':'Une histoire née du terrain',
  '/entreprise':'Capital social',
@@ -26,6 +26,9 @@ for(const href of ['/pole-formation','/integrale-expertises','/pole-conseil-acco
 const academy=fs.readFileSync('dist/pole-formation/index.html','utf8');
 for(const marker of ['academyPage','/assets/academy.css','Depuis 2018','Qualiopi','Sécurité privée','Sécurité incendie','Direction & VAE','Chauffeur VTC','BTS en alternance','Secourisme','Une expertise collective','Le terrain qui nourrit tout l’écosystème.']) if(!academy.includes(marker)) throw new Error(`Academy page redesign missing ${marker}`);
 for(const marker of ['Stagiaires','Apprentis','Professionnels','Entreprises','https://www.integraleacademy.com/']) if(!academy.includes(marker)) throw new Error(`Academy page missing ${marker}`);
+const conseil=fs.readFileSync('dist/pole-conseil-accompagnement/index.html','utf8');
+for(const marker of ['conseilPage','/assets/conseil.css','Structurer pour mieux','Organismes de formation','Accompagnement des dirigeants','Structuration administrative','Stratégie commerciale','Digitalisation','Certification','Process internes','Accompagnement sur mesure','Ni théorie hors-sol','Une intervention claire en quatre temps.','Création','Reprise','Croissance','Repositionnement','Transformation','La méthode qui relie stratégie et exécution.']) if(!conseil.includes(marker)) throw new Error(`Conseil page redesign missing ${marker}`);
+for(const marker of ['Comprendre','Prioriser','Structurer','Accompagner','Diagnostic organisationnel','Plan d’action priorisé','Supports prêts à l’emploi','Suivi de déploiement','Transmission aux équipes','Pilotage dirigeant']) if(!conseil.includes(marker)) throw new Error(`Conseil page missing ${marker}`);
 for(const r of legacyRoutes){const html=fs.readFileSync(fileFor(r),'utf8'); if(!html.includes('location.replace')) throw new Error(`legacy route is not redirected: ${r}`);}
 const expertises=fs.readFileSync('dist/integrale-expertises/index.html','utf8');
 for(const title of ['Équipier de sécurité privée','Équipier de sécurité privée armé – catégorie D','Équipier de protection rapprochée','Expert en investigation et renseignement sur les cybermenaces','Dirigeant d’une société de sécurité privée','Opérateur de vidéoprotection et de surveillance électronique','Équipier de protection rapprochée armé – catégories B et D','Équipier de sécurité privée armé – catégories B et D','Équipier de sécurité privée événementiel','Agent de recherches privées']) if(!expertises.includes(title)) throw new Error(`Intégrale Expertises page missing ${title}`);
@@ -44,6 +47,8 @@ const polesCss=fs.readFileSync('dist/assets/poles.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','polesDetailGrid','polesOrientationGrid','overflow-wrap: anywhere']) if(!polesCss.includes(s)) throw new Error(`poles responsive CSS guard failed: ${s}`);
 const academyCss=fs.readFileSync('dist/assets/academy.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','academyProgramsGrid','academyPeopleGrid','overflow-wrap: anywhere']) if(!academyCss.includes(s)) throw new Error(`Academy responsive CSS guard failed: ${s}`);
+const conseilCss=fs.readFileSync('dist/assets/conseil.css','utf8');
+for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','conseilServicesGrid','conseilMethodGrid','conseilMomentsGrid','overflow-wrap: anywhere']) if(!conseilCss.includes(s)) throw new Error(`Conseil responsive CSS guard failed: ${s}`);
 const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
 for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 console.log('OK: 4-pole architecture, redirects, navigation, Academy link and responsive CSS verified.');
