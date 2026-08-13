@@ -3,9 +3,11 @@ const burger = document.querySelector('.burger');
 const navDropdowns = [...document.querySelectorAll('.navDropdown')];
 const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-const setDropdownOpen = (dropdown, open) => {
+const setDropdownOpen = (dropdown, open, source = 'programmatic') => {
   dropdown.classList.toggle('is-open', open);
   dropdown.querySelector('.navDropdownToggle')?.setAttribute('aria-expanded', String(open));
+  if (open) dropdown.dataset.dropdownSource = source;
+  else delete dropdown.dataset.dropdownSource;
 };
 
 const closeDropdowns = exception => {
@@ -19,14 +21,18 @@ navDropdowns.forEach(dropdown => {
 
   toggle?.addEventListener('click', event => {
     event.stopPropagation();
-    const willOpen = !dropdown.classList.contains('is-open');
+    const wasOpenedByClick = dropdown.classList.contains('is-open') && dropdown.dataset.dropdownSource === 'click';
     closeDropdowns(dropdown);
-    setDropdownOpen(dropdown, willOpen);
+    setDropdownOpen(dropdown, !wasOpenedByClick, 'click');
+    dropdown.classList.toggle('ignore-hover', wasOpenedByClick);
   });
 
   if (canHover) {
-    dropdown.addEventListener('mouseenter', () => setDropdownOpen(dropdown, true));
+    dropdown.addEventListener('mouseenter', () => {
+      if (!dropdown.classList.contains('ignore-hover')) setDropdownOpen(dropdown, true, 'hover');
+    });
     dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('ignore-hover');
       if (!dropdown.contains(document.activeElement)) setDropdownOpen(dropdown, false);
     });
   }

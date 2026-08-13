@@ -53,7 +53,7 @@ for(const option of ['Formation / Intégrale Academy','Intégrale Expertises / p
 for(const forbidden of ['SMTP_HOST','SMTP_PORT','SMTP_USER','SMTP_PASS','CONTACT_EMAIL','Variables prévues']) if(contact.includes(forbidden)) throw new Error(`Technical contact implementation leaked in page: ${forbidden}`);
 const app=fs.readFileSync('dist/assets/app.js','utf8');
 for(const marker of ['subjectMap','data-contact-subject','contactFormStatus','[Intégrale Group]']) if(!app.includes(marker)) throw new Error(`Contact form behavior missing ${marker}`);
-for(const marker of ['setDropdownOpen','navDropdownToggle','aria-expanded','Escape','closeDropdowns']) if(!app.includes(marker)) throw new Error(`Pole dropdown behavior missing ${marker}`);
+for(const marker of ['setDropdownOpen','navDropdownToggle','aria-expanded','Escape','closeDropdowns','dropdownSource','ignore-hover']) if(!app.includes(marker)) throw new Error(`Pole dropdown behavior missing ${marker}`);
 const css=fs.readFileSync('dist/assets/styles.css','utf8');
 for(const s of ['overflow-x:hidden','@media(max-width:640px)','--gold:#F4C45A','grid-template-columns:1fr']) if(!css.includes(s)) throw new Error(`responsive/global CSS guard failed: ${s}`);
 for(const s of ['.navDropdownTrigger','.navDropdownToggle','.dropdownOverview','.dropdownPole','.navDropdown.is-open .dropdownMenu']) if(!css.includes(s)) throw new Error(`pole dropdown CSS missing ${s}`);
