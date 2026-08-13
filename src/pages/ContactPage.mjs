@@ -1,7 +1,7 @@
 import { company } from '../data/siteContent.mjs';
 
 export const route = '/contact';
-export const bodyClass = 'contactPage';
+export const bodyClass = 'contactRoute';
 export const buttons = `<a class="btn primary" href="#contact-form">Décrire mon besoin</a><a class="btn secondary" href="tel:${company.phoneHref}">${company.phone}</a>`;
 
 const heading = (eyebrow, title, text = '', dark = false, centered = false) => `

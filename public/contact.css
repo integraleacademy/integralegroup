@@ -1,5 +1,5 @@
 /* Contact — orientation, formulaire et prise de contact directe */
-.contactPage {
+.contactRoute {
   --contact-ink: #07131f;
   --contact-night: #06111c;
   --contact-navy: #0b2135;
@@ -17,19 +17,19 @@
   overflow-x: hidden;
 }
 
-.contactPage main { background: var(--contact-cream); }
-.contactPage .siteHeader {
+.contactRoute main { background: var(--contact-cream); }
+.contactRoute .siteHeader {
   min-height: 82px;
   padding: 0 clamp(22px, 5vw, 76px);
   background: rgba(5, 14, 24, .95);
   border-bottom: 1px solid rgba(255, 255, 255, .09);
   box-shadow: none;
 }
-.contactPage .brand { font-size: 15px; letter-spacing: .15em; }
-.contactPage .navLinks { gap: 28px; font-size: 13px; }
-.contactPage .navLinks a { font-weight: 760; }
+.contactRoute .brand { font-size: 15px; letter-spacing: .15em; }
+.contactRoute .navLinks { gap: 28px; font-size: 13px; }
+.contactRoute .navLinks a { font-weight: 760; }
 
-.contactPage .hero {
+.contactRoute .hero {
   position: relative;
   min-height: 760px;
   padding: 0;
@@ -39,7 +39,7 @@
     radial-gradient(circle at 12% 4%, rgba(244, 196, 90, .16), transparent 27%),
     linear-gradient(135deg, #050e18 0%, #0a1c2d 56%, #153b58 100%);
 }
-.contactPage .hero:before {
+.contactRoute .hero:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -48,15 +48,15 @@
   mask-image: linear-gradient(to bottom, #000, transparent 94%);
   pointer-events: none;
 }
-.contactPage .heroInner {
+.contactRoute .heroInner {
   position: relative;
   min-height: 760px;
   grid-template-columns: minmax(0, 1.02fr) minmax(440px, .98fr);
   gap: 68px;
   padding: 78px 0 90px;
 }
-.contactPage .heroCopy { position: relative; z-index: 2; }
-.contactPage .kicker {
+.contactRoute .heroCopy { position: relative; z-index: 2; }
+.contactRoute .kicker {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -65,8 +65,8 @@
   font-size: 12px;
   letter-spacing: .2em;
 }
-.contactPage .kicker:before { content: ""; width: 34px; height: 1px; background: currentColor; }
-.contactPage .hero h1 {
+.contactRoute .kicker:before { content: ""; width: 34px; height: 1px; background: currentColor; }
+.contactRoute .hero h1 {
   max-width: 720px;
   margin: 0;
   font-size: clamp(58px, 5.8vw, 82px);
@@ -74,16 +74,16 @@
   letter-spacing: -.058em;
   font-weight: 760;
 }
-.contactPage .hero h1 span { color: var(--contact-gold); }
-.contactPage .heroCopy > p:not(.kicker) {
+.contactRoute .hero h1 span { color: var(--contact-gold); }
+.contactRoute .heroCopy > p:not(.kicker) {
   max-width: 660px;
   margin: 28px 0 0;
   color: rgba(255, 255, 255, .72);
   font-size: 18px;
   line-height: 1.72;
 }
-.contactPage .heroActions { margin-top: 36px; }
-.contactPage .btn { min-height: 52px; padding: 14px 23px; border-radius: 12px; }
+.contactRoute .heroActions { margin-top: 36px; }
+.contactRoute .btn { min-height: 52px; padding: 14px 23px; border-radius: 12px; }
 
 .contactHeroVisual {
   min-height: 540px;
@@ -192,9 +192,9 @@
 .contactVisualFlow path, .contactVisualFlow circle { stroke: rgba(244, 196, 90, .11); stroke-width: 1; }
 .contactVisualFlow .alt { stroke: rgba(109, 168, 208, .17); }
 
-.contactPage section { position: relative; width: 100%; max-width: none; margin: 0; padding: 112px 0; }
-.contactPage section:before { content: none !important; }
-.contactPage section > * { width: min(100% - 72px, 1240px); margin-left: auto; margin-right: auto; }
+.contactRoute section { position: relative; width: 100%; max-width: none; margin: 0; padding: 112px 0; }
+.contactRoute section:before { content: none !important; }
+.contactRoute section > * { width: min(100% - 72px, 1240px); margin-left: auto; margin-right: auto; }
 .contactWrap { width: min(100% - 72px, 1240px) !important; }
 .contactHeading { max-width: 900px; margin: 0 0 54px; }
 .contactHeadingCenter { max-width: 980px; margin-left: auto; margin-right: auto; text-align: center; }
@@ -361,10 +361,10 @@
 .contactDirectActions span { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--contact-gold); font-size: 11px; font-weight: 950; }
 
 @media (max-width: 1120px) {
-  .contactPage .navLinks { gap: 15px; font-size: 12px; }
-  .contactPage .hero { min-height: auto; }
-  .contactPage .heroInner { min-height: auto; grid-template-columns: 1fr; padding: 76px 0; gap: 52px; }
-  .contactPage .hero h1 { max-width: 900px; }
+  .contactRoute .navLinks { gap: 15px; font-size: 12px; }
+  .contactRoute .hero { min-height: auto; }
+  .contactRoute .heroInner { min-height: auto; grid-template-columns: 1fr; padding: 76px 0; gap: 52px; }
+  .contactRoute .hero h1 { max-width: 900px; }
   .contactHeroVisual { min-height: 520px; }
   .contactOrientationGrid { grid-template-columns: 1fr 1fr; }
   .contactOrientationCard { min-height: 300px; }
@@ -378,13 +378,13 @@
 }
 
 @media (max-width: 760px) {
-  .contactPage .siteHeader { min-height: 68px; }
-  .contactPage .brand { font-size: 13px; }
-  .contactPage .heroInner { padding: 58px 0; }
-  .contactPage .hero h1 { font-size: clamp(42px, 12vw, 54px); }
-  .contactPage .heroCopy > p:not(.kicker) { font-size: 16px; line-height: 1.65; }
-  .contactPage .heroActions { display: grid; }
-  .contactPage .heroActions .btn { width: 100%; }
+  .contactRoute .siteHeader { min-height: 68px; }
+  .contactRoute .brand { font-size: 13px; }
+  .contactRoute .heroInner { padding: 58px 0; }
+  .contactRoute .hero h1 { font-size: clamp(42px, 12vw, 54px); }
+  .contactRoute .heroCopy > p:not(.kicker) { font-size: 16px; line-height: 1.65; }
+  .contactRoute .heroActions { display: grid; }
+  .contactRoute .heroActions .btn { width: 100%; }
   .contactHeroVisual { min-height: 465px; border-radius: 27px; }
   .contactVisualHeader { left: 18px; right: 18px; }
   .contactVisualMessage { left: 18px; top: 76px; width: calc(100% - 36px); min-height: 165px; }
@@ -393,8 +393,8 @@
   .contactVisualTopics article { min-height: 57px; }
   .contactVisualTopics article:nth-child(n+3) { display: none; }
   .contactVisualStatus { left: 18px; right: 18px; bottom: 17px; }
-  .contactPage section { padding: 76px 0; }
-  .contactPage section > *, .contactWrap { width: min(100% - 32px, 1240px) !important; }
+  .contactRoute section { padding: 76px 0; }
+  .contactRoute section > *, .contactWrap { width: min(100% - 32px, 1240px) !important; }
   .contactHeading { margin-bottom: 39px; }
   .contactHeading h2 { font-size: clamp(37px, 10vw, 47px); }
   .contactHeading > p:last-child:not(.contactEyebrow) { font-size: 16px; line-height: 1.65; }
