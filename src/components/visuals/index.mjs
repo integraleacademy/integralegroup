@@ -7,6 +7,8 @@ const rails=(n=3)=>`<div class="signalRails">${Array.from({length:n},()=>'<span>
 
 export const HeroVisualGroup=()=>panel('heroVisualGroup',`<div class="groupCore"><b>IG</b><span>formation & terrain</span><small>conseil · digital · outils métier</small></div><div class="growthPath"></div><div class="orbitNodes">${['Formation','Conseil','Digital','Suivi','Méthode','Emploi'].map(x=>`<em>${x}</em>`).join('')}</div><div class="barStack"><span></span><span></span><span></span></div><div class="microDashboard">${metric('Depuis','2018')}${metric('Academy','Socle')}${metric('Outils','Métier')}</div>${rails(3)}${dots(24)}`,'Structuration, croissance et interconnexion');
 
+export const AcademyVisual=()=>panel('academyHeroVisual',`<div class="academyVisualBrand"><i>IA</i><b>Intégrale Academy</b><small>Former pour agir</small></div><article class="academyVisualSince"><small>Depuis</small><b>2018</b></article><article class="academyVisualQuality"><i>Q</i><b>Qualiopi</b><small>Démarche qualité</small></article><article class="academyVisualCampus"><small>Campus</small><b>Puget-sur-Argens</b></article><div class="academyVisualCourses"><span>APS</span><span>A3P</span><span>SSIAP 1</span><span>VTC</span><span>BTS</span><span>VAE</span></div>`,'Intégrale Academy, organisme de formation professionnelle fondé en 2018 à Puget-sur-Argens');
+
 export const CertificationVisual=()=>panel('certificationVisual',`<div class="certDoc main"><header><strong>DSSP</strong><small>RNCP dossier</small></header><span></span><span></span><div class="certMatrix"><b>Blocs</b><i></i><i></i><i></i><i></i></div><ul><li>Référentiel</li><li>Preuves</li><li>Jury</li></ul></div><div class="certDoc side"><b>Conformité</b><small>France Compétences</small><em>86%</em></div><div class="evidenceStack"><span>Évaluation</span><span>Traçabilité</span><span>Qualité</span></div><div class="checkRing">✓</div><div class="sealMark">RNCP</div><div class="complianceLines"><span></span><span></span><span></span><span></span></div>`,'Système premium de validation, référentiel RNCP, preuves et conformité');
 
 export const ExpertisesVisual=()=>panel('expertisesVisual',`<div class="expertisesVisualCore"><span>INTÉGRALE</span><b>EXPERTISES</b><small>Ingénierie de certification</small></div><div class="expertisesVisualMetric registration"><b>05</b><span>En cours d’enregistrement</span></div><div class="expertisesVisualMetric writing"><b>05</b><span>En cours d’écriture</span></div><div class="expertisesVisualTags"><span>Référentiels</span><span>Évaluation</span><span>Traçabilité</span></div><div class="expertisesVisualSeal">France<br>compétences</div>`,'Intégrale Expertises, ingénierie de certification professionnelle et portefeuille de dix projets de titres');
@@ -34,7 +36,7 @@ export const ProcessTimelineVisual=(items=['Création','Vision','Pôles','Croiss
 export const visualForRoute=route=>({
  '/':HeroVisualGroup,
  '/les-poles-du-groupe':ExpertiseNetworkVisual,
- '/pole-formation':HeroVisualGroup,
+ '/pole-formation':AcademyVisual,
  '/integrale-expertises':ExpertisesVisual,
  '/pole-conseil-accompagnement':CompanyVisual,
  '/pole-developpement-web':ConnectVisual,
