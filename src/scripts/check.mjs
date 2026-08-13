@@ -5,7 +5,7 @@ const legacyRoutes=['/integrale-academy','/certifications','/integrale-certifica
 const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
 const expectedMarkers={
  '/':'Quatre expertises. Une même exigence.',
- '/les-poles-du-groupe':'Une structure mère qui développe des pôles complémentaires',
+ '/les-poles-du-groupe':'Quatre expertises.<br>Quatre portes d’entrée.',
  '/pole-formation':'Visiter le site Intégrale Academy',
  '/integrale-expertises':'Dossiers en cours d’instruction auprès de France compétences',
  '/pole-conseil-accompagnement':'Méthode',
@@ -20,6 +20,9 @@ const home=fs.readFileSync('dist/index.html','utf8');
 if(!home.includes('https://www.integraleacademy.com/')) throw new Error('external Academy link missing on home');
 for(const marker of ['homePage','/assets/home.css','homeHeaderCta','Un groupe qui relie stratégie et terrain.','Clément Vaillant','Faire simple, concret et durable.']) if(!home.includes(marker)) throw new Error(`homepage redesign missing ${marker}`);
 for(const href of ['/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web']) if(!home.includes(`href="${href}"`)) throw new Error(`homepage missing pole link ${href}`);
+const polesPage=fs.readFileSync('dist/les-poles-du-groupe/index.html','utf8');
+for(const marker of ['polesPage','/assets/poles.css','Intégrale Academy','Intégrale Expertises','Structurer pour mieux développer','Outils digitaux & solutions métiers','Des expertises autonomes, une méthode partagée.']) if(!polesPage.includes(marker)) throw new Error(`poles page redesign missing ${marker}`);
+for(const href of ['/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web']) if(!polesPage.includes(`href="${href}"`)) throw new Error(`poles page missing pole link ${href}`);
 for(const r of legacyRoutes){const html=fs.readFileSync(fileFor(r),'utf8'); if(!html.includes('location.replace')) throw new Error(`legacy route is not redirected: ${r}`);}
 const expertises=fs.readFileSync('dist/integrale-expertises/index.html','utf8');
 for(const title of ['Équipier de sécurité privée','Équipier de sécurité privée armé – catégorie D','Équipier de protection rapprochée','Expert en investigation et renseignement sur les cybermenaces','Dirigeant d’une société de sécurité privée','Opérateur de vidéoprotection et de surveillance électronique','Équipier de protection rapprochée armé – catégories B et D','Équipier de sécurité privée armé – catégories B et D','Équipier de sécurité privée événementiel','Agent de recherches privées']) if(!expertises.includes(title)) throw new Error(`Intégrale Expertises page missing ${title}`);
@@ -34,6 +37,8 @@ const css=fs.readFileSync('dist/assets/styles.css','utf8');
 for(const s of ['overflow-x:hidden','@media(max-width:640px)','--gold:#F4C45A','grid-template-columns:1fr']) if(!css.includes(s)) throw new Error(`responsive/global CSS guard failed: ${s}`);
 const homeCss=fs.readFileSync('dist/assets/home.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 520px)','grid-template-columns: 1fr','homePoleGrid','homeBentoGrid']) if(!homeCss.includes(s)) throw new Error(`homepage responsive CSS guard failed: ${s}`);
+const polesCss=fs.readFileSync('dist/assets/poles.css','utf8');
+for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','polesDetailGrid','polesOrientationGrid','overflow-wrap: anywhere']) if(!polesCss.includes(s)) throw new Error(`poles responsive CSS guard failed: ${s}`);
 const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
 for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 console.log('OK: 4-pole architecture, redirects, navigation, Academy link and responsive CSS verified.');

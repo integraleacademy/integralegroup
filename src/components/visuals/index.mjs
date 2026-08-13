@@ -23,7 +23,7 @@ export const HistoryVisual=()=>panel('historyVisual',`<div class="historyVisualS
 
 export const ContactVisual=()=>panel('contactVisual',`<div class="messageCard"><b>Projet</b><span></span><span></span><small>discussion qualifiée</small></div><div class="wave wave1"></div><div class="wave wave2"></div><div class="contactNode">@</div>`,'Connexion et échange projet');
 
-export const ExpertiseNetworkVisual=()=>panel('expertiseNetworkVisual',`<div class="expertiseCore">Intégrale<br>Group</div>${[['Expertises','cert'],['Webdesign','web'],['SaaS','saas'],['Connect','connect']].map(([t,i],n)=>`<article class="xp xp${n}"><i>${iconGlyph(i)}</i><b>${t}</b></article>`).join('')}<svg viewBox="0 0 900 420"><path d="M450 210L170 92M450 210L730 92M450 210L170 328M450 210L730 328"/></svg>`,'Schéma des quatre pôles d’expertise');
+export const ExpertiseNetworkVisual=()=>panel('expertiseNetworkVisual',`<div class="expertiseCore"><i>IG</i><b>Intégrale Group</b><small>une vision commune</small></div>${[['Formation','Compétences & emploi','of'],['Expertises','Certification','cert'],['Conseil','Organisation','growth'],['Digital','Outils métiers','web']].map(([t,s,i],n)=>`<article class="xp xp${n}"><i>${iconGlyph(i)}</i><div><b>${t}</b><small>${s}</small></div></article>`).join('')}<svg viewBox="0 0 900 420"><path d="M450 210L170 92M450 210L730 92M450 210L170 328M450 210L730 328"/></svg>`,'Les quatre pôles d’Intégrale Group : formation, expertises, conseil et digital');
 
 export const ModuleFlowVisual=()=>panel('moduleFlowVisual',`${['Processus','Automatisation','Dashboard'].map((x,i)=>`<article><i>0${i+1}</i><b>${x}</b><span></span><span></span></article>`).join('')}<div class="flowArrow"></div>`,'Processus vers automatisation puis dashboard');
 

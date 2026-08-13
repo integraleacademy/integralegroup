@@ -1,0 +1,980 @@
+/* Les pôles du groupe — continuité visuelle de la homepage, août 2026 */
+.polesPage {
+  --poles-ink: #081625;
+  --poles-navy: #071827;
+  --poles-blue: #123f64;
+  --poles-gold: #f4c45a;
+  --poles-cream: #fbfaf7;
+  --poles-soft: #f0f4f7;
+  --poles-border: rgba(8, 22, 37, .10);
+}
+
+.homeHeaderCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--poles-gold), #ffe29a);
+  color: #08131e;
+  font-size: 13px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  box-shadow: 0 16px 36px rgba(244, 196, 90, .18);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.homeHeaderCta:hover,
+.homeHeaderCta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(244, 196, 90, .26);
+}
+
+.polesPage main { background: var(--poles-cream); }
+
+.polesPage .hero {
+  position: relative;
+  min-height: 780px;
+  padding: 92px 0 112px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 22%, rgba(244, 196, 90, .19), transparent 25%),
+    radial-gradient(circle at 88% 45%, rgba(39, 113, 168, .27), transparent 31%),
+    linear-gradient(135deg, #06121f 0%, #09233a 58%, #123f64 100%);
+}
+
+.polesPage .hero::before,
+.polesSynergySection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .28;
+  background-image: radial-gradient(rgba(255, 255, 255, .20) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: linear-gradient(to bottom, #000, transparent 92%);
+}
+
+.polesPage .hero::after {
+  content: "";
+  position: absolute;
+  right: -210px;
+  bottom: -300px;
+  width: 720px;
+  height: 720px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 85px rgba(255, 255, 255, .025), 0 0 0 170px rgba(255, 255, 255, .018);
+}
+
+.polesPage .heroInner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 48px, 1320px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(520px, .95fr);
+  gap: 76px;
+}
+
+.polesPage .heroCopy { min-width: 0; }
+
+.polesPage .kicker {
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  color: #e7edf2;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .08);
+}
+
+.polesPage .kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-right: 11px;
+  border-radius: 50%;
+  background: var(--poles-gold);
+  box-shadow: 0 0 16px rgba(244, 196, 90, .55);
+}
+
+.polesPage .hero h1 {
+  max-width: 780px;
+  margin: 31px 0 24px;
+  font-size: clamp(58px, 6.2vw, 88px);
+  line-height: .98;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+
+.polesPage .hero h1 span {
+  display: block;
+  color: var(--poles-gold);
+}
+
+.polesPage .heroCopy > p:not(.kicker) {
+  max-width: 720px;
+  color: #cbd5dd;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.62;
+}
+
+.polesPage .heroActions {
+  display: grid;
+  gap: 27px;
+  margin-top: 36px;
+}
+
+.polesHeroButtons,
+.polesHeroProof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.polesHeroButtons .btn { min-width: 218px; }
+.polesHeroButtons .btn span { margin-left: 8px; }
+
+.polesHeroProof span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 13px 8px 9px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .07);
+  color: #dce4ea;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.polesHeroProof i {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(244, 196, 90, .16);
+  color: var(--poles-gold);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesPage .heroVisualSlot { min-width: 0; }
+
+.polesPage .expertiseNetworkVisual {
+  min-height: 570px;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 16% 16%, rgba(244, 196, 90, .25), transparent 25%),
+    radial-gradient(circle at 86% 78%, rgba(91, 151, 198, .26), transparent 28%),
+    linear-gradient(145deg, #071827, #0e3554);
+}
+
+.polesPage .expertiseNetworkVisual::after {
+  content: "04";
+  position: absolute;
+  right: 32px;
+  bottom: -27px;
+  color: rgba(255, 255, 255, .045);
+  font-size: 170px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.polesPage .expertiseCore {
+  z-index: 3;
+  width: 180px;
+  height: 145px;
+  color: #fff;
+}
+
+.polesPage .expertiseCore i {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--poles-gold);
+  color: #081522;
+  font-size: 20px;
+  font-style: normal;
+}
+
+.polesPage .expertiseCore b { color: #fff; font-size: 18px; }
+.polesPage .expertiseCore small { margin-top: 5px; color: #9eafbc; font-size: 10px; text-transform: uppercase; letter-spacing: .11em; }
+
+.polesPage .xp {
+  z-index: 3;
+  width: 200px;
+  min-height: 92px;
+  padding: 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, .09);
+  backdrop-filter: blur(12px);
+}
+
+.polesPage .xp > div { display: grid; gap: 4px; }
+.polesPage .xp b { font-size: 15px; }
+.polesPage .xp small { color: #aebbc6; font-size: 11px; }
+.polesPage .xp:nth-of-type(2) i { background: rgba(244, 196, 90, .2); }
+.polesPage .xp:nth-of-type(3) i { background: rgba(105, 163, 152, .2); color: #8bc1b7; }
+.polesPage .xp:nth-of-type(4) i { background: rgba(120, 151, 193, .2); color: #9cb8dc; }
+
+.polesVisionSection {
+  padding: 125px 0 132px;
+  background: var(--poles-cream);
+}
+
+.polesVisionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(560px, 1.15fr);
+  align-items: center;
+  gap: 86px;
+}
+
+.polesVisionCopy > span,
+.polesSectionHeading > span,
+.polesSynergyCopy > span,
+.polesOrientationLead > span,
+.polesCta > div > span {
+  display: inline-flex;
+  margin-bottom: 17px;
+  color: #a47721;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.polesVisionCopy h2,
+.polesSectionHeading h2,
+.polesSynergyCopy h2,
+.polesOrientationLead h2,
+.polesCta h2 {
+  margin: 0 0 20px;
+  color: var(--poles-ink);
+  font-size: clamp(42px, 4.6vw, 66px);
+  line-height: 1.03;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+
+.polesVisionCopy > p,
+.polesSectionHeading > p,
+.polesSynergyCopy > p,
+.polesOrientationLead > p,
+.polesCta > div > p {
+  margin: 0;
+  color: #68747e;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.polesVisionStatement {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  margin-top: 39px;
+  padding: 22px;
+  border: 1px solid var(--poles-border);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(8, 22, 37, .06);
+}
+
+.polesVisionStatement i {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--poles-navy);
+  color: var(--poles-gold);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesVisionStatement p { margin: 0; color: #5e6b76; font-size: 15px; line-height: 1.6; }
+.polesVisionStatement strong { display: block; color: var(--poles-ink); font-size: 17px; }
+
+.polesCompass {
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+  border: 1px solid var(--poles-border);
+  border-radius: 40px;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(244, 196, 90, .20), transparent 24%),
+    linear-gradient(145deg, #0e3a5c, #071827 72%);
+  box-shadow: 0 32px 80px rgba(8, 22, 37, .18);
+}
+
+.polesCompass::before {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 29px;
+}
+
+.compassTitle {
+  position: absolute;
+  left: 48px;
+  top: 42px;
+  z-index: 3;
+  color: var(--poles-gold);
+  font-size: 10px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+.compassCore {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 176px;
+  height: 176px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(244, 196, 90, .23);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .07);
+  box-shadow: 0 0 0 38px rgba(255, 255, 255, .025);
+  text-align: center;
+}
+
+.compassCore i {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--poles-gold);
+  color: #081522;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.compassCore b { color: #fff; font-size: 16px; }
+.compassCore small { color: #94a7b6; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
+
+.polesCompass article {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 2px 13px;
+  width: 190px;
+  min-height: 92px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 23px;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+.polesCompass article > i {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #144d74;
+  color: var(--poles-gold);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesCompass article b { font-size: 14px; }
+.polesCompass article small { color: #a9b7c2; font-size: 10px; }
+.polesCompass article.academy { left: 45px; top: 105px; }
+.polesCompass article.expertises { right: 45px; top: 105px; }
+.polesCompass article.conseil { left: 45px; bottom: 70px; }
+.polesCompass article.digital { right: 45px; bottom: 70px; }
+.polesCompass article.expertises > i { background: #e2aa34; color: #081522; }
+.polesCompass article.conseil > i { background: #568c82; color: #fff; }
+.polesCompass article.digital > i { background: #607da8; color: #fff; }
+
+.polesCompass svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 22px;
+}
+
+.polesCompass path,
+.polesCompass circle {
+  fill: none;
+  stroke: rgba(244, 196, 90, .45);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 7 12;
+}
+
+.polesCompass circle { stroke: rgba(105, 163, 152, .35); stroke-dasharray: 4 11; }
+
+.polesDetailSection {
+  padding: 125px 0 140px;
+  background: var(--poles-soft);
+}
+
+.polesSectionHeading { max-width: 980px; margin-bottom: 58px; }
+.polesSectionHeading.centered { margin-left: auto; margin-right: auto; text-align: center; }
+
+.polesDetailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.polesDetailCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--poles-border);
+  border-radius: 36px;
+  box-shadow: 0 25px 65px rgba(8, 22, 37, .09);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.polesDetailCard:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 34px 80px rgba(8, 22, 37, .14);
+}
+
+.polesCardVisual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 225px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #17496e, #081a29);
+  color: #fff;
+}
+
+.polesDetailCard.expertises .polesCardVisual { background: linear-gradient(140deg, #f2c65c, #d59b2b); color: #091827; }
+.polesDetailCard.conseil .polesCardVisual { background: linear-gradient(140deg, #5d9087, #2c5b55); }
+.polesDetailCard.digital .polesCardVisual { background: linear-gradient(140deg, #6784ae, #2d466d); }
+
+.polesCardVisual::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .10);
+  box-shadow: 0 0 0 52px rgba(255, 255, 255, .05);
+}
+
+.polesCardVisual > span {
+  position: absolute;
+  left: 35px;
+  top: 32px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .17em;
+}
+
+.polesCardVisual > i { position: relative; z-index: 2; font-style: normal; }
+
+.polesCardVisual svg {
+  width: 78px;
+  height: 78px;
+  fill: none;
+  stroke: var(--poles-gold);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.polesDetailCard.expertises .polesCardVisual svg { stroke: #091827; }
+
+.polesCardVisual > b {
+  position: absolute;
+  right: 21px;
+  bottom: -34px;
+  color: rgba(255, 255, 255, .12);
+  font-size: 155px;
+  line-height: 1;
+}
+
+.polesDetailCard.expertises .polesCardVisual > b { color: rgba(8, 22, 37, .08); }
+
+.polesCardBody {
+  display: flex;
+  flex-direction: column;
+  min-height: 515px;
+  padding: 35px 38px 38px;
+  background: #e8f0f5;
+}
+
+.polesDetailCard.expertises .polesCardBody { background: #fff3d9; }
+.polesDetailCard.conseil .polesCardBody { background: #e8f2ef; }
+.polesDetailCard.digital .polesCardBody { background: #e8eef7; }
+
+.polesCardIdentity {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 15px;
+}
+
+.polesCardIdentity > i {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #123f64;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesDetailCard.expertises .polesCardIdentity > i { background: #fff; color: #a16b10; }
+.polesDetailCard.conseil .polesCardIdentity > i { background: #fff; color: #4a8177; }
+.polesDetailCard.digital .polesCardIdentity > i { background: #fff; color: #5876a2; }
+
+.polesCardIdentity h3 {
+  margin: 0;
+  color: var(--poles-ink);
+  font-size: 26px;
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+
+.polesCardBody h4 {
+  margin: 28px 0 13px;
+  color: var(--poles-ink);
+  font-size: 31px;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.polesCardBody > p {
+  margin: 0;
+  color: #62717d;
+  font-size: 16px;
+  line-height: 1.67;
+}
+
+.polesCardBody ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 25px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.polesCardBody li {
+  padding: 9px 13px;
+  border: 1px solid rgba(8, 22, 37, .07);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  color: #26435b;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.polesCardBody > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 25px;
+  border-top: 1px solid rgba(8, 22, 37, .10);
+  color: #123f64;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+}
+
+.polesCardBody > a b {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #123f64;
+  color: #fff;
+}
+
+.polesDetailCard.expertises .polesCardBody > a { color: #9b6812; }
+.polesDetailCard.expertises .polesCardBody > a b { background: #e2a932; color: #081522; }
+.polesDetailCard.conseil .polesCardBody > a { color: #3d746a; }
+.polesDetailCard.conseil .polesCardBody > a b { background: #4f887d; }
+.polesDetailCard.digital .polesCardBody > a { color: #526f9b; }
+.polesDetailCard.digital .polesCardBody > a b { background: #5d7aa7; }
+
+.polesSynergySection {
+  position: relative;
+  overflow: hidden;
+  padding: 125px 0 135px;
+  background:
+    radial-gradient(circle at 92% 5%, rgba(244, 196, 90, .20), transparent 23%),
+    linear-gradient(135deg, #071827, #0c3150 70%, #061521);
+  color: #fff;
+}
+
+.polesSynergyInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(560px, 1.14fr);
+  align-items: center;
+  gap: 78px;
+}
+
+.polesSynergyCopy h2 { color: #fff; }
+.polesSynergyCopy > p { color: #c5d0d8; }
+.polesSynergyCopy .btn { width: max-content; margin-top: 33px; }
+
+.polesMethodGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.polesMethodGrid article {
+  min-height: 230px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 27px;
+  background: rgba(255, 255, 255, .075);
+  backdrop-filter: blur(12px);
+}
+
+.polesMethodGrid article:last-child { background: var(--poles-gold); color: #081522; }
+
+.polesMethodGrid i {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .10);
+  color: var(--poles-gold);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesMethodGrid article:last-child i { background: #081522; color: var(--poles-gold); }
+.polesMethodGrid h3 { margin: 0 0 11px; font-size: 24px; letter-spacing: -.03em; }
+.polesMethodGrid p { margin: 0; color: #bfcbd3; font-size: 14px; line-height: 1.6; }
+.polesMethodGrid article:last-child p { color: #554317; }
+
+.polesLeversSection {
+  padding: 125px 0 135px;
+  background: var(--poles-cream);
+}
+
+.polesLeversGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.polesLeversGrid article {
+  position: relative;
+  min-height: 310px;
+  overflow: hidden;
+  padding: 32px 28px;
+  border: 1px solid var(--poles-border);
+  border-radius: 29px;
+  background: #fff;
+  box-shadow: 0 20px 55px rgba(8, 22, 37, .06);
+}
+
+.polesLeversGrid article::after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  bottom: -55px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #edf2f5;
+}
+
+.polesLeversGrid i {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 42px;
+  border-radius: 15px;
+  background: var(--poles-navy);
+  color: var(--poles-gold);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesLeversGrid article:nth-child(2) i { background: #e4ab35; color: #081522; }
+.polesLeversGrid article:nth-child(3) i { background: #568c82; color: #fff; }
+.polesLeversGrid article:nth-child(4) i { background: #607da8; color: #fff; }
+.polesLeversGrid h3 { position: relative; z-index: 1; margin: 0 0 14px; color: var(--poles-ink); font-size: 23px; line-height: 1.15; letter-spacing: -.035em; }
+.polesLeversGrid p { position: relative; z-index: 1; margin: 0; color: #68747e; font-size: 15px; line-height: 1.65; }
+
+.polesOrientationSection {
+  padding: 125px 0 135px;
+  background: var(--poles-soft);
+}
+
+.polesOrientationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(560px, 1.08fr);
+  gap: 27px;
+}
+
+.polesOrientationLead {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: 52px;
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 95% 8%, rgba(244, 196, 90, .27), transparent 25%),
+    #091d2e;
+  color: #fff;
+  box-shadow: 0 28px 75px rgba(8, 22, 37, .15);
+}
+
+.polesOrientationLead::after {
+  content: "IG";
+  position: absolute;
+  right: 35px;
+  bottom: -35px;
+  color: rgba(255, 255, 255, .045);
+  font-size: 180px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.polesOrientationLead h2 { position: relative; z-index: 1; color: #fff; font-size: clamp(40px, 4.2vw, 60px); }
+.polesOrientationLead > p { position: relative; z-index: 1; color: #c5d0d8; }
+.polesOrientationLead .btn { position: relative; z-index: 1; width: max-content; margin-top: 32px; }
+
+.polesOrientationLinks { display: grid; gap: 13px; }
+
+.polesOrientationLinks > a {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  min-height: 116px;
+  padding: 22px 24px;
+  border: 1px solid var(--poles-border);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(8, 22, 37, .05);
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+
+.polesOrientationLinks > a:hover,
+.polesOrientationLinks > a:focus-visible { transform: translateX(6px); box-shadow: 0 24px 55px rgba(8, 22, 37, .10); }
+
+.polesOrientationLinks > a > i {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 17px;
+  background: #123f64;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.polesOrientationLinks > a.expertises > i { background: #e4ab35; color: #081522; }
+.polesOrientationLinks > a.conseil > i { background: #568c82; }
+.polesOrientationLinks > a.digital > i { background: #607da8; }
+.polesOrientationLinks span { display: grid; gap: 7px; min-width: 0; }
+.polesOrientationLinks b { color: var(--poles-ink); font-size: 19px; line-height: 1.18; letter-spacing: -.02em; }
+.polesOrientationLinks small { color: #71808c; font-size: 13px; }
+.polesOrientationLinks em { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #edf2f5; color: #123f64; font-style: normal; font-weight: 950; }
+
+.polesCtaSection {
+  padding: 88px 0 108px;
+  background: var(--poles-cream);
+}
+
+.polesCta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  align-items: center;
+  gap: 55px;
+  min-height: 390px;
+  overflow: hidden;
+  padding: 62px;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 90% 30%, rgba(244, 196, 90, .24), transparent 23%),
+    linear-gradient(135deg, #123f64, #071827 75%);
+  color: #fff;
+  box-shadow: 0 30px 80px rgba(8, 22, 37, .18);
+}
+
+.polesCta h2 { color: #fff; }
+.polesCta > div > p { max-width: 760px; color: #c4d0d8; }
+.polesCta > div > div { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+.polesCtaMark {
+  display: grid;
+  place-items: center;
+  width: 145px;
+  height: 145px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--poles-gold);
+  box-shadow: 0 0 0 48px rgba(255, 255, 255, .04), 0 0 0 49px rgba(255, 255, 255, .09);
+  color: #081522;
+  font-size: 43px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+@media (max-width: 1120px) {
+  .homeHeaderCta { display: none; }
+  .polesPage .heroInner,
+  .polesVisionGrid,
+  .polesSynergyInner,
+  .polesOrientationGrid { grid-template-columns: 1fr; }
+  .polesPage .heroInner { gap: 60px; }
+  .polesPage .heroCopy { max-width: 850px; }
+  .polesPage .expertiseNetworkVisual { min-height: 520px; }
+  .polesVisionGrid,
+  .polesSynergyInner { gap: 65px; }
+  .polesVisionCopy { max-width: 850px; }
+  .polesCompass { width: 100%; }
+  .polesDetailGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .polesCardBody { min-height: 565px; padding: 32px; }
+  .polesCardBody h4 { font-size: 28px; }
+  .polesMethodGrid { max-width: 850px; }
+  .polesLeversGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .polesLeversGrid article { min-height: 270px; }
+  .polesOrientationLead { min-height: 500px; }
+}
+
+@media (max-width: 760px) {
+  .polesPage .hero { min-height: auto; padding: 66px 0 80px; }
+  .polesPage .heroInner { gap: 46px; }
+  .polesPage .hero h1 { font-size: clamp(48px, 12vw, 68px); }
+  .polesPage .expertiseNetworkVisual { min-height: 480px; }
+  .polesVisionSection,
+  .polesDetailSection,
+  .polesSynergySection,
+  .polesLeversSection,
+  .polesOrientationSection { padding-top: 92px; padding-bottom: 100px; }
+  .polesDetailGrid,
+  .polesMethodGrid { grid-template-columns: 1fr; }
+  .polesCardBody { min-height: 500px; }
+  .polesSynergyCopy .btn { width: 100%; }
+  .polesMethodGrid article { min-height: 210px; }
+  .polesOrientationLead { min-height: auto; padding: 43px 38px; }
+  .polesCta { grid-template-columns: 1fr; padding: 49px 40px; }
+  .polesCtaMark { grid-row: 1; width: 105px; height: 105px; margin-left: 0; font-size: 34px; }
+}
+
+@media (max-width: 640px) {
+  .polesPage .heroInner { width: min(100% - 32px, 1320px); }
+  .polesPage .kicker { font-size: 10px; letter-spacing: .12em; }
+  .polesPage .hero h1 { margin-top: 25px; font-size: clamp(43px, 13.5vw, 58px); overflow-wrap: normal; }
+  .polesPage .heroCopy > p:not(.kicker) { font-size: 16px; }
+  .polesHeroButtons,
+  .polesHeroProof { width: 100%; }
+  .polesHeroButtons .btn { width: 100%; }
+  .polesHeroProof { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .polesHeroProof span { min-width: 0; white-space: normal; }
+  .polesPage .expertiseNetworkVisual { min-height: auto; }
+  .polesPage .expertiseNetworkVisual::after { display: none; }
+  .polesPage .expertiseCore { height: auto; padding: 22px; }
+  .polesPage .xp { width: 100%; }
+  .polesVisionCopy h2,
+  .polesSectionHeading h2,
+  .polesSynergyCopy h2,
+  .polesOrientationLead h2,
+  .polesCta h2 { font-size: clamp(36px, 10.6vw, 46px); overflow-wrap: anywhere; }
+  .polesVisionCopy > p,
+  .polesSectionHeading > p,
+  .polesSynergyCopy > p,
+  .polesOrientationLead > p,
+  .polesCta > div > p { font-size: 16px; }
+  .polesVisionStatement { grid-template-columns: 52px minmax(0, 1fr); padding: 18px; }
+  .polesVisionStatement i { width: 52px; height: 52px; }
+  .polesCompass { display: grid; gap: 12px; min-height: auto; padding: 26px; border-radius: 30px; }
+  .polesCompass::before { inset: 13px; border-radius: 22px; }
+  .compassTitle,
+  .compassCore,
+  .polesCompass article { position: relative; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; width: 100%; }
+  .compassTitle { padding: 6px 4px 12px; }
+  .compassCore { height: auto; min-height: 145px; transform: none; border-radius: 24px; box-shadow: none; }
+  .polesCompass article { min-height: 80px; }
+  .polesCompass svg { display: none; }
+  .polesSectionHeading { margin-bottom: 42px; }
+  .polesCardVisual { min-height: 190px; }
+  .polesCardVisual > span { left: 25px; top: 24px; font-size: 9px; }
+  .polesCardVisual svg { width: 64px; height: 64px; }
+  .polesCardBody { min-height: auto; padding: 28px 24px 30px; }
+  .polesCardIdentity { grid-template-columns: 44px minmax(0, 1fr); }
+  .polesCardIdentity > i { width: 44px; height: 44px; }
+  .polesCardIdentity h3 { font-size: 23px; overflow-wrap: anywhere; }
+  .polesCardBody h4 { font-size: 27px; }
+  .polesCardBody > a { margin-top: 34px; }
+  .polesLeversGrid { grid-template-columns: 1fr; }
+  .polesLeversGrid article { min-height: 245px; }
+  .polesOrientationLead { padding: 35px 25px; border-radius: 29px; }
+  .polesOrientationLead .btn { width: 100%; }
+  .polesOrientationLinks > a { grid-template-columns: 48px minmax(0, 1fr) 36px; gap: 13px; padding: 18px; }
+  .polesOrientationLinks > a > i { width: 48px; height: 48px; }
+  .polesOrientationLinks b { font-size: 16px; overflow-wrap: anywhere; }
+  .polesOrientationLinks small { font-size: 11px; }
+  .polesOrientationLinks em { width: 36px; height: 36px; }
+  .polesCtaSection { padding: 65px 0 78px; }
+  .polesCta { padding: 38px 24px; border-radius: 29px; }
+  .polesCta > div > div { display: grid; }
+}
+
+@media (max-width: 420px) {
+  .polesHeroProof { grid-template-columns: 1fr; }
+  .polesOrientationLinks > a { grid-template-columns: 44px minmax(0, 1fr); }
+  .polesOrientationLinks > a > i { width: 44px; height: 44px; }
+  .polesOrientationLinks em { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polesPage *,
+  .polesPage *::before,
+  .polesPage *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
