@@ -4,7 +4,7 @@ const menuRoutes=['/','/les-poles-du-groupe','/pole-formation','/integrale-exper
 const legacyRoutes=['/integrale-academy','/certifications','/integrale-certifications','/pole-certification-ingenierie','/conseil-accompagnement','/ecosysteme','/webdesign','/developpement-saas','/integrale-connect'];
 const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
 const expectedMarkers={
- '/':'Les 4 pôles du groupe',
+ '/':'Quatre expertises. Une même exigence.',
  '/les-poles-du-groupe':'Une structure mère qui développe des pôles complémentaires',
  '/pole-formation':'Visiter le site Intégrale Academy',
  '/integrale-expertises':'Dossiers en cours d’instruction auprès de France compétences',
@@ -18,6 +18,8 @@ const seen=new Set();
 for(const route of routes){const file=fileFor(route); if(!fs.existsSync(file)) throw new Error(`${route} missing`); const html=fs.readFileSync(file,'utf8'); if(html.length<4500) throw new Error(`${route} lacks complete content`); const marker=expectedMarkers[route]; if(Array.isArray(marker)){if(!marker.some(m=>html.toLowerCase().includes(m))) throw new Error(`${route} missing one of ${marker.join(', ')}`);} else if(!html.includes(marker)) throw new Error(`${route} missing own marker ${marker}`); if(seen.has(html)) throw new Error(`${route} duplicates another page HTML`); seen.add(html); for(const r of menuRoutes){if(!html.includes(`href="${r}"`) && !(route==='/'&&r==='/')) throw new Error(`${route} missing main menu link ${r}`);} }
 const home=fs.readFileSync('dist/index.html','utf8');
 if(!home.includes('https://www.integraleacademy.com/')) throw new Error('external Academy link missing on home');
+for(const marker of ['homePage','/assets/home.css','homeHeaderCta','Un groupe qui relie stratégie et terrain.','Clément Vaillant','Faire simple, concret et durable.']) if(!home.includes(marker)) throw new Error(`homepage redesign missing ${marker}`);
+for(const href of ['/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web']) if(!home.includes(`href="${href}"`)) throw new Error(`homepage missing pole link ${href}`);
 for(const r of legacyRoutes){const html=fs.readFileSync(fileFor(r),'utf8'); if(!html.includes('location.replace')) throw new Error(`legacy route is not redirected: ${r}`);}
 const expertises=fs.readFileSync('dist/integrale-expertises/index.html','utf8');
 for(const title of ['Équipier de sécurité privée','Équipier de sécurité privée armé – catégorie D','Équipier de protection rapprochée','Expert en investigation et renseignement sur les cybermenaces','Dirigeant d’une société de sécurité privée','Opérateur de vidéoprotection et de surveillance électronique','Équipier de protection rapprochée armé – catégories B et D','Équipier de sécurité privée armé – catégories B et D','Équipier de sécurité privée événementiel','Agent de recherches privées']) if(!expertises.includes(title)) throw new Error(`Intégrale Expertises page missing ${title}`);
@@ -30,6 +32,8 @@ const dev=fs.readFileSync('dist/pole-developpement-web/index.html','utf8');
 for(const s of ['Site vitrine premium','CRM métier','Intégrale Connect CRM']) if(!dev.includes(s)) throw new Error(`development web page missing ${s}`);
 const css=fs.readFileSync('dist/assets/styles.css','utf8');
 for(const s of ['overflow-x:hidden','@media(max-width:640px)','--gold:#F4C45A','grid-template-columns:1fr']) if(!css.includes(s)) throw new Error(`responsive/global CSS guard failed: ${s}`);
+const homeCss=fs.readFileSync('dist/assets/home.css','utf8');
+for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 520px)','grid-template-columns: 1fr','homePoleGrid','homeBentoGrid']) if(!homeCss.includes(s)) throw new Error(`homepage responsive CSS guard failed: ${s}`);
 const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
 for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 console.log('OK: 4-pole architecture, redirects, navigation, Academy link and responsive CSS verified.');

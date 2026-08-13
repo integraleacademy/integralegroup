@@ -1,13 +1,209 @@
-import { card, cta, title } from '../scripts/html.mjs';
 export const route = '/';
-export const buttons = '<a class="btn primary" href="/les-poles-du-groupe">Découvrir les pôles</a><a class="btn secondary" href="/contact">Contacter le groupe</a>';
-const academy=['Agent de Prévention et de Sécurité — APS','Agent de Protection Physique des Personnes — A3P','Dirigeant d’Entreprise de Sécurité Privée — DESP','SSIAP 1','Chauffeur VTC','BTS en alternance'];
-export function render(){
-const mission=[['Former','Développer des compétences utiles, concrètes et directement exploitables dans les environnements professionnels.'],['Accompagner','Aider les dirigeants, équipes et organismes à franchir des étapes structurantes avec méthode.'],['Structurer','Installer des process, outils et parcours lisibles pour soutenir la qualité et la croissance.']];
-const expertises=[['Formation professionnelle','Conception, organisation et développement de formations réglementées et professionnalisantes.'],['Conseil aux organismes de formation','Accompagnement stratégique, structuration administrative, amélioration des process, développement commercial et optimisation de l’organisation.'],['Certifications et ingénierie pédagogique','Création de parcours, référentiels, blocs de compétences, dossiers de certification et dispositifs d’évaluation.'],['Digitalisation','Mise en place d’outils digitaux, plateformes internes, automatisations, CRM, espaces apprenants et solutions de suivi.'],['Développement commercial','Positionnement, stratégie d’offre, amélioration de la conversion, visibilité web, partenariats et structuration de l’activité.'],['Accompagnement réglementaire','Appui dans la compréhension des obligations liées à la formation professionnelle, aux certifications, à la qualité et aux dispositifs de financement.']];
-const conseil=['Création ou développement d’un organisme de formation','Structuration administrative et commerciale','Amélioration de l’expérience apprenant','Mise en place de process internes','Digitalisation des outils de gestion','Développement d’offres de formation','Préparation de dossiers de certification','Accompagnement stratégique du dirigeant'];
-const timeline=['Création et développement des premières activités de formation','Structuration d’Intégrale Academy','Développement des formations réglementées et de l’alternance','Création de nouveaux pôles autour du conseil, de la certification et des outils digitaux','Ambition : construire un groupe de référence dans la formation et l’accompagnement professionnel'];
-const methode=[['Diagnostic','Comprendre la situation, les objectifs et les contraintes.'],['Structuration','Créer une organisation claire, lisible et efficace.'],['Mise en œuvre','Déployer les solutions concrètes sur le terrain.'],['Suivi','Mesurer, ajuster et améliorer dans la durée.']];
-const poles=[['Pôle formation','Intégrale Academy est un organisme de formation spécialisé dans les métiers de la sécurité privée, de la sécurité incendie, du transport VTC et de l’alternance.','/pole-formation',['APS','SSIAP 1','VTC','BTS'],'of'],['Intégrale Expertises','Ingénierie de certification professionnelle, conception de titres, référentiels, évaluations et préparation du déploiement auprès de centres partenaires.','/integrale-expertises',['Titres professionnels','France compétences','Partenariats centres'],'cert'],['Pôle conseil et accompagnement','Accompagnement stratégique, structuration administrative, amélioration des process, développement commercial et optimisation de l’organisation.','/pole-conseil-accompagnement',['Stratégie','Process','Digitalisation'],'growth'],['Pôle développement web','Mise en place d’outils digitaux, plateformes internes, automatisations, CRM, espaces apprenants et solutions de suivi.','/pole-developpement-web',['Webdesign','SaaS','CRM','Connect'],'web']];
-return `<section>${title('Notre mission','Accompagner la montée en compétence','Notre mission est d’accompagner la montée en compétence des individus, des entreprises et des organismes de formation grâce à des solutions concrètes, structurées et adaptées au terrain.')}<div class="grid three">${mission.map(x=>card(x[0],x[1])).join('')}</div></section><section id="activites">${title('Les 4 pôles du groupe','Des expertises complémentaires pour développer des activités solides')}<div class="grid four poleCards">${poles.map(p=>card(...p).replace('Découvrir','Découvrir ce pôle')).join('')}</div></section><section class="band academyBand"><div>${title('Intégrale Academy','Intégrale Academy, le pôle formation du groupe','Intégrale Academy est un organisme de formation spécialisé dans les métiers de la sécurité privée, de la sécurité incendie, du transport VTC et de l’alternance. L’école accompagne les stagiaires, apprentis et professionnels dans des parcours exigeants, concrets et orientés vers l’emploi.')}<a class="btn primary" href="https://www.integraleacademy.com/" target="_blank" rel="noopener noreferrer">Découvrir Intégrale Academy</a></div><div class="pillGrid">${academy.map(x=>`<span class="reveal">${x}</span>`).join('')}</div></section><section>${title('Conseil & accompagnement','Structurer, développer et professionnaliser','Au-delà de la formation, Intégrale Group accompagne les dirigeants, organismes de formation et porteurs de projets dans la structuration, le développement et la professionnalisation de leur activité.')}<div class="grid four compactCards">${conseil.map(x=>card(x,'Un accompagnement concret pour clarifier les priorités, sécuriser l’organisation et gagner en efficacité.')).join('')}</div><p class="notice reveal">Notre approche est simple : comprendre le terrain, identifier les blocages, structurer les solutions et accompagner leur mise en œuvre.</p></section><section>${title('Notre histoire','Une trajectoire progressive autour de la formation professionnelle','Intégrale Group est né d’une volonté : construire un écosystème solide autour de la formation professionnelle, de l’accompagnement et de l’innovation pédagogique. À partir d’une expertise terrain dans les métiers de la sécurité et de la formation réglementée, le groupe s’est progressivement développé vers de nouveaux projets, de nouveaux outils et de nouvelles solutions pour accompagner les apprenants, les entreprises et les organismes.')}<div class="timelineModern">${timeline.map((x,i)=>`<article class="reveal"><b>0${i+1}</b><p>${x}</p></article>`).join('')}</div></section><section>${title('Notre méthode','Quatre étapes pour passer de l’idée à l’exécution')}<div class="grid four">${methode.map(x=>card(x[0],x[1])).join('')}</div></section>${cta('Vous souhaitez structurer, développer ou digitaliser votre activité ?','Intégrale Group accompagne les projets ambitieux dans le domaine de la formation, du conseil et du développement des compétences.','Nous contacter','/contact','Découvrir Intégrale Academy','https://www.integraleacademy.com/')}`;
+export const bodyClass = 'homePage';
+
+export const buttons = `
+  <div class="homeHeroButtons">
+    <a class="btn primary" href="#home-poles">Découvrir les pôles <span aria-hidden="true">→</span></a>
+    <a class="btn secondary" href="/notre-histoire">Notre histoire</a>
+  </div>
+  <div class="homeProof" aria-label="Repères Intégrale Group">
+    <span><i class="goldDot"></i>Depuis 2018</span>
+    <span><i class="greenDot"></i>4 pôles complémentaires</span>
+    <span><i class="blueDot"></i>Approche terrain</span>
+  </div>`;
+
+const icons = {
+  academy: '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 25h36v27H14zM20 19h24M32 19V9"/><path d="M9 55h46"/></svg>',
+  expertises: '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 50 19v26L32 56 14 45V19z"/><path d="m22 33 7 7 14-18"/></svg>',
+  conseil: '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="m9 49 16-21 12 12 18-28"/><circle cx="9" cy="49" r="3"/><circle cx="55" cy="12" r="3"/></svg>',
+  digital: '<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="12" width="46" height="33" rx="6"/><path d="M23 54h18M32 45v9"/></svg>',
+};
+
+const poles = [
+  {
+    theme: 'academy', eyebrow: '01 · Formation', icon: icons.academy, badge: 'IA',
+    title: 'Intégrale Academy',
+    text: 'Des formations réglementées et professionnalisantes, conçues pour l’emploi.',
+    href: '/pole-formation', link: 'Découvrir le pôle',
+  },
+  {
+    theme: 'expertises', eyebrow: '02 · Expertises', icon: icons.expertises, badge: 'IE',
+    title: 'Intégrale Expertises',
+    text: 'Ingénierie de certification, référentiels, évaluations et réseaux partenaires.',
+    href: '/integrale-expertises', link: 'Découvrir le pôle',
+  },
+  {
+    theme: 'conseil', eyebrow: '03 · Conseil', icon: icons.conseil, badge: '↗',
+    title: 'Conseil & accompagnement',
+    text: 'Stratégie, organisation, process et développement des organismes.',
+    href: '/pole-conseil-accompagnement', link: 'Découvrir le pôle',
+  },
+  {
+    theme: 'digital', eyebrow: '04 · Digital', icon: icons.digital, badge: '▣',
+    title: 'Développement web & outils métiers',
+    text: 'Sites, plateformes, CRM, automatisations et espaces de pilotage sur mesure.',
+    href: '/pole-developpement-web', link: 'Découvrir le pôle',
+  },
+];
+
+const method = [
+  ['Comprendre', 'Écouter les objectifs, observer le terrain et identifier les vrais enjeux.'],
+  ['Structurer', 'Donner une architecture claire au projet, aux parcours et aux responsabilités.'],
+  ['Mettre en œuvre', 'Transformer les décisions en outils, actions et résultats directement exploitables.'],
+  ['Faire évoluer', 'Mesurer, ajuster et améliorer dans la durée pour conserver une organisation performante.'],
+];
+
+const sceneCard = (theme, badge, title, text, link) => `
+  <a class="homeSceneCard ${theme}" href="${link}">
+    <i>${badge}</i><strong>${title}</strong><span>${text}</span><b>Découvrir <em aria-hidden="true">→</em></b>
+  </a>`;
+
+const poleCard = (pole) => `
+  <article class="homePoleCard ${pole.theme} reveal">
+    <div class="homePoleVisual"><span>${pole.eyebrow}</span>${pole.icon}</div>
+    <div class="homePoleBody">
+      <i>${pole.badge}</i><h3>${pole.title}</h3><p>${pole.text}</p>
+      <a href="${pole.href}">${pole.link}<b aria-hidden="true">→</b></a>
+    </div>
+  </article>`;
+
+export function render() {
+  return `
+    <section class="homeSceneSection" aria-labelledby="ecosystem-title">
+      <div class="homeDashboard reveal">
+        <aside class="homeDashboardNav" aria-label="Les expertises du groupe">
+          <strong>INTEGRALE GROUP</strong>
+          <small>Écosystème</small>
+          <span class="active"><i></i>Vue d’ensemble</span>
+          <span><i></i>Formation</span>
+          <span><i></i>Expertises</span>
+          <span><i></i>Conseil</span>
+          <span><i></i>Solutions digitales</span>
+          <div><b>Notre cap</b><em>Faire progresser les projets.</em></div>
+        </aside>
+        <div class="homeDashboardContent">
+          <p>Le groupe en un regard</p>
+          <h2 id="ecosystem-title">Un écosystème, quatre expertises.</h2>
+          <span>Chaque pôle répond à un besoin précis. Ensemble, ils construisent une réponse complète.</span>
+          <div class="homeSceneCards">
+            ${sceneCard('academy', 'IA', 'Intégrale Academy', 'Former aux métiers et préparer à l’emploi.', '/pole-formation')}
+            ${sceneCard('expertises', 'IE', 'Intégrale Expertises', 'Concevoir des titres professionnels exigeants.', '/integrale-expertises')}
+            ${sceneCard('conseil', '↗', 'Conseil', 'Structurer les organismes et accélérer les projets.', '/pole-conseil-accompagnement')}
+            ${sceneCard('digital', '▣', 'Développement web', 'Digitaliser, automatiser et mieux piloter.', '/pole-developpement-web')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="homePolesSection" id="home-poles">
+      <div class="homeSectionHeading centered reveal">
+        <span>Les pôles du groupe</span>
+        <h2>Quatre expertises. Une même exigence.</h2>
+        <p>Des métiers différents, reliés par une même culture du concret, de la qualité et du résultat.</p>
+      </div>
+      <div class="homePoleGrid">${poles.map(poleCard).join('')}</div>
+    </section>
+
+    <section class="homeBentoSection">
+      <div class="homeSectionHeading reveal">
+        <span>L’esprit Intégrale</span>
+        <h2>Un groupe qui relie stratégie et terrain.</h2>
+        <p>Pas de solutions théoriques déconnectées : chaque projet est pensé pour être réellement utilisé.</p>
+      </div>
+      <div class="homeBentoGrid">
+        <article class="homeBentoMain reveal">
+          <span>Notre différence</span>
+          <h3>De l’idée à l’exécution, sans perdre le terrain.</h3>
+          <p>Comprendre les contraintes réelles, bâtir une organisation solide, déployer les bons outils et accompagner la durée.</p>
+          <div class="homeRings" aria-label="Une méthode centrée sur un seul cap">
+            <i>IG<small>Un seul cap</small></i>
+            <b class="ringOne">Comprendre</b><b class="ringTwo">Structurer</b>
+            <b class="ringThree">Déployer</b><b class="ringFour">Améliorer</b>
+          </div>
+        </article>
+        <article class="homeBentoTraining reveal">
+          <div>
+            <span>Formation & emploi</span>
+            <h3>Des parcours conçus pour des métiers réels.</h3>
+            <p>Sécurité, incendie, VTC et alternance : des compétences directement mobilisables.</p>
+            <div class="homeCourseTags"><i>APS</i><i>A3P</i><i>SSIAP 1</i><i>VTC</i><i>BTS</i></div>
+          </div>
+          <div class="homeTrainingIcon">${icons.academy}</div>
+        </article>
+        <a class="homeBentoSmall certification reveal" href="/integrale-expertises">
+          <i>✓</i><h3>Certifier</h3><p>Des référentiels lisibles, des évaluations robustes et des partenariats maîtrisés.</p><b>Intégrale Expertises <span>→</span></b>
+        </a>
+        <a class="homeBentoSmall digital reveal" href="/pole-developpement-web">
+          <i>▣</i><h3>Digitaliser</h3><p>Des outils simples pour mieux gérer, suivre, automatiser et décider.</p><b>Solutions digitales <span>→</span></b>
+        </a>
+      </div>
+    </section>
+
+    <section class="homeAcademySection">
+      <div class="homeAcademyInner">
+        <div class="homeAcademyCopy reveal">
+          <span>Le socle historique</span>
+          <h2>Intégrale Academy, l’expérience qui a tout lancé.</h2>
+          <p>Créée en 2018, l’Academy accompagne les stagiaires, apprentis et professionnels dans des parcours exigeants, concrets et orientés vers l’emploi.</p>
+          <a class="btn primary" href="https://www.integraleacademy.com/" target="_blank" rel="noopener noreferrer">Découvrir l’Academy <b aria-hidden="true">→</b></a>
+          <div class="homeAcademyTags"><i>Sécurité</i><i>SSIAP</i><i>VTC</i><i>Alternance</i></div>
+        </div>
+        <div class="homeAcademyVisual reveal" aria-label="Univers de formation d’Intégrale Academy">
+          <strong>INTÉGRALE ACADEMY · PUGET-SUR-ARGENS</strong>
+          <span class="academyLetter" aria-hidden="true">A</span>
+          <article class="academyPromise"><small>Parcours métiers</small><b>Former pour agir.</b><p>Des compétences directement mobilisables en situation.</p></article>
+          <article class="academySince"><small>Depuis</small><b>2018</b><p>Une expertise construite dans la durée.</p></article>
+          <article class="academyUniverse"><small>Nos univers</small><div><i>APS</i><i>A3P</i><i>SSIAP 1</i><i>VTC</i><i>BTS</i><i>Alternance</i></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="homeStorySection">
+      <div class="homeStoryGrid">
+        <div class="homeStoryCopy reveal">
+          <span>Notre histoire</span>
+          <h2>Une histoire entrepreneuriale, pas un assemblage de marques.</h2>
+          <p>Le groupe s’est construit progressivement autour d’une expérience opérationnelle directe.</p>
+          <div class="homeStoryTimeline">
+            <article><b>2018</b><strong>Création d’Intégrale Academy</strong><p>La formation professionnelle devient le premier socle de développement.</p></article>
+            <article><b>2025</b><strong>Structuration d’Intégrale Group</strong><p>Les expertises complémentaires se réunissent autour d’une vision commune.</p></article>
+            <article><b>Aujourd’hui</b><strong>Quatre pôles au service d’un même cap</strong><p>Former, structurer, certifier et digitaliser les projets professionnels.</p></article>
+          </div>
+          <a class="btn storyButton" href="/notre-histoire">Découvrir l’histoire <b aria-hidden="true">→</b></a>
+        </div>
+        <article class="homeFounderCard reveal">
+          <span>Le fondateur</span>
+          <div class="homeFounderAvatar">CV</div>
+          <h3>Clément Vaillant</h3>
+          <strong>Fondateur & dirigeant d’Intégrale Group</strong>
+          <hr>
+          <p>Un parcours à la croisée de la sécurité privée, de l’événementiel, de la communication et de la formation.</p>
+          <p>Une conviction : les meilleurs projets naissent d’une compréhension directe du terrain.</p>
+          <div><i>Expérience</i><i>Terrain</i><i>Master 2 communication</i></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="homeMethodSection">
+      <div class="homeSectionHeading centered reveal">
+        <span>Notre méthode</span>
+        <h2>Faire simple, concret et durable.</h2>
+        <p>Une méthode commune aux quatre pôles pour passer rapidement de l’objectif à l’action.</p>
+      </div>
+      <div class="homeMethodGrid">
+        ${method.map(([title, text], index) => `<article class="reveal${index === 3 ? ' featured' : ''}"><i>0${index + 1}</i><h3>${title}</h3><p>${text}</p></article>`).join('')}
+      </div>
+    </section>
+
+    <section class="homeCtaSection">
+      <div class="homeCta reveal">
+        <div>
+          <span>Parlons de votre projet</span>
+          <h2>Vous avez une ambition à structurer ?</h2>
+          <p>Formation, certification, conseil ou digitalisation : identifions ensemble le bon point de départ.</p>
+          <div><a class="btn primary" href="/contact">Contacter le groupe <b aria-hidden="true">→</b></a><a class="btn secondary" href="/les-poles-du-groupe">Voir nos pôles</a></div>
+        </div>
+        <i class="homeCtaMark" aria-hidden="true">IG</i>
+      </div>
+    </section>`;
 }
