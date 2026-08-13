@@ -9,7 +9,7 @@ const expectedMarkers={
  '/pole-formation':'Des parcours conçus pour des métiers réels.',
  '/integrale-expertises':'Dossiers en cours d’instruction auprès de France compétences',
  '/pole-conseil-accompagnement':'Huit leviers pour faire passer une organisation au niveau suivant.',
- '/pole-developpement-web':'Focus Intégrale Connect',
+ '/pole-developpement-web':'Transformer un besoin en expérience digitale utile.',
  '/notre-histoire':'Une histoire née du terrain',
  '/entreprise':'Capital social',
  '/contact':['formulaire','mailto'],
@@ -38,7 +38,11 @@ for(const marker of ['Niveau visé','Présentiel','Distanciel','hors évaluation
 if(/DSSP[^<]{0,80}(enregistrée|enregistré|inscrit|inscrite)[^<]{0,50}RNCP/i.test(expertises)) throw new Error('false DSSP RNCP claim detected');
 if(!expertises.includes('mailto:clement@integraleacademy.com')) throw new Error('partner contact missing on Intégrale Expertises page');
 const dev=fs.readFileSync('dist/pole-developpement-web/index.html','utf8');
-for(const s of ['Site vitrine premium','CRM métier','Intégrale Connect CRM']) if(!dev.includes(s)) throw new Error(`development web page missing ${s}`);
+for(const marker of ['digitalPage','/assets/digital.css','Transformer vos process en outils','Sites & interfaces','Plateformes métier','CRM & automatisations','Un site internet doit inspirer confiance.','Des briques connectées pour automatiser l’activité.','Intégrale Connect.','Une suite pensée pour les organismes de formation.','Un cycle court, cadré et évolutif.','L’outil qui transforme la méthode en usage.']) if(!dev.includes(marker)) throw new Error(`Digital page redesign missing ${marker}`);
+for(const item of ['Site vitrine premium','Landing page de conversion','Refonte de site existant','Site pour organisme de formation','Pages formations détaillées','Formulaires de contact','Prise de rendez-vous','Connexion CRM ou outils externes','Optimisation mobile','SEO de base']) if(!dev.includes(item)) throw new Error(`Digital web offer missing ${item}`);
+for(const item of ['CRM métier','Plateforme administrative','Tableau de bord interne','Espace client','Espace apprenant','Suivi de dossiers','Gestion de documents','Génération automatique de PDF','Notifications email','Gestion partenaires','Connexion API','Hébergement cloud','Maintenance évolutive']) if(!dev.includes(item)) throw new Error(`Digital software offer missing ${item}`);
+for(const item of ['Intégrale Connect CRM','Intégrale Connect Partenaires','Intégrale Connect CPF','Intégrale Connect Gestion OF','WeDoF','EDOF','Rapprochement','WEBHOOKS','SALESFORCE','JSON']) if(!dev.includes(item)) throw new Error(`Intégrale Connect content missing ${item}`);
+for(const item of ['Cadrage','Prototype','Développement','Tests','Mise en ligne','Évolutions']) if(!dev.includes(item)) throw new Error(`Digital method missing ${item}`);
 const css=fs.readFileSync('dist/assets/styles.css','utf8');
 for(const s of ['overflow-x:hidden','@media(max-width:640px)','--gold:#F4C45A','grid-template-columns:1fr']) if(!css.includes(s)) throw new Error(`responsive/global CSS guard failed: ${s}`);
 const homeCss=fs.readFileSync('dist/assets/home.css','utf8');
@@ -49,6 +53,8 @@ const academyCss=fs.readFileSync('dist/assets/academy.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','academyProgramsGrid','academyPeopleGrid','overflow-wrap: anywhere']) if(!academyCss.includes(s)) throw new Error(`Academy responsive CSS guard failed: ${s}`);
 const conseilCss=fs.readFileSync('dist/assets/conseil.css','utf8');
 for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','conseilServicesGrid','conseilMethodGrid','conseilMomentsGrid','overflow-wrap: anywhere']) if(!conseilCss.includes(s)) throw new Error(`Conseil responsive CSS guard failed: ${s}`);
+const digitalCss=fs.readFileSync('dist/assets/digital.css','utf8');
+for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media (max-width: 640px)','grid-template-columns: 1fr','digitalSolutionsGrid','digitalSoftwareGrid','digitalConnectGrid','digitalMethodGrid','overflow-wrap: anywhere']) if(!digitalCss.includes(s)) throw new Error(`Digital responsive CSS guard failed: ${s}`);
 const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
 for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 console.log('OK: 4-pole architecture, redirects, navigation, Academy link and responsive CSS verified.');

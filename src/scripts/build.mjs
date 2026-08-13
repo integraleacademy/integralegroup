@@ -54,12 +54,14 @@ function shell(page, body, buttons) {
       ? '<link rel="stylesheet" href="/assets/academy.css">'
     : page.route === '/pole-conseil-accompagnement'
       ? '<link rel="stylesheet" href="/assets/conseil.css">'
+    : page.route === '/pole-developpement-web'
+      ? '<link rel="stylesheet" href="/assets/digital.css">'
     : page.route === '/notre-histoire'
       ? '<link rel="stylesheet" href="/assets/history.css">'
       : page.route === '/integrale-expertises'
         ? '<link rel="stylesheet" href="/assets/expertises.css">'
         : '';
-  const headerCta = ['/', '/les-poles-du-groupe', '/pole-formation', '/pole-conseil-accompagnement'].includes(page.route) ? '<a class="homeHeaderCta" href="/contact">Nous contacter</a>' : '';
+  const headerCta = ['/', '/les-poles-du-groupe', '/pole-formation', '/pole-conseil-accompagnement', '/pole-developpement-web'].includes(page.route) ? '<a class="homeHeaderCta" href="/contact">Nous contacter</a>' : '';
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${p.title}</title><meta name="description" content="${esc(p.metaDescription || p.lead)}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/assets/styles.css">${pageStyles}</head><body${bodyClass}><header class="siteHeader"><a class="brand" href="/">INTEGRALE <b>GROUP</b></a><button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="navLinks" aria-label="Navigation principale">${headerNav.map(([n,h])=>link(h,n,sameRoute(h,page.route)?'active':'')).join('')}</nav>${headerCta}</header><main><section class="hero hero-section full-width"><div class="container heroInner"><div class="heroCopy reveal"><p class="kicker">${p.kicker}</p><h1>${p.h1}</h1><p>${p.lead}</p><div class="heroActions">${buttons}</div></div><div class="heroVisualSlot reveal">${visualForRoute(page.route)}</div></div></section>${body}</main><footer class="siteFooter"><div class="footerGlow" aria-hidden="true"></div><div class="footerGrid"><div class="footerBrand" aria-labelledby="footer-brand"><h2 id="footer-brand">Intégrale <b>Group</b></h2><p>Écosystème indépendant dédié à la formation professionnelle, au conseil, à la certification, à l’ingénierie pédagogique et au développement d’outils digitaux.</p><strong>Former, structurer, accompagner et digitaliser.</strong></div><nav class="footerNav" aria-label="Les pôles"><strong>Les pôles</strong>${poleNav.map(([n,h])=>link(h,n)).join('')}</nav><nav class="footerNav" aria-label="Navigation secondaire"><strong>Navigation</strong>${headerNav.map(([n,h])=>link(h,n)).join('')}<a href="/entreprise">Infos légales</a></nav><address class="footerContact"><strong>Contact</strong><span>${company.address}</span><a href="mailto:${company.email}">${company.email}</a><a class="footerCta" href="/contact">Contacter le groupe</a></address></div><div class="footerBottom"><p>© 2026 Intégrale Group. Tous droits réservés.</p><p><span>SIREN : ${company.siren}</span><span>Capital social : ${company.capital}</span></p></div></footer><script src="/assets/app.js"></script></body></html>`;
 }
 
@@ -96,6 +98,7 @@ fs.copyFileSync('public/home.css', `${out}/assets/home.css`);
 fs.copyFileSync('public/poles.css', `${out}/assets/poles.css`);
 fs.copyFileSync('public/academy.css', `${out}/assets/academy.css`);
 fs.copyFileSync('public/conseil.css', `${out}/assets/conseil.css`);
+fs.copyFileSync('public/digital.css', `${out}/assets/digital.css`);
 fs.copyFileSync('public/history.css', `${out}/assets/history.css`);
 fs.copyFileSync('public/expertises.css', `${out}/assets/expertises.css`);
 fs.copyFileSync('public/app.js', `${out}/assets/app.js`);
