@@ -261,6 +261,86 @@
 .contactOrientationCard.digital > small, .contactOrientationCard.digital > b em { color: var(--contact-gold); }
 .contactOrientationCard.digital p { color: rgba(255, 255, 255, .62); }
 
+.contactTeam {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(244, 196, 90, .2), transparent 25%),
+    radial-gradient(circle at 92% 82%, rgba(60, 111, 148, .2), transparent 29%),
+    #e9eff2;
+  overflow: hidden;
+}
+.contactTeam:after {
+  content: "@";
+  position: absolute;
+  right: -42px;
+  bottom: -172px;
+  color: rgba(7, 19, 31, .025);
+  font-size: 520px;
+  font-weight: 950;
+  line-height: .8;
+  pointer-events: none;
+}
+.contactTeam .contactWrap { position: relative; z-index: 1; }
+.contactTeamGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.contactTeamCard {
+  position: relative;
+  min-width: 0;
+  min-height: 475px;
+  display: flex;
+  flex-direction: column;
+  padding: 31px;
+  border: 1px solid var(--contact-line);
+  border-radius: 30px;
+  color: var(--contact-ink);
+  background: var(--contact-paper);
+  box-shadow: 0 24px 70px rgba(7, 19, 31, .08);
+  overflow: hidden;
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+.contactTeamCard:hover { transform: translateY(-6px); box-shadow: 0 31px 82px rgba(7, 19, 31, .13); }
+.contactTeamNumber { position: absolute; right: 16px; top: 3px; color: rgba(7, 19, 31, .055); font-size: 104px; font-weight: 950; line-height: 1; letter-spacing: -.09em; }
+.contactTeamCardHeader { position: relative; display: flex; align-items: center; gap: 13px; margin-bottom: 54px; }
+.contactTeamCardHeader > i { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 17px; color: var(--contact-blue); background: var(--contact-blue-soft); font-size: 12px; font-style: normal; font-weight: 950; letter-spacing: .04em; }
+.contactTeamCardHeader > small { color: var(--contact-blue); font-size: 9px; font-weight: 950; letter-spacing: .16em; text-transform: uppercase; }
+.contactTeamCard h3 { position: relative; margin: 0 0 19px; font-size: clamp(29px, 2.4vw, 36px); line-height: 1.02; letter-spacing: -.045em; }
+.contactTeamCard h3 strong { font-weight: 820; }
+.contactTeamRoles { position: relative; display: grid; gap: 8px; }
+.contactTeamRoles span { display: flex; align-items: flex-start; gap: 10px; color: var(--contact-muted); font-size: 14px; font-weight: 760; line-height: 1.45; }
+.contactTeamRoles span:before { content: ""; width: 6px; height: 6px; flex: 0 0 auto; margin-top: 7px; border-radius: 50%; background: var(--contact-gold); }
+.contactTeamContacts { position: relative; display: grid; gap: 9px; margin-top: auto; padding-top: 29px; }
+.contactTeamEmail {
+  position: relative;
+  min-width: 0;
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  padding: 16px 50px 16px 17px;
+  border: 1px solid var(--contact-line);
+  border-radius: 18px;
+  color: var(--contact-ink);
+  background: rgba(255, 255, 255, .58);
+}
+.contactTeamEmail > span, .contactTeamPhones span { color: var(--contact-blue); font-size: 8px; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
+.contactTeamEmail > strong { overflow-wrap: anywhere; font-size: 12px; line-height: 1.4; }
+.contactTeamEmail > b { position: absolute; right: 17px; top: 50%; transform: translateY(-50%); color: var(--contact-blue); font-size: 17px; }
+.contactTeamPhones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.contactTeamPhones a { min-width: 0; min-height: 70px; display: grid; align-content: center; gap: 6px; padding: 13px 15px; border: 1px solid var(--contact-line); border-radius: 17px; color: var(--contact-ink); background: rgba(255, 255, 255, .58); }
+.contactTeamPhones strong { white-space: nowrap; font-size: 12px; }
+.contactTeamEmail, .contactTeamPhones a { transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+.contactTeamEmail:hover, .contactTeamPhones a:hover { transform: translateY(-2px); border-color: rgba(60, 111, 148, .38); background: #fff; }
+.contactTeamCard.director { color: #fff; background: radial-gradient(circle at 100% 0, rgba(60, 111, 148, .45), transparent 34%), var(--contact-night); border-color: rgba(255, 255, 255, .08); }
+.contactTeamCard.director .contactTeamNumber { color: rgba(255, 255, 255, .055); }
+.contactTeamCard.director .contactTeamCardHeader > i { color: var(--contact-night); background: var(--contact-gold); }
+.contactTeamCard.director .contactTeamCardHeader > small, .contactTeamCard.director .contactTeamEmail > span { color: var(--contact-gold); }
+.contactTeamCard.director .contactTeamRoles span { color: rgba(255, 255, 255, .67); }
+.contactTeamCard.director .contactTeamEmail { color: #fff; background: rgba(255, 255, 255, .065); border-color: rgba(255, 255, 255, .14); }
+.contactTeamCard.director .contactTeamEmail > b { color: var(--contact-gold); }
+.contactTeamCard.director .contactTeamEmail:hover { border-color: rgba(244, 196, 90, .42); background: rgba(255, 255, 255, .1); }
+.contactTeamCard.commercial { background: var(--contact-gold-soft); border-color: rgba(139, 101, 21, .16); }
+.contactTeamCard.commercial .contactTeamCardHeader > i { color: #775716; background: rgba(244, 196, 90, .42); }
+.contactTeamCard.commercial .contactTeamCardHeader > small, .contactTeamCard.commercial .contactTeamEmail > span, .contactTeamCard.commercial .contactTeamPhones span { color: #80601a; }
+.contactTeamCard.relations .contactTeamCardHeader > i { color: #315f7e; background: #dce9f0; }
+
 .contactFormSection { background: var(--contact-cream); }
 .contactFormGrid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 66px; align-items: start; }
 .contactFormAside { min-width: 0; }
@@ -368,6 +448,8 @@
   .contactHeroVisual { min-height: 520px; }
   .contactOrientationGrid { grid-template-columns: 1fr 1fr; }
   .contactOrientationCard { min-height: 300px; }
+  .contactTeamGrid { grid-template-columns: 1fr 1fr; }
+  .contactTeamCard:first-child { grid-column: 1 / 3; min-height: 390px; }
   .contactFormGrid { grid-template-columns: 1fr; gap: 50px; }
   .contactFormAside { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .contactFormAside .contactHeading { grid-column: 1 / 3; }
@@ -401,6 +483,9 @@
   .contactHeadingCenter { text-align: left; }
   .contactHeadingCenter .contactEyebrow { justify-content: flex-start; }
   .contactHeadingCenter .contactEyebrow:after { display: none; }
+  .contactTeamGrid { grid-template-columns: 1fr; }
+  .contactTeamCard:first-child { grid-column: auto; min-height: 410px; }
+  .contactTeamCard { min-height: 455px; }
   .contactFormAside { grid-template-columns: 1fr; }
   .contactFormAside .contactHeading { grid-column: auto; }
   .contactForm { padding: 26px; border-radius: 27px; }
@@ -418,6 +503,9 @@
   .contactVisualRoute small { display: none; }
   .contactOrientationGrid { grid-template-columns: 1fr; }
   .contactOrientationCard { min-height: 285px; }
+  .contactTeamCard { min-height: 430px; padding: 25px; border-radius: 25px; }
+  .contactTeamCardHeader { margin-bottom: 43px; }
+  .contactTeamPhones { grid-template-columns: 1fr; }
   .contactChecklist > div { grid-template-columns: 1fr; }
   .contactDetails > a, .contactDetails > div { grid-template-columns: 44px 1fr; }
   .contactDetails > a > span { display: none; }

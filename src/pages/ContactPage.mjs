@@ -28,6 +28,45 @@ const options = [
   'Autre demande',
 ];
 
+const team = [
+  {
+    number: '01',
+    initials: 'CV',
+    firstName: 'Clément',
+    lastName: 'VAILLANT',
+    roles: ['Directeur Intégrale Group', 'Directeur de la certification'],
+    email: 'clement@integraleacademy.com',
+    theme: 'director',
+    phones: [],
+  },
+  {
+    number: '02',
+    initials: 'CM',
+    firstName: 'Cassandre',
+    lastName: 'MENARD',
+    roles: ['Responsable commerciale'],
+    email: 'cassandre@integraleacademy.com',
+    theme: 'commercial',
+    phones: [
+      ['Ligne directe', '04 87 83 06 16', '+33487830616'],
+      ['Portable', '07 43 58 22 64', '+33743582264'],
+    ],
+  },
+  {
+    number: '03',
+    initials: 'AC',
+    firstName: 'Aurélie',
+    lastName: 'CHAUSSEZ',
+    roles: ['Chargée des relations clients'],
+    email: 'aurelie@integraleacademy.com',
+    theme: 'relations',
+    phones: [
+      ['Ligne directe', '04 87 83 06 15', '+33487830615'],
+      ['Portable', '07 69 39 04 57', '+33769390457'],
+    ],
+  },
+];
+
 export function render() {
   return `
     <section class="contactOrientation" id="orientation">
@@ -43,6 +82,36 @@ export function render() {
               <p>${text}</p>
               <b>Choisir ce sujet <em>→</em></b>
             </a>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="contactTeam" id="equipe">
+      <div class="contactWrap">
+        ${heading('Vos interlocuteurs', 'Une équipe disponible.<br><em>Des contacts directs.</em>', 'Direction, certification, développement commercial ou relations clients : contactez directement la personne qui pourra vous accompagner.', false, true).trim()}
+        <div class="contactTeamGrid">
+          ${team.map(member => `
+            <article class="contactTeamCard ${member.theme} reveal">
+              <span class="contactTeamNumber">${member.number}</span>
+              <header class="contactTeamCardHeader">
+                <i>${member.initials}</i>
+                <small>Intégrale Group</small>
+              </header>
+              <h3>${member.firstName}<br><strong>${member.lastName}</strong></h3>
+              <div class="contactTeamRoles">
+                ${member.roles.map(role => `<span>${role}</span>`).join('')}
+              </div>
+              <div class="contactTeamContacts">
+                <a class="contactTeamEmail" href="mailto:${member.email}?subject=Demande%20Int%C3%A9grale%20Group">
+                  <span>Email</span>
+                  <strong>${member.email}</strong>
+                  <b aria-hidden="true">↗</b>
+                </a>${member.phones.length ? `
+                <div class="contactTeamPhones">
+                  ${member.phones.map(([label, display, href]) => `<a href="tel:${href}"><span>${label}</span><strong>${display}</strong></a>`).join('')}
+                </div>` : ''}
+              </div>
+            </article>`).join('').trimStart()}
         </div>
       </div>
     </section>
