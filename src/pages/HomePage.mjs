@@ -53,11 +53,6 @@ const method = [
   ['Faire évoluer', 'Mesurer, ajuster et améliorer dans la durée pour conserver une organisation performante.'],
 ];
 
-const sceneCard = (theme, badge, title, text, link) => `
-  <a class="homeSceneCard ${theme}" href="${link}">
-    <i>${badge}</i><strong>${title}</strong><span>${text}</span><b>Découvrir <em aria-hidden="true">→</em></b>
-  </a>`;
-
 const poleCard = (pole) => `
   <article class="homePoleCard ${pole.theme} reveal">
     <div class="homePoleVisual"><span>${pole.eyebrow}</span>${pole.icon}</div>
@@ -69,32 +64,6 @@ const poleCard = (pole) => `
 
 export function render() {
   return `
-    <section class="homeSceneSection" aria-labelledby="ecosystem-title">
-      <div class="homeDashboard reveal">
-        <aside class="homeDashboardNav" aria-label="Les expertises du groupe">
-          <strong>INTEGRALE GROUP</strong>
-          <small>Écosystème</small>
-          <span class="active"><i></i>Vue d’ensemble</span>
-          <span><i></i>Formation</span>
-          <span><i></i>Expertises</span>
-          <span><i></i>Conseil</span>
-          <span><i></i>Solutions digitales</span>
-          <div><b>Notre cap</b><em>Faire progresser les projets.</em></div>
-        </aside>
-        <div class="homeDashboardContent">
-          <p>Le groupe en un regard</p>
-          <h2 id="ecosystem-title">Un écosystème, quatre expertises.</h2>
-          <span>Chaque pôle répond à un besoin précis. Ensemble, ils construisent une réponse complète.</span>
-          <div class="homeSceneCards">
-            ${sceneCard('academy', 'IA', 'Intégrale Academy', 'Former aux métiers et préparer à l’emploi.', '/pole-formation')}
-            ${sceneCard('expertises', 'IE', 'Intégrale Expertises', 'Concevoir des titres professionnels exigeants.', '/integrale-expertises')}
-            ${sceneCard('conseil', '↗', 'Conseil', 'Structurer les organismes et accélérer les projets.', '/pole-conseil-accompagnement')}
-            ${sceneCard('digital', '▣', 'Développement web', 'Digitaliser, automatiser et mieux piloter.', '/pole-developpement-web')}
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="homePolesSection" id="home-poles">
       <div class="homeSectionHeading centered reveal">
         <span>Les pôles du groupe</span>
