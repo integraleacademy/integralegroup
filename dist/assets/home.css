@@ -1144,3 +1144,63 @@
   .homePage *::before,
   .homePage *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Home hero zoom — aligned with the Intégrale Academy hero animation. */
+.homePage .hero h1 .homeHeroZoom {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-style: normal;
+  transform-origin: center center;
+  will-change: transform;
+  animation: homeAmbitionsZoom 1.6s .72s both;
+}
+
+@keyframes homeAmbitionsZoom {
+  0% {
+    transform: scale(1);
+  }
+  16% {
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(.12, .8, .2, 1);
+  }
+  42% {
+    transform: scale(2.05);
+    animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .homePage .hero h1 .homeHeroZoom {
+    animation-name: homeAmbitionsZoomMobile;
+    animation-duration: 1.45s;
+    animation-delay: .62s;
+  }
+}
+
+@keyframes homeAmbitionsZoomMobile {
+  0% {
+    transform: scale(1);
+  }
+  16% {
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(.12, .8, .2, 1);
+  }
+  42% {
+    transform: scale(1.6);
+    animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homePage .hero h1 .homeHeroZoom {
+    animation: none !important;
+    transform: none !important;
+  }
+}
