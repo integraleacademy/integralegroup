@@ -71,11 +71,11 @@
   position: relative;
   z-index: 1;
   display: block;
-  width: min(100% - 48px, 1320px);
+  width: min(100% - 48px, 1640px);
 }
 
 .homePage .heroCopy {
-  width: min(100%, 1120px);
+  width: min(100%, 1480px);
   margin: 0 auto;
 }
 
@@ -104,9 +104,9 @@
 }
 
 .homePage .hero h1 {
-  max-width: 1120px;
+  max-width: 1480px;
   margin: 32px auto 25px;
-  font-size: clamp(58px, 6.5vw, 96px);
+  font-size: clamp(64px, 7.2vw, 112px);
   line-height: .99;
   letter-spacing: -.065em;
   text-wrap: balance;
@@ -118,10 +118,10 @@
 }
 
 .homePage .heroCopy > p:not(.kicker) {
-  max-width: 890px;
+  max-width: 1080px;
   margin: 0 auto;
   color: #cbd5dd;
-  font-size: clamp(18px, 1.55vw, 22px);
+  font-size: clamp(19px, 1.6vw, 23px);
   line-height: 1.58;
 }
 
