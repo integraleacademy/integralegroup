@@ -1145,27 +1145,33 @@
   .homePage *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
-/* Home hero zoom — aligned with the Intégrale Academy hero animation. */
+/* Home hero zoom — slower and contained inside the viewport. */
 .homePage .hero h1 .homeHeroZoom {
   position: relative;
   z-index: 1;
   display: block;
+  width: 76%;
+  margin-inline: auto;
   font-style: normal;
   transform-origin: center center;
   will-change: transform;
-  animation: homeAmbitionsZoom 1.6s .72s both;
+  animation: homeAmbitionsZoom 2.5s .72s both;
 }
 
 @keyframes homeAmbitionsZoom {
   0% {
     transform: scale(1);
   }
-  16% {
+  18% {
     transform: scale(1);
     animation-timing-function: cubic-bezier(.12, .8, .2, 1);
   }
-  42% {
-    transform: scale(2.05);
+  48% {
+    transform: scale(1.28);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: scale(1.28);
     animation-timing-function: cubic-bezier(.2, .8, .2, 1);
   }
   100% {
@@ -1175,8 +1181,9 @@
 
 @media (max-width: 700px) {
   .homePage .hero h1 .homeHeroZoom {
+    width: 86%;
     animation-name: homeAmbitionsZoomMobile;
-    animation-duration: 1.45s;
+    animation-duration: 2.3s;
     animation-delay: .62s;
   }
 }
@@ -1185,12 +1192,16 @@
   0% {
     transform: scale(1);
   }
-  16% {
+  18% {
     transform: scale(1);
     animation-timing-function: cubic-bezier(.12, .8, .2, 1);
   }
-  42% {
-    transform: scale(1.6);
+  48% {
+    transform: scale(1.12);
+    animation-timing-function: linear;
+  }
+  60% {
+    transform: scale(1.12);
     animation-timing-function: cubic-bezier(.2, .8, .2, 1);
   }
   100% {
