@@ -75,6 +75,108 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.querySelectorAll('[data-product-gallery]').forEach(gallery => {
+  const tabs = [...gallery.querySelectorAll('[data-product-tab]')];
+  const panels = [...gallery.querySelectorAll('[data-product-panel]')];
+  const interval = Number(gallery.dataset.galleryInterval) || 5600;
+  let activeIndex = Math.max(0, tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true'));
+  let rotationTimer;
+  let galleryIsVisible = false;
+  let interactionPaused = false;
+
+  const activateProductPanel = (nextIndex, moveFocus = false) => {
+    activeIndex = (nextIndex + tabs.length) % tabs.length;
+    tabs.forEach((tab, index) => {
+      const isActive = index === activeIndex;
+      tab.setAttribute('aria-selected', String(isActive));
+      tab.tabIndex = isActive ? 0 : -1;
+      tab.classList.toggle('is-active', isActive);
+      if (isActive && moveFocus) tab.focus();
+    });
+    panels.forEach((panel, index) => {
+      const isActive = index === activeIndex;
+      panel.classList.toggle('is-active', isActive);
+      panel.setAttribute('aria-hidden', String(!isActive));
+    });
+  };
+
+  const stopRotation = () => {
+    window.clearInterval(rotationTimer);
+    rotationTimer = undefined;
+  };
+
+  const startRotation = () => {
+    if (reducedMotion || !galleryIsVisible || interactionPaused || rotationTimer || tabs.length < 2) return;
+    rotationTimer = window.setInterval(() => activateProductPanel(activeIndex + 1), interval);
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      activateProductPanel(index);
+      stopRotation();
+      startRotation();
+    });
+    tab.addEventListener('keydown', event => {
+      const keyMap = { ArrowRight: activeIndex + 1, ArrowLeft: activeIndex - 1, Home: 0, End: tabs.length - 1 };
+      if (!(event.key in keyMap)) return;
+      event.preventDefault();
+      activateProductPanel(keyMap[event.key], true);
+      stopRotation();
+    });
+  });
+
+  gallery.addEventListener('mouseenter', () => {
+    interactionPaused = true;
+    stopRotation();
+  });
+  gallery.addEventListener('mouseleave', () => {
+    interactionPaused = false;
+    startRotation();
+  });
+  gallery.addEventListener('focusin', () => {
+    interactionPaused = true;
+    stopRotation();
+  });
+  gallery.addEventListener('focusout', event => {
+    if (gallery.contains(event.relatedTarget)) return;
+    interactionPaused = false;
+    startRotation();
+  });
+
+  const galleryObserver = new IntersectionObserver(entries => {
+    galleryIsVisible = entries.some(entry => entry.isIntersecting);
+    if (galleryIsVisible) startRotation();
+    else stopRotation();
+  }, { threshold: .22 });
+  galleryObserver.observe(gallery);
+  activateProductPanel(activeIndex);
+});
+
+if (reducedMotion) {
+  document.querySelectorAll('.productVideoStage video[autoplay]').forEach(video => video.pause());
+}
+
+const productStickyCta = document.querySelector('[data-product-sticky]');
+if (productStickyCta) {
+  let frameRequested = false;
+  const updateProductStickyCta = () => {
+    const finalCard = document.querySelector('.connectPlusFinalSection, .crmFinalSection');
+    const finalCardVisible = finalCard && finalCard.getBoundingClientRect().top < window.innerHeight * .82;
+    productStickyCta.classList.toggle('is-visible', window.scrollY > window.innerHeight * .72 && !finalCardVisible);
+    frameRequested = false;
+  };
+  const requestProductStickyUpdate = () => {
+    if (frameRequested) return;
+    frameRequested = true;
+    window.requestAnimationFrame(updateProductStickyCta);
+  };
+  window.addEventListener('scroll', requestProductStickyUpdate, { passive: true });
+  window.addEventListener('resize', requestProductStickyUpdate);
+  updateProductStickyCta();
+}
+
 const form = document.querySelector('#contactForm');
 
 if (form) {

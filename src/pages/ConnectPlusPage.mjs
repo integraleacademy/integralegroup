@@ -71,11 +71,35 @@ const gains = [
   ['Une meilleure traçabilité', 'Les statuts, documents et actions restent rattachés au bon stagiaire et à la bonne session.'],
 ];
 
+const galleryScreens = [
+  { label: 'Sessions', eyebrow: 'Pilotage quotidien', title: 'Toutes les sessions, sans perdre les priorités.', text: 'Volumes, dates, examens, dossiers complets et alertes sont lisibles depuis le même tableau de bord.', image: 'connect-plus-sessions.jpg', alt: 'Tableau de bord réel des sessions dans Intégrale Connect+', width: 1348, height: 926 },
+  { label: 'CNAPS', eyebrow: 'Conformité', title: 'Les démarches CNAPS restent visibles à chaque étape.', text: 'NUB, changements de statut, inscriptions et dossiers à surveiller sont regroupés dans une vue métier dédiée.', image: 'connect-plus-cnaps.jpg', alt: 'Vue réelle de suivi des dossiers CNAPS dans Intégrale Connect+', width: 1350, height: 430 },
+  { label: 'Automatisations', eyebrow: 'Centre de contrôle', title: 'Automatiser sans perdre la maîtrise.', text: 'Les scénarios, files d’attente, exceptions et actions à relancer restent contrôlables par l’équipe.', image: 'connect-plus-automations.jpg', alt: 'Centre de contrôle réel des automatisations dans Intégrale Connect+', width: 1090, height: 330 },
+  { label: 'CPF · WEDOF', eyebrow: 'Financements', title: 'Le suivi CPF et WEDOF réuni dans un seul écran.', text: 'Compteurs, verrous, alertes et dossiers à traiter permettent d’agir sans parcourir plusieurs outils.', image: 'connect-plus-wedof.jpg', alt: 'Vue réelle de pilotage CPF et WEDOF dans Intégrale Connect+', width: 1348, height: 926 },
+  { label: 'Examens', eyebrow: 'Parcours & certification', title: 'Chaque examen relié à sa session et à ses participants.', text: 'Dates, volumes et états d’avancement donnent une lecture opérationnelle des échéances à venir.', image: 'connect-plus-exams.jpg', alt: 'Vue réelle des examens dans Intégrale Connect+', width: 1363, height: 936 },
+];
+
+const transformations = [
+  ['Des tableaux et dossiers séparés', 'Une fiche stagiaire reliée à sa session, ses documents et son financement'],
+  ['Des échéances vérifiées une par une', 'Des statuts, alertes et priorités visibles dans les vues de pilotage'],
+  ['Des actions répétitives relancées à la main', 'Des automatisations contrôlées qui signalent aussi les exceptions'],
+];
+
+const useCases = [
+  ['Direction', 'Suivre l’activité, les anomalies et les volumes par formation sans reconstruire un reporting.'],
+  ['Administration', 'Traiter les dossiers, documents, signatures et paiements depuis un fil de gestion continu.'],
+  ['Référents métier', 'Contrôler CNAPS, CPF, WEDOF, examens et obligations depuis des vues dédiées.'],
+];
+
+const ecosystem = ['CNAPS', 'CPF · WEDOF', 'Signature électronique', 'Paiements', 'E-learning', 'API · webhooks'];
+
 const faq = [
   ['À quels organismes s’adresse Connect+ ?', 'La solution s’adresse aux organismes de formation et CFA qui doivent coordonner des sessions, des dossiers stagiaires, des documents, des financements et des obligations réglementaires. Une démonstration permet de confirmer l’adéquation avec votre fonctionnement.'],
   ['Faut-il utiliser toutes les fonctionnalités ?', 'Non. Le périmètre utile est défini selon vos formations, vos processus et vos priorités. La proposition commerciale précise les modules et les accès retenus.'],
   ['Peut-on reprendre des données existantes ?', 'La faisabilité d’une reprise est étudiée à partir de vos sources actuelles : fichiers, exports ou outils déjà utilisés. Le volume et la qualité des données déterminent le travail nécessaire.'],
   ['Comment est calculé l’abonnement ?', 'Le tarif mensuel dépend du périmètre fonctionnel, du nombre d’utilisateurs, du volume d’activité et de l’accompagnement nécessaire au démarrage. Une proposition est remise après la démonstration.'],
+  ['Connect+ peut-il dialoguer avec nos outils actuels ?', 'Les connexions utiles sont étudiées pendant le cadrage. Selon les sources disponibles, elles peuvent passer par des imports, des exports, des API ou des webhooks. La proposition précise les flux réellement retenus.'],
+  ['Combien de temps faut-il pour démarrer ?', 'Le calendrier dépend des modules, des données à reprendre et des paramétrages nécessaires. Après la démonstration, un plan de mise en place réaliste est proposé avec les étapes et les responsabilités de chacun.'],
 ];
 
 export function render() {
@@ -95,6 +119,26 @@ export function render() {
       </div>
     </section>
 
+    <section class="productDemoSection productDemoPlus" id="demo-connect-plus">
+      <div class="productDemoIntro reveal">
+        <div><span>Démonstration en mouvement</span><h2>Connect+ en action, en moins de 20 secondes.</h2></div>
+        <p>Sessions, conformité, automatisations, CPF et examens : parcourez de vrais écrans de la solution avant même notre rendez-vous.</p>
+      </div>
+      <div class="productVideoStage reveal">
+        <div class="productVideoChrome"><span><i></i><i></i><i></i></span><b>Intégrale Connect+</b><small>Démo produit · 17 s</small></div>
+        <video autoplay muted loop playsinline controls preload="metadata" poster="/images/connect-plus-sessions.jpg" aria-label="Vidéo de démonstration d’Intégrale Connect+">
+          <source src="/videos/connect-plus-demo.mp4" type="video/mp4">
+          Votre navigateur ne permet pas de lire cette vidéo. <a href="/videos/connect-plus-demo.mp4">Télécharger la démonstration</a>.
+        </video>
+        <div class="productVideoPulse"><i></i>Écrans réels · données non nominatives</div>
+      </div>
+      <div class="productDemoPoints">
+        <article class="reveal"><i>01</i><div><b>Voir l’activité</b><span>Des tableaux de bord conçus pour les priorités d’un organisme de formation.</span></div></article>
+        <article class="reveal"><i>02</i><div><b>Passer à l’action</b><span>Chaque vue rapproche le contexte, le statut et l’action suivante.</span></div></article>
+        <article class="reveal"><i>03</i><div><b>Garder le contrôle</b><span>Automatisations et exceptions restent visibles par l’équipe.</span></div></article>
+      </div>
+    </section>
+
     <section class="connectPlusJourneySection">
       <div class="connectPlusSectionHeading centered reveal">
         <span>Un parcours sans rupture</span>
@@ -106,38 +150,35 @@ export function render() {
       </div>
     </section>
 
-    <section class="connectPlusScreensSection" id="captures">
-      <div class="connectPlusScreensHeader">
-        <div class="connectPlusSectionHeading connectPlusSectionHeadingDark reveal">
-          <span>Le produit, en conditions réelles</span>
-          <h2>Des vues claires pour décider et agir.</h2>
-          <p>Ces écrans sont issus d’Intégrale Connect+ en utilisation réelle. Les vues présentées ne contiennent aucune donnée nominative.</p>
+    <section class="productGallerySection productGalleryPlus" id="captures">
+      <div class="productGalleryHeading reveal">
+        <div><span>Explorez le produit</span><h2>Cinq écrans réels. Cinq moments décisifs.</h2><p>Choisissez une vue pour découvrir comment Connect+ transforme une information dispersée en action immédiatement exploitable.</p></div>
+        <div class="productGalleryCount"><b>05</b><span>vues métier</span></div>
+      </div>
+      <div class="productGallery reveal" data-product-gallery data-gallery-interval="5600">
+        <div class="productGalleryTabs" role="tablist" aria-label="Captures d’écran d’Intégrale Connect+">
+          ${galleryScreens.map((screen, index) => `<button type="button" role="tab" id="plus-tab-${index}" aria-controls="plus-panel-${index}" aria-selected="${index === 0}" tabindex="${index === 0 ? '0' : '-1'}" data-product-tab="${index}"><i>${String(index + 1).padStart(2, '0')}</i><span>${screen.label}</span></button>`).join('')}
         </div>
-        <div class="connectPlusScreenCounter reveal"><b>03</b><span>vues métier</span></div>
+        <div class="productGalleryStage">
+          ${galleryScreens.map((screen, index) => `<figure id="plus-panel-${index}" role="tabpanel" aria-labelledby="plus-tab-${index}" aria-hidden="${index !== 0}" class="productGalleryPanel${index === 0 ? ' is-active' : ''}" data-product-panel="${index}">
+            <a class="productGalleryImage" href="/images/${screen.image}" target="_blank" rel="noopener" aria-label="Agrandir : ${screen.title}"><img src="/images/${screen.image}" alt="${screen.alt}" width="${screen.width}" height="${screen.height}" loading="${index === 0 ? 'eager' : 'lazy'}"></a>
+            <figcaption><span>${screen.eyebrow}</span><h3>${screen.title}</h3><p>${screen.text}</p><a href="/images/${screen.image}" target="_blank" rel="noopener">Voir l’écran en grand <i aria-hidden="true">↗</i></a></figcaption>
+          </figure>`).join('')}
+        </div>
       </div>
-      <div class="connectPlusScreensGrid">
-        <figure class="connectPlusScreen connectPlusScreenMain reveal">
-          <a href="/images/connect-plus-sessions.jpg" target="_blank" rel="noopener" aria-label="Agrandir la vue de pilotage des sessions">
-            <div class="connectPlusBrowserBar"><span><i></i><i></i><i></i></span><b>Intégrale Connect+</b><small>Sessions</small></div>
-            <img src="/images/connect-plus-sessions.jpg" alt="Tableau de bord annuel des sessions et stagiaires" width="1350" height="925" loading="lazy">
-          </a>
-          <figcaption><i>01</i><div><h3>Pilotage des sessions</h3><p>Volumes annuels, filtres, dates, examens, dossiers complets et indicateurs réglementaires sont visibles dans une seule vue.</p></div></figcaption>
-        </figure>
-        <figure class="connectPlusScreen reveal">
-          <a href="/images/connect-plus-cnaps.jpg" target="_blank" rel="noopener" aria-label="Agrandir la vue de suivi CNAPS">
-            <div class="connectPlusBrowserBar"><span><i></i><i></i><i></i></span><b>Intégrale Connect+</b><small>CNAPS</small></div>
-            <img src="/images/connect-plus-cnaps.jpg" alt="Indicateurs de suivi des dossiers CNAPS" width="1350" height="430" loading="lazy">
-          </a>
-          <figcaption><i>02</i><div><h3>Suivi CNAPS</h3><p>Changements de statut, inscriptions, NUB et dossiers à surveiller restent immédiatement identifiables.</p></div></figcaption>
-        </figure>
-        <figure class="connectPlusScreen reveal">
-          <a href="/images/connect-plus-wedof.jpg" target="_blank" rel="noopener" aria-label="Agrandir la vue de pilotage CPF et WEDOF">
-            <div class="connectPlusBrowserBar"><span><i></i><i></i><i></i></span><b>Intégrale Connect+</b><small>CPF · WEDOF</small></div>
-            <img src="/images/connect-plus-wedof.jpg" alt="Pilotage des automatisations CPF et WEDOF" width="1350" height="925" loading="lazy">
-          </a>
-          <figcaption><i>03</i><div><h3>Pilotage CPF & WEDOF</h3><p>Automatisations, compteurs, alertes, verrous et dossiers à traiter sont réunis dans un tableau de bord contrôlable.</p></div></figcaption>
-        </figure>
+    </section>
+
+    <section class="productTransformationSection productTransformationPlus">
+      <div class="productTransformationIntro reveal"><span>Avant / avec Connect+</span><h2>La différence se voit dans le quotidien de l’équipe.</h2><p>Connect+ ne rajoute pas une couche de suivi. Il donne une continuité à ce que vos équipes font déjà, du dossier initial à la clôture.</p></div>
+      <div class="productTransformationGrid">
+        ${transformations.map(([before, after], index) => `<article class="reveal"><i>${String(index + 1).padStart(2, '0')}</i><div><small>AVANT</small><p>${before}</p></div><span aria-hidden="true">→</span><div><small>AVEC CONNECT+</small><p>${after}</p></div></article>`).join('')}
       </div>
+    </section>
+
+    <section class="productUseCasesSection productUseCasesPlus">
+      <div class="productUseCasesHeader reveal"><div><span>Un outil, plusieurs rôles</span><h2>La même donnée utile à toute l’organisation.</h2></div><p>Chacun retrouve une lecture adaptée à son travail, sans créer une nouvelle version de l’information.</p></div>
+      <div class="productUseCasesGrid">${useCases.map(([title, text], index) => `<article class="reveal"><i>${String(index + 1).padStart(2, '0')}</i><h3>${title}</h3><p>${text}</p></article>`).join('')}</div>
+      <div class="productEcosystem reveal"><span>ÉCOSYSTÈME MÉTIER</span><div>${ecosystem.map(item => `<i>${item}</i>`).join('')}</div></div>
     </section>
 
     <section class="connectPlusFeaturesSection" id="fonctionnalites">
@@ -162,6 +203,18 @@ export function render() {
         <div class="connectPlusGainsGrid">
           ${gains.map(([title, text], index) => `<article class="reveal"><i>${String(index + 1).padStart(2, '0')}</i><h3>${title}</h3><p>${text}</p></article>`).join('')}
         </div>
+      </div>
+    </section>
+
+    <section class="productDemoAgendaSection productDemoAgendaPlus">
+      <div class="productDemoAgendaCard reveal">
+        <div class="productDemoAgendaCopy"><span>Votre démonstration personnalisée</span><h2>En 4 parcours, vous saurez si Connect+ correspond à votre organisme.</h2><p>Nous partons de vos usages et ouvrons directement les vues qui répondent à vos difficultés actuelles.</p><a class="btn primary" href="/contact?sujet=integrale-connect-plus">Réserver ma démonstration <b aria-hidden="true">→</b></a></div>
+        <ol>
+          <li><i>01</i><div><b>Piloter une session</b><span>Effectifs, dates, dossiers et actions à venir.</span></div></li>
+          <li><i>02</i><div><b>Ouvrir un dossier stagiaire</b><span>Pièces, financement, documents et historique.</span></div></li>
+          <li><i>03</i><div><b>Contrôler une automatisation</b><span>Déclenchements, alertes et exceptions.</span></div></li>
+          <li><i>04</i><div><b>Lire les indicateurs</b><span>Priorités opérationnelles et vision direction.</span></div></li>
+        </ol>
       </div>
     </section>
 
@@ -204,5 +257,10 @@ export function render() {
         <div><span>Intégrale Connect+</span><h2>Voyez votre gestion stagiaires réunie dans un seul outil.</h2><p>Présentez-nous votre fonctionnement actuel. Nous vous montrerons les parcours les plus pertinents pour votre organisme.</p></div>
         <div><a class="btn primary" href="/contact?sujet=integrale-connect-plus">Planifier une démonstration <b aria-hidden="true">→</b></a><a class="connectPlusFinalContact" href="mailto:clement@integraleacademy.com?subject=D%C3%A9monstration%20Int%C3%A9grale%20Connect%2B">clement@integraleacademy.com</a></div>
       </div>
-    </section>`;
+    </section>
+
+    <div class="productStickyCta productStickyPlus" data-product-sticky aria-label="Actions rapides Intégrale Connect+">
+      <div><i>IC+</i><span><b>Intégrale Connect+</b><small>Gestion stagiaires & conformité</small></span></div>
+      <nav><a href="#captures">Voir les écrans</a><a class="btn primary" href="/contact?sujet=integrale-connect-plus">Demander une démo <b aria-hidden="true">→</b></a></nav>
+    </div>`;
 }
