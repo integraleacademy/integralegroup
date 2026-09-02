@@ -99,7 +99,7 @@ function shell(page, body, buttons) {
     : page.route === '/pole-developpement-web'
       ? '<link rel="stylesheet" href="/assets/digital.css">'
     : ['/nos-outils-metiers', '/integrale-connect-plus', '/integrale-connect-crm'].includes(page.route)
-      ? '<link rel="stylesheet" href="/assets/tools.css">'
+      ? '<link rel="stylesheet" href="/assets/tools.css"><link rel="stylesheet" href="/assets/product-sales.css">'
     : page.route === '/notre-histoire'
       ? '<link rel="stylesheet" href="/assets/history.css">'
     : page.route === '/entreprise'
@@ -148,6 +148,7 @@ fs.copyFileSync('public/academy.css', `${out}/assets/academy.css`);
 fs.copyFileSync('public/conseil.css', `${out}/assets/conseil.css`);
 fs.copyFileSync('public/digital.css', `${out}/assets/digital.css`);
 fs.copyFileSync('public/tools.css', `${out}/assets/tools.css`);
+fs.copyFileSync('public/product-sales.css', `${out}/assets/product-sales.css`);
 fs.copyFileSync('public/history.css', `${out}/assets/history.css`);
 fs.copyFileSync('public/company.css', `${out}/assets/company.css`);
 fs.copyFileSync('public/contact.css', `${out}/assets/contact.css`);
@@ -155,3 +156,4 @@ fs.copyFileSync('public/expertises.css', `${out}/assets/expertises.css`);
 fs.copyFileSync('public/app.js', `${out}/assets/app.js`);
 fs.copyFileSync('public/favicon.svg', `${out}/favicon.svg`);
 fs.cpSync('public/images', `${out}/images`, { recursive: true });
+fs.cpSync('public/videos', `${out}/videos`, { recursive: true });

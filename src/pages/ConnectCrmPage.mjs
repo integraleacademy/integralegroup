@@ -71,11 +71,35 @@ const gains = [
   ['Des conversions mesurables', 'La direction suit les sources, l’activité et les passages du premier contact à l’inscription.'],
 ];
 
+const galleryScreens = [
+  { label: 'Tableau de bord', eyebrow: 'Vision acquisition', title: 'Comprendre d’où viennent les demandes et ce qu’elles deviennent.', text: 'Volumes, sources, campagnes et conversions donnent à la direction une lecture immédiate de l’acquisition.', image: 'connect-crm-dashboard.jpg', alt: 'Tableau de bord réel des indicateurs d’acquisition dans Intégrale Connect CRM', width: 1070, height: 620 },
+  { label: 'Pipeline', eyebrow: 'Suivi commercial', title: 'Chaque piste à la bonne étape, avec la bonne priorité.', text: 'Les volumes par statut, les filtres et les actions à mener structurent le travail quotidien des conseillers.', image: 'connect-crm-pipeline.jpg', alt: 'Vue réelle du pipeline commercial dans Intégrale Connect CRM', width: 1090, height: 620 },
+  { label: 'Relances', eyebrow: 'Prochaine action', title: 'Les relances dues aujourd’hui ne disparaissent plus dans une boîte mail.', text: 'Compteurs, dates, statuts et recherches permettent de concentrer l’équipe sur les contacts à reprendre.', image: 'connect-crm-relances.jpg', alt: 'Vue réelle des relances dans Intégrale Connect CRM', width: 1090, height: 415 },
+  { label: 'E-mails & SMS', eyebrow: 'Communication', title: 'Des réponses rapides, cohérentes et toujours personnalisables.', text: 'Les modèles et variables métier accélèrent les échanges tout en conservant le contexte du prospect.', image: 'connect-crm-modeles.jpg', alt: 'Bibliothèque réelle de modèles de messages dans Intégrale Connect CRM', width: 1080, height: 800 },
+  { label: 'Exports', eyebrow: 'Exploitation des données', title: 'Les données utiles restent disponibles pour le pilotage.', text: 'Des exports structurés permettent de poursuivre une analyse ou un traitement lorsque le besoin l’exige.', image: 'connect-crm-exports.jpg', alt: 'Vue réelle des exports disponibles dans Intégrale Connect CRM', width: 1090, height: 620 },
+];
+
+const transformations = [
+  ['Des demandes réparties entre formulaires, e-mails et fichiers', 'Un pipeline commun qui conserve la source et l’historique'],
+  ['Des relances dépendantes de la mémoire de chaque conseiller', 'Une prochaine action datée et visible par l’équipe'],
+  ['Des résultats commerciaux difficiles à relier aux campagnes', 'Des tableaux de bord qui rapprochent acquisition et conversion'],
+];
+
+const useCases = [
+  ['Conseillers', 'Qualifier, appeler, planifier et relancer depuis une fiche qui garde tout le contexte.'],
+  ['Responsable commercial', 'Répartir les priorités, suivre le pipeline et identifier les opportunités sans suite.'],
+  ['Direction', 'Mesurer les sources, l’activité et les conversions pour mieux orienter les investissements.'],
+];
+
+const ecosystem = ['Formulaires web', 'Meta', 'Calendly', 'E-mail', 'SMS', 'Exports Excel'];
+
 const faq = [
   ['À qui s’adresse Intégrale Connect CRM ?', 'Le CRM est conçu pour les organismes de formation et CFA qui gèrent des demandes entrantes, des rendez-vous, des financements et des parcours d’inscription. La démonstration permet de vérifier son adéquation avec votre organisation commerciale.'],
   ['Le CRM convient-il aux formations réglementées ?', 'Oui. Les fonctions de faisabilité et de suivi CNAPS permettent d’intégrer les prérequis réglementaires au parcours commercial lorsque la formation le nécessite.'],
   ['Peut-on adapter le pipeline et les automatisations ?', 'Le périmètre, les étapes et les scénarios utiles sont cadrés selon vos formations, votre équipe et vos méthodes de suivi. Ils sont précisés dans la proposition commerciale.'],
   ['Comment est calculé l’abonnement ?', 'Le tarif mensuel dépend notamment du nombre d’utilisateurs, des modules retenus, du volume d’activité, des automatisations et du travail de mise en place. Une proposition est remise après la démonstration.'],
+  ['Peut-on reprendre nos prospects et notre historique ?', 'La reprise est étudiée à partir de vos fichiers ou exports actuels. Les champs, les volumes, les doublons et la qualité des données déterminent ce qui peut être importé et le travail nécessaire.'],
+  ['Le CRM peut-il recevoir automatiquement nos demandes ?', 'Les sources à connecter sont définies pendant le cadrage : formulaires, campagnes, prise de rendez-vous ou autres flux disponibles. La proposition précise les connexions et automatisations réellement mises en place.'],
 ];
 
 const browserBar = (view) => `<div class="crmBrowserBar"><span><i></i><i></i><i></i></span><b>Intégrale Connect CRM</b><small>${view}</small></div>`;
@@ -148,6 +172,26 @@ export function render() {
       </div>
     </section>
 
+    <section class="productDemoSection productDemoCrm" id="demo-connect-crm">
+      <div class="productDemoIntro reveal">
+        <div><span>Démonstration en mouvement</span><h2>Le CRM en action, en moins de 20 secondes.</h2></div>
+        <p>Tableau de bord, pipeline, relances, modèles et exports : découvrez de vrais écrans avant de nous présenter votre parcours commercial.</p>
+      </div>
+      <div class="productVideoStage reveal">
+        <div class="productVideoChrome"><span><i></i><i></i><i></i></span><b>Intégrale Connect CRM</b><small>Démo produit · 17 s</small></div>
+        <video autoplay muted loop playsinline controls preload="metadata" poster="/images/connect-crm-dashboard.jpg" aria-label="Vidéo de démonstration d’Intégrale Connect CRM">
+          <source src="/videos/connect-crm-demo.mp4" type="video/mp4">
+          Votre navigateur ne permet pas de lire cette vidéo. <a href="/videos/connect-crm-demo.mp4">Télécharger la démonstration</a>.
+        </video>
+        <div class="productVideoPulse"><i></i>Écrans réels · données non nominatives</div>
+      </div>
+      <div class="productDemoPoints">
+        <article class="reveal"><i>01</i><div><b>Centraliser les demandes</b><span>Toutes les sources rejoignent un même parcours commercial.</span></div></article>
+        <article class="reveal"><i>02</i><div><b>Organiser les relances</b><span>La prochaine action reste visible et partagée par l’équipe.</span></div></article>
+        <article class="reveal"><i>03</i><div><b>Mesurer les conversions</b><span>Les indicateurs rapprochent acquisition, activité et inscriptions.</span></div></article>
+      </div>
+    </section>
+
     <section class="crmJourneySection">
       <div class="crmSectionHeading centered reveal">
         <span>Un parcours commercial continu</span>
@@ -159,12 +203,30 @@ export function render() {
       </div>
     </section>
 
+    <section class="productGallerySection productGalleryCrm" id="captures-crm">
+      <div class="productGalleryHeading reveal">
+        <div><span>Explorez le produit</span><h2>Cinq écrans réels pour suivre toute la relation commerciale.</h2><p>Choisissez une vue : le carrousel vous montre comment le CRM transforme chaque demande en parcours clair, mesurable et actionnable.</p></div>
+        <div class="productGalleryCount"><b>05</b><span>vues métier</span></div>
+      </div>
+      <div class="productGallery reveal" data-product-gallery data-gallery-interval="5600">
+        <div class="productGalleryTabs" role="tablist" aria-label="Captures d’écran d’Intégrale Connect CRM">
+          ${galleryScreens.map((screen, index) => `<button type="button" role="tab" id="crm-tab-${index}" aria-controls="crm-panel-${index}" aria-selected="${index === 0}" tabindex="${index === 0 ? '0' : '-1'}" data-product-tab="${index}"><i>${String(index + 1).padStart(2, '0')}</i><span>${screen.label}</span></button>`).join('')}
+        </div>
+        <div class="productGalleryStage">
+          ${galleryScreens.map((screen, index) => `<figure id="crm-panel-${index}" role="tabpanel" aria-labelledby="crm-tab-${index}" aria-hidden="${index !== 0}" class="productGalleryPanel${index === 0 ? ' is-active' : ''}" data-product-panel="${index}">
+            <a class="productGalleryImage" href="/images/${screen.image}" target="_blank" rel="noopener" aria-label="Agrandir : ${screen.title}"><img src="/images/${screen.image}" alt="${screen.alt}" width="${screen.width}" height="${screen.height}" loading="${index === 0 ? 'eager' : 'lazy'}"></a>
+            <figcaption><span>${screen.eyebrow}</span><h3>${screen.title}</h3><p>${screen.text}</p><a href="/images/${screen.image}" target="_blank" rel="noopener">Voir l’écran en grand <i aria-hidden="true">↗</i></a></figcaption>
+          </figure>`).join('')}
+        </div>
+      </div>
+    </section>
+
     <section class="crmViewsSection" id="apercus-crm">
       <div class="crmViewsHeader">
         <div class="crmSectionHeading dark reveal">
-          <span>Aperçus fonctionnels</span>
-          <h2>Le bon contexte, au moment d’agir.</h2>
-          <p>Pipeline, fiche contact et agenda donnent trois lectures complémentaires du même parcours commercial. Les équipes voient ce qui s’est passé, ce qui bloque et ce qu’il faut faire ensuite.</p>
+          <span>Parcours animés</span>
+          <h2>Suivez la prochaine action, pas seulement une liste de contacts.</h2>
+          <p>Ces mises en situation montrent comment pipeline, fiche contact et agenda travaillent ensemble. Elles complètent les captures réelles avec une lecture guidée du parcours commercial.</p>
         </div>
         <div class="crmViewsCounter reveal"><b>03</b><span>vues métier</span></div>
       </div>
@@ -182,6 +244,19 @@ export function render() {
           <figcaption><i>03</i><div><h3>Agenda & relances</h3><p>Rendez-vous, tâches et contacts à rappeler structurent la journée de chaque conseiller.</p></div></figcaption>
         </figure>
       </div>
+    </section>
+
+    <section class="productTransformationSection productTransformationCrm">
+      <div class="productTransformationIntro reveal"><span>Avant / avec le CRM</span><h2>Une méthode commerciale partagée, du premier clic à l’inscription.</h2><p>Le CRM ne se contente pas de conserver des coordonnées. Il structure la prochaine décision et rend les résultats lisibles.</p></div>
+      <div class="productTransformationGrid">
+        ${transformations.map(([before, after], index) => `<article class="reveal"><i>${String(index + 1).padStart(2, '0')}</i><div><small>AVANT</small><p>${before}</p></div><span aria-hidden="true">→</span><div><small>AVEC LE CRM</small><p>${after}</p></div></article>`).join('')}
+      </div>
+    </section>
+
+    <section class="productUseCasesSection productUseCasesCrm">
+      <div class="productUseCasesHeader reveal"><div><span>Une vision pour chaque rôle</span><h2>Le quotidien de l’équipe et les décisions de la direction, enfin reliés.</h2></div><p>Les conseillers agissent dans le même environnement que celui qui alimente le pilotage commercial.</p></div>
+      <div class="productUseCasesGrid">${useCases.map(([title, text], index) => `<article class="reveal"><i>${String(index + 1).padStart(2, '0')}</i><h3>${title}</h3><p>${text}</p></article>`).join('')}</div>
+      <div class="productEcosystem reveal"><span>SOURCES & CANAUX</span><div>${ecosystem.map(item => `<i>${item}</i>`).join('')}</div></div>
     </section>
 
     <section class="crmFeaturesSection" id="fonctionnalites-crm">
@@ -206,6 +281,18 @@ export function render() {
         <div class="crmGainsGrid">
           ${gains.map(([title, text], index) => `<article class="reveal"><i>${String(index + 1).padStart(2, '0')}</i><h3>${title}</h3><p>${text}</p></article>`).join('')}
         </div>
+      </div>
+    </section>
+
+    <section class="productDemoAgendaSection productDemoAgendaCrm">
+      <div class="productDemoAgendaCard reveal">
+        <div class="productDemoAgendaCopy"><span>Votre démonstration personnalisée</span><h2>En 4 parcours, vous saurez comment le CRM s’adapte à votre équipe.</h2><p>Nous partons de vos sources de demandes, de vos étapes et de vos règles de relance pour vous montrer un scénario concret.</p><a class="btn primary" href="/contact?sujet=integrale-connect-crm">Réserver ma démonstration <b aria-hidden="true">→</b></a></div>
+        <ol>
+          <li><i>01</i><div><b>Faire entrer une demande</b><span>Source, campagne et attribution du contact.</span></div></li>
+          <li><i>02</i><div><b>Qualifier une piste</b><span>Besoin, financement et faisabilité.</span></div></li>
+          <li><i>03</i><div><b>Programmer la suite</b><span>Rendez-vous, message et prochaine relance.</span></div></li>
+          <li><i>04</i><div><b>Lire la conversion</b><span>Pipeline, sources et activité commerciale.</span></div></li>
+        </ol>
       </div>
     </section>
 
@@ -246,5 +333,10 @@ export function render() {
         <div><span>Intégrale Connect CRM</span><h2>Voyez votre parcours commercial réuni dans un seul outil.</h2><p>Présentez-nous vos étapes actuelles. Nous vous montrerons comment le CRM peut structurer les demandes, les relances et les inscriptions de votre organisme.</p></div>
         <div><a class="btn primary" href="/contact?sujet=integrale-connect-crm">Planifier une démonstration <b aria-hidden="true">→</b></a><a class="crmFinalContact" href="mailto:clement@integraleacademy.com?subject=D%C3%A9monstration%20Int%C3%A9grale%20Connect%20CRM">clement@integraleacademy.com</a></div>
       </div>
-    </section>`;
+    </section>
+
+    <div class="productStickyCta productStickyCrm" data-product-sticky aria-label="Actions rapides Intégrale Connect CRM">
+      <div><i>IC</i><span><b>Intégrale Connect CRM</b><small>Prospects, relances & conversion</small></span></div>
+      <nav><a href="#captures-crm">Voir les écrans</a><a class="btn primary" href="/contact?sujet=integrale-connect-crm">Demander une démo <b aria-hidden="true">→</b></a></nav>
+    </div>`;
 }
