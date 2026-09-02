@@ -90,6 +90,9 @@ if (form) {
     'developpement-web': 'Développement web & outils métiers',
     'integrale-connect': 'Intégrale Connect',
     'lancement-integrale-connect': 'Intégrale Connect',
+    'integrale-connect-plus': 'Intégrale Connect+',
+    'integrale-connect-crm': 'Intégrale Connect CRM',
+    'outils-metiers': 'Développement web & outils métiers',
     groupe: 'Partenariat groupe',
   };
 

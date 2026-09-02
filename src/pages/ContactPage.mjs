@@ -24,6 +24,8 @@ const options = [
   'Conseil & accompagnement',
   'Développement web & outils métiers',
   'Intégrale Connect',
+  'Intégrale Connect+',
+  'Intégrale Connect CRM',
   'Partenariat groupe',
   'Autre demande',
 ];
