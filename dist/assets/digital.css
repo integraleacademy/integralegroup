@@ -982,6 +982,7 @@
 .digitalConnectRows p > i { width: 8px; height: 8px; border-radius: 3px; background: #6f99c4; }
 .digitalConnectRows p > b { color: #dce6f0; font-size: 9px; }
 .digitalConnectRows p > small { color: #8ba1ba; font-size: 8px; }
+.digitalConnectCopy > .btn { width: max-content; margin-top: 24px; }
 
 .digitalConnectGrid {
   display: grid;

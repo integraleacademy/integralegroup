@@ -74,24 +74,14 @@ const softwareBlocks = [
 
 const connectModules = [
   {
-    theme: 'crm featured', code: 'CRM', number: '01', title: 'Intégrale Connect CRM',
-    text: 'Suivi des prospects, candidats, relances, inscriptions, financements et étapes commerciales.',
+    theme: 'plus featured', code: 'IC+', number: '01', title: 'Intégrale Connect+',
+    text: 'Gestion des sessions, stagiaires, documents, financements, obligations réglementaires et automatisations.',
+    tags: ['Sessions', 'Documents', 'CNAPS', 'CPF'],
+  },
+  {
+    theme: 'crm', code: 'CRM', number: '02', title: 'Intégrale Connect CRM',
+    text: 'Suivi des prospects, candidats, relances, rendez-vous, financements et étapes commerciales.',
     tags: ['Pipeline', 'Contacts', 'Relances', 'Conversions'],
-  },
-  {
-    theme: 'partners', code: 'P', number: '02', title: 'Intégrale Connect Partenaires',
-    text: 'Gestion des partenaires, conventions, dossiers transmis, statistiques et commissions.',
-    tags: ['Conventions', 'Dossiers', 'Reporting'],
-  },
-  {
-    theme: 'cpf', code: '€', number: '03', title: 'Intégrale Connect CPF',
-    text: 'Centralisation des demandes WeDoF, CPF et EDOF, rapprochement des dossiers, statuts, paiements et pièces administratives.',
-    tags: ['WeDoF', 'EDOF', 'Statuts', 'Rapprochement'],
-  },
-  {
-    theme: 'of', code: 'OF', number: '04', title: 'Intégrale Connect Gestion OF',
-    text: 'Pilotage des sessions, apprenants, documents, attestations, tableaux de bord et suivi qualité.',
-    tags: ['Sessions', 'Apprenants', 'Qualité'],
   },
 ];
 
@@ -203,9 +193,10 @@ export function render() {
         <div class="digitalConnectCopy reveal">
           <span>Focus produit métier</span>
           <h2>Intégrale Connect.</h2>
-          <strong>Une suite pensée pour les organismes de formation.</strong>
-          <p>Intégrale Connect centralise le suivi commercial, la gestion administrative, les dossiers candidats, les partenaires, le CPF, les documents et le reporting pour limiter les doublons et améliorer la visibilité opérationnelle.</p>
-          <div><i>En développement continu</i><i>Architecture modulaire</i></div>
+          <strong>Deux outils pensés pour les organismes de formation.</strong>
+          <p>Intégrale Connect+ pilote la gestion des stagiaires et Intégrale Connect CRM structure le parcours commercial. Ensemble, ils couvrent l’activité de la première demande à la clôture de la formation.</p>
+          <div><i>Abonnement mensuel</i><i>Évolutions continues</i></div>
+          <a class="btn primary" href="/nos-outils-metiers">Découvrir nos outils métiers <b aria-hidden="true">→</b></a>
         </div>
         <div class="digitalConnectDashboard reveal" aria-label="Tableau de bord Intégrale Connect">
           <header><span><i></i><i></i><i></i></span><b>Intégrale Connect</b><small>Tableau de bord</small></header>
@@ -218,7 +209,7 @@ export function render() {
         </div>
       </div>
       <div class="digitalConnectGrid">${connectModules.map(connectCard).join('')}</div>
-      <div class="digitalConnectors reveal"><span>Flux & connecteurs</span><div><i>WEBHOOKS</i><i>SALESFORCE</i><i>JSON</i><i>API</i><i>PDF</i><i>EMAIL</i></div></div>
+      <div class="digitalConnectors reveal"><span>Flux & connecteurs</span><div><i>WEDOF</i><i>EDOF</i><i>YOUSIGN</i><i>QONTO</i><i>API</i><i>EMAIL</i></div></div>
     </section>
 
     <section class="digitalMethodSection" id="methode">
@@ -256,7 +247,7 @@ export function render() {
           <span>Votre prochain outil</span>
           <h2>Votre site, votre plateforme ou votre CRM ne reflète pas encore votre niveau réel&nbsp;?</h2>
           <p>Expliquez-nous votre processus actuel, les irritants et les automatisations prioritaires.</p>
-          <div><a class="btn primary" href="/contact?sujet=developpement-web">Parler de mon projet <b aria-hidden="true">→</b></a><a class="btn secondary" href="#integrale-connect">Découvrir Intégrale Connect</a></div>
+          <div><a class="btn primary" href="/contact?sujet=developpement-web">Parler de mon projet <b aria-hidden="true">→</b></a><a class="btn secondary" href="/nos-outils-metiers">Découvrir nos outils métiers</a></div>
         </div>
         <i class="digitalCtaMark" aria-hidden="true">04</i>
       </div>
