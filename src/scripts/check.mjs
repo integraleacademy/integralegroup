@@ -1,5 +1,5 @@
 import fs from 'fs';
-const routes=['/','/les-poles-du-groupe','/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web','/nos-outils-metiers','/integrale-connect-plus','/notre-histoire','/entreprise','/contact'];
+const routes=['/','/les-poles-du-groupe','/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web','/nos-outils-metiers','/integrale-connect-plus','/integrale-connect-crm','/notre-histoire','/entreprise','/contact'];
 const menuRoutes=['/','/les-poles-du-groupe','/pole-formation','/integrale-expertises','/pole-conseil-accompagnement','/pole-developpement-web','/nos-outils-metiers','/notre-histoire','/entreprise','/contact'];
 const legacyRoutes=['/integrale-academy','/certifications','/integrale-certifications','/pole-certification-ingenierie','/conseil-accompagnement','/ecosysteme','/webdesign','/developpement-saas','/integrale-connect'];
 const fileFor=r=>r==='/'?'dist/index.html':`dist${r}/index.html`;
@@ -12,6 +12,7 @@ const expectedMarkers={
  '/pole-developpement-web':'Transformer un besoin en expérience digitale utile.',
  '/nos-outils-metiers':'Des logiciels métier, pas des outils généralistes à adapter.',
  '/integrale-connect-plus':'Un seul environnement pour suivre tout le parcours stagiaire.',
+ '/integrale-connect-crm':'Un CRM qui comprend vraiment le parcours d’un futur stagiaire.',
  '/notre-histoire':'Une histoire née du terrain',
  '/entreprise':'La carte d’identité',
  '/contact':'Quatre expertises.<br><em>Un seul contact.</em>',
@@ -46,10 +47,13 @@ for(const item of ['CRM métier','Plateforme administrative','Tableau de bord in
 for(const item of ['Intégrale Connect+','Intégrale Connect CRM','Sessions','Documents','CNAPS','CPF','Pipeline','Relances','WEDOF','EDOF','YOUSIGN','QONTO']) if(!dev.includes(item)) throw new Error(`Intégrale Connect content missing ${item}`);
 for(const item of ['Cadrage','Prototype','Développement','Tests','Mise en ligne','Évolutions']) if(!dev.includes(item)) throw new Error(`Digital method missing ${item}`);
 const tools=fs.readFileSync('dist/nos-outils-metiers/index.html','utf8');
-for(const marker of ['toolsPage','/assets/tools.css','Deux outils métiers. <span>Une gestion enfin fluide.</span>','Intégrale Connect+','Intégrale Connect CRM','Solution SaaS','Abonnement mensuel','/integrale-connect-plus','/contact?sujet=integrale-connect-crm','Des logiciels métier, pas des outils généralistes à adapter.']) if(!tools.includes(marker)) throw new Error(`Tools page missing ${marker}`);
+for(const marker of ['toolsPage','/assets/tools.css','Deux outils métiers. <span>Une gestion enfin fluide.</span>','Intégrale Connect+','Intégrale Connect CRM','Solution SaaS','Abonnement mensuel','/integrale-connect-plus','/integrale-connect-crm','Découvrir Connect CRM','/contact?sujet=integrale-connect-crm','Des logiciels métier, pas des outils généralistes à adapter.']) if(!tools.includes(marker)) throw new Error(`Tools page missing ${marker}`);
 const connectPlus=fs.readFileSync('dist/integrale-connect-plus/index.html','utf8');
 for(const marker of ['connectPlusPage','/assets/tools.css','Toute votre gestion stagiaires. <span>Un seul outil.</span>','Sessions & stagiaires','Dossiers administratifs','Documents & signatures','Financements & paiements','CNAPS & conformité','Examens & parcours','Automatisations métier','Pilotage & tableaux de bord','Pilotage des sessions','Suivi CNAPS','Pilotage CPF & WEDOF','MODÈLE D’ABONNEMENT','Questions fréquentes']) if(!connectPlus.includes(marker)) throw new Error(`Connect+ page missing ${marker}`);
 for(const image of ['connect-plus-sessions.jpg','connect-plus-cnaps.jpg','connect-plus-wedof.jpg']){const file=`dist/images/${image}`;if(!fs.existsSync(file)||fs.statSync(file).size<10000) throw new Error(`Connect+ screenshot missing or empty: ${image}`);if(!connectPlus.includes(`/images/${image}`)) throw new Error(`Connect+ page does not use screenshot ${image}`);}
+const connectCrm=fs.readFileSync('dist/integrale-connect-crm/index.html','utf8');
+for(const marker of ['connectCrmPage','/assets/tools.css','Chaque prospect. Chaque relance. <span>Une seule vision.</span>','Six étapes. Une prochaine action toujours visible.','Pipeline commercial','Fiche contact unifiée','Agenda & relances','Leads & pipeline','Fiches contacts à 360°','Rendez-vous & appels','E-mails, SMS & relances','Financement & faisabilité','Réglementaire & CNAPS','Automatisations & prochaines actions','Pilotage & statistiques','MODÈLE D’ABONNEMENT','Questions fréquentes','/contact?sujet=integrale-connect-crm']) if(!connectCrm.includes(marker)) throw new Error(`Connect CRM page missing ${marker}`);
+for(const forbidden of ['Capture réelle','données nominatives','Lorem ipsum']) if(connectCrm.includes(forbidden)) throw new Error(`Connect CRM page contains misleading or placeholder copy: ${forbidden}`);
 const companyPage=fs.readFileSync('dist/entreprise/index.html','utf8');
 for(const marker of ['companyPage','/assets/company.css','Une structure pour faire grandir des projets','Donner une structure commune à des expertises','Transformer une vision en capacité d’action.','Une même exigence.<br><em>Quatre rôles distincts.</em>','Une direction directement impliquée.','Clément Vaillant','Quatre repères qui ne changent pas.','Une structure récente.<br>Une expérience déjà installée.','La carte d’identité<br>du groupe.','Capital social']) if(!companyPage.includes(marker)) throw new Error(`Company page redesign missing ${marker}`);
 for(const marker of ['INTEGRALE GROUP','SAS','989 785 068','989 785 068 00010','54 chemin du Carreou, 83480 Puget-sur-Argens','1 041 000 €','23/07/2025','Gestion de fonds','66.30Z']) if(!companyPage.includes(marker)) throw new Error(`Company legal identity missing ${marker}`);
@@ -81,5 +85,5 @@ for(const s of ['@media (max-width: 1120px)','@media (max-width: 760px)','@media
 const expertisesCss=fs.readFileSync('dist/assets/expertises.css','utf8');
 for(const s of ['@media(max-width:1120px)','@media(max-width:760px)','grid-template-columns:1fr','overflow-wrap:anywhere']) if(!expertisesCss.includes(s)) throw new Error(`Intégrale Expertises responsive CSS guard failed: ${s}`);
 const toolsCss=fs.readFileSync('dist/assets/tools.css','utf8');
-for(const s of ['@media (max-width:1120px)','@media (max-width:760px)','@media (max-width:640px)','grid-template-columns:1fr','toolsProductCard','connectPlusFeaturesGrid','connectPlusScreensGrid','overflow-wrap:anywhere']) if(!toolsCss.includes(s.replaceAll(' ',''))&&!toolsCss.includes(s)) throw new Error(`Tools responsive CSS guard failed: ${s}`);
-console.log('OK: group architecture, tools pages, redirects, navigation and responsive CSS verified.');
+for(const s of ['@media (max-width:1120px)','@media (max-width:760px)','@media (max-width:640px)','grid-template-columns:1fr','toolsProductCard','connectPlusFeaturesGrid','connectPlusScreensGrid','connectCrmPage','crmViewsGrid','crmFeaturesGrid','crmDeploymentFlow','overflow-wrap:anywhere']) if(!toolsCss.includes(s.replaceAll(' ',''))&&!toolsCss.includes(s)) throw new Error(`Tools responsive CSS guard failed: ${s}`);
+console.log('OK: group architecture, Connect+ and CRM pages, redirects, navigation and responsive CSS verified.');

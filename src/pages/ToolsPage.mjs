@@ -83,8 +83,8 @@ export function render() {
             <li>${check}<span>Automatisations, scoring et tableaux de bord</span></li>
           </ul>
           <div class="toolsProductActions">
-            <a class="btn primary" href="/contact?sujet=integrale-connect-crm">Demander une démonstration <b aria-hidden="true">→</b></a>
-            <a class="toolsTextLink" href="/contact?sujet=integrale-connect-crm">Recevoir une proposition</a>
+            <a class="btn primary" href="/integrale-connect-crm">Découvrir Connect CRM <b aria-hidden="true">→</b></a>
+            <a class="toolsTextLink" href="/contact?sujet=integrale-connect-crm">Demander une démonstration</a>
           </div>
         </div>
         <div class="toolsProductPreview toolsCrmPreview" aria-label="Aperçu fonctionnel d’Intégrale Connect CRM">
