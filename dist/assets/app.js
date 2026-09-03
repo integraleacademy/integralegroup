@@ -155,7 +155,7 @@ document.querySelectorAll('[data-product-gallery]').forEach(gallery => {
 });
 
 if (reducedMotion) {
-  document.querySelectorAll('.productVideoStage video[autoplay]').forEach(video => video.pause());
+  document.querySelectorAll('.productVideoStage video[autoplay], .toolsDemoVideo video[autoplay]').forEach(video => video.pause());
 }
 
 const productStickyCta = document.querySelector('[data-product-sticky]');
