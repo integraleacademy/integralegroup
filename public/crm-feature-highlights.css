@@ -1,0 +1,86 @@
+/* Screenshot-and-copy highlights, scoped to the added blocks only. */
+.connectCrmPage .crmFeatureHighlights {
+  --crm-accent: #6844d5;
+  --crm-ink: #151b2c;
+  --crm-muted: #626779;
+  color: var(--crm-ink);
+  background: #fff;
+}
+.connectCrmPage .crmFeatureHighlights .crmTourFeature { background: #fff; position: relative; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeature::before { display: none; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy h2 {
+  margin: 17px 0 21px;
+  font-weight: 780;
+  line-height: 1.13;
+  letter-spacing: -.04em;
+}
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy > p { color: var(--crm-muted); line-height: 1.75; }
+.connectCrmPage .crmFeatureHighlights a:focus-visible { outline: 3px solid #9e80ee; outline-offset: 5px; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeature { padding: 86px 0; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeature:nth-of-type(even) { background: #faf9fc; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureInner { width: min(100% - 80px,1200px); display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); align-items: center; gap: clamp(44px,6vw,86px); }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureReverse .crmTourFeatureCopy { grid-column: 1; grid-row: 1; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureReverse .crmTourFigure { grid-column: 2; grid-row: 1; }
+.connectCrmPage .crmFeatureHighlights .crmTourTone-violet { --screen-glow: #d9cafa; --screen-soft: #f0e9fc; --screen-ink: #7651c8; }
+.connectCrmPage .crmFeatureHighlights .crmTourTone-blue { --screen-glow: #c6dafa; --screen-soft: #eaf0ff; --screen-ink: #386dcc; }
+.connectCrmPage .crmFeatureHighlights .crmTourTone-mint { --screen-glow: #bce9df; --screen-soft: #e6f6f1; --screen-ink: #21846b; }
+.connectCrmPage .crmFeatureHighlights .crmTourTone-peach { --screen-glow: #f4d1bd; --screen-soft: #fff0e7; --screen-ink: #b96d3d; }
+.connectCrmPage .crmFeatureHighlights .crmTourFigure { margin: 0; min-width: 0; position: relative; padding: 12px 0 30px; }
+.connectCrmPage .crmFeatureHighlights .crmTourFigure::before { content: ''; position: absolute; inset: 5% -5% 5%; border-radius: 50%; background: var(--screen-glow); filter: blur(42px); opacity: .44; pointer-events: none; }
+.connectCrmPage .crmFeatureHighlights .crmTourScreen { display: block; position: relative; overflow: hidden; border-radius: 14px; background: #fff; border: 1px solid #dedde7; box-shadow: 0 20px 42px #1d15361a,0 3px 8px #1d153608; transition: transform .3s,box-shadow .3s; }
+.connectCrmPage .crmFeatureHighlights .crmTourScreen:hover { transform: translateY(-5px); box-shadow: 0 25px 48px #1d153624; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser { height: 37px; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 13px; background: #fff; border-bottom: 1px solid #eeeef2; color: #575b70; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser > span { display: flex; gap: 5px; align-items: center; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser i { width: 6px; height: 6px; border-radius: 50%; background: #f1a6a3; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser i:nth-child(2) { background: #f0cd87; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser i:nth-child(3) { background: #9bd7bf; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser b { font-size: 9px; font-weight: 600; }
+.connectCrmPage .crmFeatureHighlights .crmTourBrowser > span:last-child { color: #7d728f; font-size: 13px; }
+.connectCrmPage .crmFeatureHighlights .crmTourScreen img { display: block; width: 100%; height: auto; }
+.connectCrmPage .crmFeatureHighlights .crmTourZoom { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 9px 13px; border-radius: 7px; color: #fff; background: #201637e8; font-size: 11px; white-space: nowrap; opacity: 0; transition: opacity .2s; }
+.connectCrmPage .crmFeatureHighlights .crmTourScreen:hover .crmTourZoom, .connectCrmPage .crmFeatureHighlights .crmTourScreen:focus-visible .crmTourZoom { opacity: 1; }
+.connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption { position: relative; z-index: 1; margin: -2px 18px -27px auto; width: max-content; max-width: calc(100% - 20px); padding: 14px 19px; display: flex; align-items: center; gap: 12px; border: 1px solid #eae7f0; border-radius: 12px; background: #fff; box-shadow: 0 12px 25px #23183b0d; }
+.connectCrmPage .crmFeatureHighlights .crmTourNoteIcon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; padding: 8px; color: var(--screen-ink); background: var(--screen-soft); }
+.connectCrmPage .crmFeatureHighlights .crmTourNoteIcon svg, .connectCrmPage .crmFeatureHighlights .crmTourIcon svg { width: 100%; height: 100%; }
+.connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption strong, .connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption small { display: block; }
+.connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption strong { font-size: 12px; font-weight: 750; }
+.connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption small { color: var(--crm-muted); font-size: 10px; margin-top: 4px; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureLabel { display: flex; align-items: center; gap: 12px; color: var(--screen-ink); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .075em; }
+.connectCrmPage .crmFeatureHighlights .crmTourIcon { display: block; width: 43px; height: 43px; flex-shrink: 0; padding: 11px; background: var(--screen-soft,#f0eafb); color: var(--screen-ink,var(--crm-accent)); border-radius: 12px; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy h2 { font-size: clamp(30px,3vw,42px); }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy > p { font-size: 16px; margin: 0 0 21px; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy ul { list-style: none; padding: 0; display: grid; gap: 13px; margin: 24px 0 28px; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy li { display: flex; align-items: baseline; gap: 12px; color: #484c5b; font-size: 14px; line-height: 1.6; }
+.connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy li > span { color: var(--crm-accent); font-weight: 800; }
+.connectCrmPage .crmFeatureHighlights .crmTourTextLink { display: inline-flex; gap: 16px; align-items: center; color: var(--crm-accent); font-size: 13px; font-weight: 750; }
+.connectCrmPage .crmFeatureHighlights .crmTourTextLink:hover { text-decoration: underline; text-underline-offset: 5px; }
+@media (max-width: 1120px) {
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureInner { gap: 40px; }
+}
+@media (max-width: 760px) {
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureInner { grid-template-columns: 1fr; width: calc(100% - 48px); gap: 38px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureReverse .crmTourFeatureCopy,
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureReverse .crmTourFigure { grid-column: auto; grid-row: auto; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy { grid-row: 1; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFigure { grid-row: 2; max-width: 580px; width: 100%; margin: auto; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeature { padding: 52px 0 64px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy h2 { font-size: 35px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy ul { margin: 20px 0; gap: 10px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy > p { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureInner { width: calc(100% - 36px); }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureCopy h2 { font-size: 31px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption { padding: 11px 12px; margin-right: 9px; gap: 9px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption strong { font-size: 10px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFigure figcaption small { font-size: 9px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourNoteIcon { width: 31px; height: 31px; padding: 7px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourFeatureLabel { font-size: 9px; }
+  .connectCrmPage .crmFeatureHighlights .crmTourIcon { width: 38px; height: 38px; padding: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .connectCrmPage .crmFeatureHighlights .reveal { opacity: 1; transform: none; transition: none; }
+  .connectCrmPage .crmFeatureHighlights .crmTourScreen,
+  .connectCrmPage .crmFeatureHighlights .crmTourZoom { transition: none; }
+  .connectCrmPage .crmFeatureHighlights .crmTourScreen:hover { transform: none; }
+}
