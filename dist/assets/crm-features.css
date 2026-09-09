@@ -1,0 +1,215 @@
+/* Intégrale Connect CRM: a guided, screenshot-led product page. */
+body.connectCrmPage {
+  --crm-accent: #6844d5;
+  --crm-ink: #151b2c;
+  --crm-muted: #626779;
+  --crm-line: #e9e7f0;
+  --crm-header-height: 76px;
+  zoom: 1;
+  color: var(--crm-ink);
+  background: #fff;
+}
+.connectCrmPage .siteHeader { background: rgba(255,255,255,.96); color: var(--crm-ink); border-bottom: 1px solid var(--crm-line); box-shadow: none; }
+.connectCrmPage .brand b { color: #ad7b15; }
+.connectCrmPage .navLinks > a:hover, .connectCrmPage .navParentLink:hover { color: var(--crm-accent); }
+.connectCrmPage .navDropdownToggle { color: #6d627f; }
+.connectCrmPage .burger span { background: var(--crm-ink); }
+.connectCrmPage .homeHeaderCta { display: inline-flex; align-items: center; padding: 12px 18px; border-radius: 10px; background: var(--crm-ink); color: #fff; white-space: nowrap; font-size: 13px; font-weight: 700; }
+.connectCrmPage main > section { position: relative; }
+.connectCrmPage main > section::before { display: none; }
+.connectCrmPage .btn { gap: 14px; border-radius: 11px; padding: 15px 23px; min-height: 52px; font-size: 14px; font-weight: 750; line-height: 1.4; letter-spacing: 0; }
+.connectCrmPage .btn.primary { background: var(--crm-accent); color: #fff; border-color: var(--crm-accent); box-shadow: 0 6px 20px #6844d51c; }
+.connectCrmPage .btn.primary:hover { background: #5434b9; box-shadow: 0 10px 24px #6844d52b; }
+.connectCrmPage .btn.secondary { color: var(--crm-ink); border: 1px solid #dedce8; background: #fff; box-shadow: none; }
+.connectCrmPage a:focus-visible, .connectCrmPage summary:focus-visible, .connectCrmPage button:focus-visible { outline: 3px solid #9e80ee; outline-offset: 5px; }
+.connectCrmPage h1, .connectCrmPage main h2, .connectCrmPage main h3 { font-weight: 780; }
+.connectCrmPage main h2 { font-size: clamp(30px,3.15vw,44px); line-height: 1.13; letter-spacing: -.04em; margin: 17px 0 21px; }
+.connectCrmPage main p { color: var(--crm-muted); line-height: 1.75; }
+.connectCrmPage .crmTourEyebrow { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--crm-accent); }
+.connectCrmPage .crmTourHero { min-height: auto; padding: 76px 0 42px; color: var(--crm-ink); text-align: center; background: radial-gradient(ellipse at 50% 0%,#eae2ff88,transparent 65%),radial-gradient(#cbc1e33b .8px,transparent .8px) center top / 9px 9px,#fff; }
+.connectCrmPage .crmTourHeroInner { max-width: 1110px; }
+.connectCrmPage .crmTourHero .crmTourEyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 7px 13px; border: 1px solid #dcd2f3; border-radius: 30px; background: #faf7ff; font-size: 10px; line-height: 1.5; }
+.crmTourEyebrow i { width: 6px; height: 6px; background: var(--crm-accent); border-radius: 50%; flex-shrink: 0; }
+.connectCrmPage .crmTourHero h1 { margin: 25px auto 20px; max-width: 1100px; font-size: clamp(42px,5.65vw,76px); line-height: 1.06; letter-spacing: -.055em; }
+.connectCrmPage .crmTourHero h1 span { color: var(--crm-accent); }
+.connectCrmPage .crmTourHero .crmTourLead { max-width: 710px; margin: 0 auto; font-size: 18px; line-height: 1.7; color: var(--crm-muted); }
+.crmTourActions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 29px; }
+.crmTourFacts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; max-width: 900px; margin: 46px auto 0; }
+.crmTourFacts > div { padding: 23px 10px 21px; border: 1px solid #e9e5f1; background: #ffffffee; border-radius: 14px; box-shadow: 0 5px 0 #eeecf366,0 12px 26px #20204205; }
+.crmTourFacts strong { display: block; color: var(--crm-accent); font-size: 31px; font-weight: 800; letter-spacing: -.045em; line-height: 1.1; }
+.crmTourFacts > div:last-child strong { font-size: 25px; line-height: 1.36; }
+.crmTourFacts span { display: block; margin-top: 9px; color: var(--crm-muted); font-size: 13px; }
+.connectCrmPage .crmTourHero .crmTourAudience { font-size: 12px; margin: 28px auto 0; color: #767186; }
+.crmTourAudience b { color: #4e495e; font-weight: 650; }
+.crmTourNav { position: sticky; top: var(--crm-header-height); z-index: 12; border-block: 1px solid var(--crm-line); background: rgba(255,255,255,.96); backdrop-filter: blur(14px); }
+.crmTourNav > div { width: min(100% - 64px,1200px); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 65px; }
+.crmTourNavBrand { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 750; white-space: nowrap; }
+.crmTourNavBrand > span { background: #f0eafb; color: var(--crm-accent); padding: 8px; border-radius: 8px; font-size: 10px; }
+.crmTourNavLinks { display: flex; gap: 8px; }
+.crmTourNavLinks a { padding: 10px 13px; border-radius: 8px; color: #696474; font-size: 12px; font-weight: 650; white-space: nowrap; transition: background .2s,color .2s; }
+.crmTourNavLinks a:hover, .crmTourNavLinks a[aria-current="location"] { background: #f1ebff; color: #5934c3; }
+.crmTourNavDemo { font-size: 12px; font-weight: 750; color: var(--crm-accent); white-space: nowrap; }
+.crmTourNavDemo span { margin-left: 7px; }
+.crmTourAnchor, .connectCrmPage section[id] { scroll-margin-top: calc(var(--crm-header-height) + 84px); }
+.connectCrmPage .crmTourIntro { padding: 58px 0 8px; }
+.crmTourHeading { text-align: center; max-width: 740px; }
+.connectCrmPage .crmTourHeading h2 { margin: 12px 0 16px; }
+.crmTourHeading p { font-size: 16px; max-width: 625px; margin: 0 auto; }
+.connectCrmPage .crmTourFeature { padding: 86px 0; }
+.crmTourFeature:nth-of-type(even) { background: #faf9fc; }
+.crmTourFeatureInner { width: min(100% - 80px,1200px); display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); align-items: center; gap: clamp(44px,6vw,86px); }
+.crmTourFeatureReverse .crmTourFeatureCopy { grid-column: 1; grid-row: 1; }
+.crmTourFeatureReverse .crmTourFigure { grid-column: 2; grid-row: 1; }
+.crmTourTone-violet { --screen-glow: #d9cafa; --screen-soft: #f0e9fc; --screen-ink: #7651c8; }
+.crmTourTone-blue { --screen-glow: #c6dafa; --screen-soft: #eaf0ff; --screen-ink: #386dcc; }
+.crmTourTone-mint { --screen-glow: #bce9df; --screen-soft: #e6f6f1; --screen-ink: #21846b; }
+.crmTourTone-peach { --screen-glow: #f4d1bd; --screen-soft: #fff0e7; --screen-ink: #b96d3d; }
+.crmTourFigure { margin: 0; min-width: 0; position: relative; padding: 12px 0 30px; }
+.crmTourFigure::before { content: ''; position: absolute; inset: 5% -5% 5%; border-radius: 50%; background: var(--screen-glow); filter: blur(42px); opacity: .44; pointer-events: none; }
+.crmTourScreen { display: block; position: relative; overflow: hidden; border-radius: 14px; background: #fff; border: 1px solid #dedde7; box-shadow: 0 20px 42px #1d15361a,0 3px 8px #1d153608; transition: transform .3s,box-shadow .3s; }
+.crmTourScreen:hover { transform: translateY(-5px); box-shadow: 0 25px 48px #1d153624; }
+.crmTourBrowser { height: 37px; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 13px; background: #fff; border-bottom: 1px solid #eeeef2; color: #575b70; }
+.crmTourBrowser > span { display: flex; gap: 5px; align-items: center; }
+.crmTourBrowser i { width: 6px; height: 6px; border-radius: 50%; background: #f1a6a3; }
+.crmTourBrowser i:nth-child(2) { background: #f0cd87; }
+.crmTourBrowser i:nth-child(3) { background: #9bd7bf; }
+.crmTourBrowser b { font-size: 9px; font-weight: 600; }
+.crmTourBrowser > span:last-child { color: #7d728f; font-size: 13px; }
+.crmTourScreen img { display: block; width: 100%; height: auto; }
+.crmTourZoom { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 9px 13px; border-radius: 7px; color: #fff; background: #201637e8; font-size: 11px; white-space: nowrap; opacity: 0; transition: opacity .2s; }
+.crmTourScreen:hover .crmTourZoom, .crmTourScreen:focus-visible .crmTourZoom { opacity: 1; }
+.crmTourFigure figcaption { position: relative; z-index: 1; margin: -2px 18px -27px auto; width: max-content; max-width: calc(100% - 20px); padding: 14px 19px; display: flex; align-items: center; gap: 12px; border: 1px solid #eae7f0; border-radius: 12px; background: #fff; box-shadow: 0 12px 25px #23183b0d; }
+.crmTourNoteIcon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; padding: 8px; color: var(--screen-ink); background: var(--screen-soft); }
+.crmTourNoteIcon svg, .crmTourIcon svg { width: 100%; height: 100%; }
+.crmTourFigure figcaption strong, .crmTourFigure figcaption small { display: block; }
+.crmTourFigure figcaption strong { font-size: 12px; font-weight: 750; }
+.crmTourFigure figcaption small { color: var(--crm-muted); font-size: 10px; margin-top: 4px; }
+.crmTourFeatureLabel { display: flex; align-items: center; gap: 12px; color: var(--screen-ink); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .075em; }
+.crmTourIcon { display: block; width: 43px; height: 43px; flex-shrink: 0; padding: 11px; background: var(--screen-soft,#f0eafb); color: var(--screen-ink,var(--crm-accent)); border-radius: 12px; }
+.connectCrmPage .crmTourFeatureCopy h2 { font-size: clamp(30px,3vw,42px); }
+.crmTourFeatureCopy > p { font-size: 16px; margin: 0 0 21px; }
+.crmTourFeatureCopy ul { list-style: none; padding: 0; display: grid; gap: 13px; margin: 24px 0 28px; }
+.crmTourFeatureCopy li { display: flex; align-items: baseline; gap: 12px; color: #484c5b; font-size: 14px; line-height: 1.6; }
+.crmTourFeatureCopy li > span { color: var(--crm-accent); font-weight: 800; }
+.crmTourTextLink { display: inline-flex; gap: 16px; align-items: center; color: var(--crm-accent); font-size: 13px; font-weight: 750; }
+.crmTourTextLink:hover { text-decoration: underline; text-underline-offset: 5px; }
+.connectCrmPage .crmTourExtras { padding: 90px 0 55px; background: #f8f7fb; }
+.crmTourExtraGrid { width: min(100% - 80px,1200px); display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; margin-top: 40px; }
+.crmTourExtra { padding: 29px; border-radius: 15px; background: #fff; border: 1px solid #e9e6f0; box-shadow: 0 8px 24px #291b4504; }
+.crmTourExtra > div:first-child { display: flex; align-items: center; justify-content: space-between; }
+.crmTourExtra small { font-size: 11px; color: #9a91a9; }
+.crmTourExtra h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.025em; margin: 25px 0 13px; }
+.crmTourExtra p { font-size: 14px; margin: 0 0 22px; }
+.crmTourTags { display: flex; flex-wrap: wrap; gap: 6px; }
+.crmTourTags span { padding: 5px 8px; font-size: 10px; color: #6a637c; border: 1px solid #eae7f0; border-radius: 5px; }
+.crmTourSources { margin-top: 46px; text-align: center; }
+.crmTourSources > span { font-size: 9px; font-weight: 750; letter-spacing: .16em; color: #8b8497; }
+.crmTourSources > div { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 34px; margin-top: 17px; }
+.crmTourSources > div span { font-size: 15px; color: #777082; font-weight: 700; }
+.connectCrmPage .crmTourDemo { padding: 95px 0; background: #151324; color: #fff; }
+.crmTourDemoInner { width: min(100% - 80px,1200px); display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 65px; align-items: center; }
+.connectCrmPage .crmTourDemo .crmTourEyebrow { color: #c6b3fa; }
+.connectCrmPage .crmTourDemoCopy p { color: #b4aec5; font-size: 15px; margin-bottom: 25px; }
+.crmTourDemoCopy > small { display: block; max-width: 320px; color: #a29ab6; margin-top: 17px; font-size: 11px; line-height: 1.7; }
+.crmTourVideo { min-width: 0; border: 1px solid #544968; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 70px #0004; }
+.crmTourVideo .crmTourBrowser { color: #c4bcd6; background: #272239; border-color: #544968; }
+.crmTourVideo video { width: 100%; display: block; aspect-ratio: 16/9; background: #100d1b; object-fit: contain; }
+.connectCrmPage .crmTourPricing { padding: 100px 0; }
+.crmTourPricingInner { width: min(100% - 80px,1060px); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr); gap: 90px; align-items: center; }
+.crmTourPricingInner > div > p { font-size: 15px; margin-bottom: 24px; }
+.crmTourPricingCard { padding: 32px; border: 1px solid #d8cbed; border-radius: 18px; background: linear-gradient(140deg,#faf7ff,#fff); box-shadow: 0 10px 35px #38275708; }
+.crmTourPricingCard > span { font-size: 10px; letter-spacing: .1em; font-weight: 750; color: var(--crm-accent); }
+.crmTourPricingCard h3 { font-size: 35px; letter-spacing: -.05em; margin: 18px 0; }
+.crmTourPricingCard h3 span { display: block; color: var(--crm-muted); font-size: 13px; font-weight: 500; letter-spacing: 0; margin-top: 7px; }
+.crmTourPricingCard ul { list-style: none; padding: 21px 0 0; margin: 23px 0; border-top: 1px solid #e7dff1; display: grid; gap: 15px; }
+.crmTourPricingCard li { display: flex; align-items: baseline; gap: 10px; font-size: 13px; line-height: 1.5; color: var(--crm-accent); }
+.crmTourPricingCard li span { color: #645d70; }
+.crmTourPricingCard .btn { width: 100%; }
+.connectCrmPage .crmTourFaq { padding: 78px 0 95px; background: #faf9fc; border-top: 1px solid var(--crm-line); }
+.crmTourFaqInner { width: min(100% - 80px,1120px); display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 75px; }
+.crmTourFaqInner > div > p { font-size: 14px; }
+.crmTourFaqInner details { border-bottom: 1px solid #e4dfeb; padding: 0; }
+.crmTourFaqInner summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 22px; padding: 22px 0; font-size: 14px; line-height: 1.5; font-weight: 650; }
+.crmTourFaqInner summary::-webkit-details-marker { display: none; }
+.crmTourFaqInner summary span { font-size: 23px; line-height: 1; color: var(--crm-accent); font-weight: 400; transition: transform .2s; }
+.crmTourFaqInner details[open] summary span { transform: rotate(45deg); }
+.crmTourFaqInner details p { margin: 0; padding: 0 28px 22px 0; font-size: 14px; }
+.connectCrmPage .crmTourFinal { padding: 90px 0 100px; background: radial-gradient(ellipse at 50% 100%,#e9dcffbb,transparent 70%),#fff; text-align: center; }
+.connectCrmPage .crmTourFinal h2 { font-size: clamp(35px,4.3vw,60px); margin-top: 16px; }
+.crmTourFinal h2 span { color: var(--crm-accent); }
+.crmTourFinal p { font-size: 16px; margin-bottom: 28px; }
+/* Content stays visible if JavaScript or IntersectionObserver is unavailable. */
+.crmTourReady .crmTourReveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease,transform .55s ease; }
+.crmTourReady .crmTourReveal.is-visible { opacity: 1; transform: none; }
+@media (max-width: 1120px) {
+  .connectCrmPage .homeHeaderCta { display: none; }
+  .connectCrmPage .siteHeader.open .navLinks > a, .connectCrmPage .siteHeader.open .navDropdownTrigger { border-color: var(--crm-line); }
+  .connectCrmPage .siteHeader.open .dropdownMenu { background: #19162c; }
+  .connectCrmPage .dropdownMenu { color: #fff; }
+  .crmTourNav > div { width: calc(100% - 48px); }
+  .crmTourNavBrand { font-size: 0; gap: 0; }
+  .crmTourFeatureInner, .crmTourDemoInner { gap: 40px; }
+  .crmTourPricingInner, .crmTourFaqInner { gap: 45px; }
+  .crmTourExtra { padding: 22px; }
+}
+@media (max-width: 760px) {
+  .connectCrmPage .crmTourHero { padding-top: 51px; }
+  .connectCrmPage .crmTourHero h1 { font-size: clamp(37px,6.7vw,54px); }
+  .connectCrmPage .crmTourHero .crmTourLead { font-size: 16px; }
+  .crmTourFacts { gap: 10px; margin-top: 32px; }
+  .crmTourFacts strong { font-size: 27px; }
+  .crmTourFacts > div:last-child strong { font-size: 21px; }
+  .crmTourNavDemo, .crmTourNavBrand { display: none; }
+  .crmTourNav > div { min-height: 56px; width: 100%; justify-content: center; }
+  .crmTourNavLinks { width: 100%; justify-content: center; gap: 0; }
+  .crmTourNavLinks a { padding: 10px 12px; font-size: 11px; }
+  .crmTourFeatureInner, .crmTourDemoInner, .crmTourPricingInner, .crmTourFaqInner { grid-template-columns: 1fr; width: calc(100% - 48px); gap: 38px; }
+  .crmTourFeatureReverse .crmTourFeatureCopy, .crmTourFeatureReverse .crmTourFigure { grid-column: auto; grid-row: auto; }
+  .crmTourFeatureCopy { grid-row: 1 !important; }
+  .crmTourFigure { grid-row: 2 !important; max-width: 580px; width: 100%; margin: auto; }
+  .connectCrmPage .crmTourFeature { padding: 52px 0 64px; }
+  .connectCrmPage .crmTourFeatureCopy h2 { font-size: 35px; }
+  .crmTourFeatureCopy ul { margin: 20px 0; gap: 10px; }
+  .crmTourFeatureCopy > p { font-size: 15px; }
+  .crmTourExtraGrid { grid-template-columns: 1fr; width: calc(100% - 48px); gap: 14px; }
+  .crmTourExtra { padding: 25px; }
+  .crmTourExtra h3 { margin-top: 18px; }
+  .crmTourDemoCopy > small { max-width: none; }
+  .connectCrmPage .crmTourDemo, .connectCrmPage .crmTourPricing, .connectCrmPage .crmTourFaq { padding: 65px 0; }
+  .crmTourFaqInner { gap: 25px; }
+}
+@media (max-width: 480px) {
+  body.connectCrmPage { --crm-header-height: 68px; }
+  .connectCrmPage .crmTourHero { padding: 40px 0 28px; }
+  .connectCrmPage .crmTourHero .crmTourEyebrow { max-width: 325px; font-size: 8px; letter-spacing: .09em; }
+  .connectCrmPage .crmTourHero h1 { font-size: clamp(32px,9vw,43px); letter-spacing: -.05em; }
+  .crmTourActions { display: grid; gap: 10px; }
+  .connectCrmPage .btn { width: 100%; min-height: 51px; font-size: 13px; padding: 13px 16px; }
+  .crmTourFacts { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px; margin-top: 27px; }
+  .crmTourFacts > div { padding: 18px 7px; }
+  .crmTourFacts span { font-size: 11px; }
+  .connectCrmPage .crmTourHero .crmTourAudience { font-size: 11px; margin-top: 24px; }
+  .crmTourNavLinks a { padding: 10px; font-size: 10px; }
+  .connectCrmPage .crmTourIntro { padding-top: 40px; }
+  .connectCrmPage main h2, .connectCrmPage .crmTourFeatureCopy h2 { font-size: 31px; }
+  .crmTourHeading p { font-size: 14px; }
+  .crmTourFeatureInner, .crmTourDemoInner, .crmTourPricingInner, .crmTourFaqInner, .crmTourExtraGrid { width: calc(100% - 36px); }
+  .crmTourFigure figcaption { padding: 11px 12px; margin-right: 9px; gap: 9px; }
+  .crmTourFigure figcaption strong { font-size: 10px; }
+  .crmTourFigure figcaption small { font-size: 9px; }
+  .crmTourNoteIcon { width: 31px; height: 31px; padding: 7px; }
+  .crmTourFeatureLabel { font-size: 9px; }
+  .crmTourIcon { width: 38px; height: 38px; padding: 9px; }
+  .crmTourPricingCard { padding: 24px; }
+  .crmTourSources > div { gap: 16px 22px; }
+  .crmTourSources > div span { font-size: 12px; }
+  .connectCrmPage .crmTourFinal { padding: 65px 0; }
+  .crmTourFinal p br { display: none; }
+  .crmTourFinal .btn { width: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .connectCrmPage { scroll-behavior: auto; }
+  .crmTourReady .crmTourReveal, .crmTourReady .crmTourReveal.is-visible { opacity: 1; transform: none; transition: none; }
+  .crmTourScreen, .crmTourZoom, .crmTourFaqInner summary span, .connectCrmPage .btn { transition: none; }
+  .crmTourScreen:hover, .connectCrmPage .btn:hover { transform: none; }
+}
