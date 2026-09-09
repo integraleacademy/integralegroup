@@ -6,6 +6,7 @@ body.connectCrmPage {
   --crm-line: #e9e7f0;
   --crm-header-height: 76px;
   zoom: 1;
+  overflow-x: clip;
   color: var(--crm-ink);
   background: #fff;
 }
@@ -15,6 +16,7 @@ body.connectCrmPage {
 .connectCrmPage .navDropdownToggle { color: #6d627f; }
 .connectCrmPage .burger span { background: var(--crm-ink); }
 .connectCrmPage .homeHeaderCta { display: inline-flex; align-items: center; padding: 12px 18px; border-radius: 10px; background: var(--crm-ink); color: #fff; white-space: nowrap; font-size: 13px; font-weight: 700; }
+.connectCrmPage > main { background: #fff; }
 .connectCrmPage main > section { position: relative; }
 .connectCrmPage main > section::before { display: none; }
 .connectCrmPage .btn { gap: 14px; border-radius: 11px; padding: 15px 23px; min-height: 52px; font-size: 14px; font-weight: 750; line-height: 1.4; letter-spacing: 0; }
@@ -208,7 +210,7 @@ body.connectCrmPage {
   .crmTourFinal .btn { width: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .connectCrmPage { scroll-behavior: auto; }
+  html:has(body.connectCrmPage) { scroll-behavior: auto; }
   .crmTourReady .crmTourReveal, .crmTourReady .crmTourReveal.is-visible { opacity: 1; transform: none; transition: none; }
   .crmTourScreen, .crmTourZoom, .crmTourFaqInner summary span, .connectCrmPage .btn { transition: none; }
   .crmTourScreen:hover, .connectCrmPage .btn:hover { transform: none; }
